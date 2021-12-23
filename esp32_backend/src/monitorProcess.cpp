@@ -38,7 +38,7 @@ void monitorSetup() {
         data += timeRead();
         logData(data);
         Serial.println(millis() / 1000);
-        delay(5000);
+        delay(30e3);
 //        if (batterySavingActivated && !digitalRead(POWER_PIN)) {
 //            esp_deep_sleep(LOG_INTERVAL * 1000);
 //        } else {

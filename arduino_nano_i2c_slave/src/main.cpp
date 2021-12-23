@@ -51,6 +51,14 @@ void onLightning() {
     lightnings++;
 }
 
+void onWindSpeed() {
+    wind_vel++;
+}
+
+void onWaterCount() {
+    pluv_acc++;
+}
+
 void read_sensors();
 
 void requestEvent() {
@@ -159,36 +167,42 @@ void read_sensors() {
     flag1 = 0;
     count1 = 0;
     asdf = 0;
+    attachInterrupt(digitalPinToInterrupt(WIND_SPEED_PIN), onWindSpeed, RISING);
+    attachInterrupt(digitalPinToInterrupt(WATER_COUNT_PIN), onWaterCount, RISING);
 
+    wind_vel = 0;
     while ((millis() - lastMillis) <= 1000) {
-        asdf++;
-
-        if (digitalRead(WIND_SPEED_PIN) == 1) {
-            if (flag == 0)
-                flag = 1;
-        }
-        if (digitalRead(WATER_COUNT_PIN) == 1) {
-            if (flag1 == 0)
-                flag1 = 1;
-        }
-
-
-        if (digitalRead(WIND_SPEED_PIN) == 0) {
-            if (flag == 1) {
-                flag = 0;
-                count++;
-            }
-        }
-        if (digitalRead(WATER_COUNT_PIN) == 0) {
-            if (flag1 == 1) {
-                flag1 = 0;
-                count1++;
-            }
-        }
+//        asdf++;
+//
+//        if (digitalRead(WIND_SPEED_PIN) == 1) {
+//            if (flag == 0)
+//                flag = 1;
+//        }
+//        if (digitalRead(WATER_COUNT_PIN) == 1) {
+//            if (flag1 == 0)
+//                flag1 = 1;
+//        }
+//
+//
+//        if (digitalRead(WIND_SPEED_PIN) == 0) {
+//            if (flag == 1) {
+//                flag = 0;
+//                count++;
+//            }
+//        }
+//        if (digitalRead(WATER_COUNT_PIN) == 0) {
+//            if (flag1 == 1) {
+//                flag1 = 0;
+//                count1++;
+//            }
+//        }
     }
 
-    wind_vel = count;
-    pluv_acc += count1;
+    detachInterrupt(digitalPinToInterrupt(WIND_SPEED_PIN));
+    detachInterrupt(digitalPinToInterrupt(WATER_COUNT_PIN));
+
+//    wind_vel = count;
+//    pluv_acc += count1;
     //pluv_acc=0x1234;
 
 }

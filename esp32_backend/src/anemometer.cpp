@@ -38,7 +38,7 @@ int a = 0;
 uint8_t lightningCount;
 
 
-uint8_t readingsBuffer[400];
+uint8_t readingsBuffer[400] = {0};
 
 
 [[noreturn]] void tickerTask(void *param) {
@@ -148,13 +148,12 @@ void anem::readBuff() {
 
         for (uint8_t i = 0; i < 12; i++) {
             readingsBuffer[12 * j + i] = Wire.read();
-//            Serial.print(readingsBuffer[12 * j + i], HEX);
-//            if (i % 8 == 0) {
-//                Serial.println(" ");
-//                Serial.print(j, HEX);
-//                Serial.print("--");
-//            } else Serial.print(" ");
-
+            if (i % 8 == 0) {
+                Serial.println(" ");
+                Serial.print(j);
+                Serial.print("--");
+            } else Serial.print(" ");
+            Serial.print(readingsBuffer[12 * j + i]);
         }
 
     }
@@ -180,11 +179,19 @@ String anem::getWindValues() {
     reducer = 0;
     reducerCount = 0;
     for (int i = 0; i < 360; i += 2) {
+        Serial.print(readingsBuffer[i]);
+        Serial.print(" ");
+
+
         if (readingsBuffer[i] == 255) continue;
         if (readingsBuffer[i] > max) {
             max = readingsBuffer[i];
             maxDir = readingsBuffer[i + 1];
-            Serial.println(readingsBuffer[i]);
+            Serial.print("new max: ");
+            Serial.print(readingsBuffer[i]);
+            Serial.print("position: ");
+            Serial.print(i);
+            Serial.println();
         }
         if (readingsBuffer[i] < min) {
             min = readingsBuffer[i];
