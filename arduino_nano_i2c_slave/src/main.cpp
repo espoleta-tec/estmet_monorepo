@@ -19,7 +19,7 @@
 
 #define WIND_SPEED_PIN 4
 #define WATER_COUNT_PIN 7
-#define LIGHTNING_PIN 2
+#define LIGHTNING_PIN 3
 #define WIND_DIRECTION_PIN A3
 
 
