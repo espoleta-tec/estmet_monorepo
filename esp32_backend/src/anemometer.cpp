@@ -179,10 +179,10 @@ String anem::getWindValues() {
     reducer = 0;
     reducerCount = 0;
     for (int i = 0; i < 360; i += 2) {
-        Serial.print(readingsBuffer[i]);
-        Serial.print(" ");
+//        Serial.print(readingsBuffer[i]);
+//        Serial.print(" ");
 
-
+        if (readingsBuffer[i] == 0xFF) { break; }
         if (readingsBuffer[i] == 255) continue;
         if (readingsBuffer[i] > max) {
             max = readingsBuffer[i];

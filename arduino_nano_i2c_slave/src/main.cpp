@@ -91,7 +91,7 @@ void requestEvent() {
 
     if ((command) == DELETE_BUF) {
         for (unsigned char &buffer_sensor: buffer_sensors)
-            buffer_sensor = -1;
+            buffer_sensor = 0xFF;
 
         pluv_acc = 0;
         counter = 0;
