@@ -78,8 +78,8 @@ uint16_t anem::getCursor() {
 //    Serial.print(Wire.read(), HEX);
 //    Serial.print("  ");
 //    Serial.print(Wire.read(), HEX);
-    Serial.print(smallEnd);
-    Serial.print(bigEnd);
+//    Serial.print(smallEnd);
+//    Serial.print(bigEnd);
     return bigEnd << 8 | smallEnd;
 }
 
@@ -131,6 +131,9 @@ void anem::dele() {
     Wire.requestFrom(SLAVE_ADDR, 1u);
 
     Serial.println(Wire.read(), HEX);
+    for (unsigned char &i: readingsBuffer) {
+        i = 0;
+    }
 }
 
 void anem::readBuff() {
@@ -145,12 +148,12 @@ void anem::readBuff() {
 
         for (uint8_t i = 0; i < 12; i++) {
             readingsBuffer[12 * j + i] = Wire.read();
-            Serial.print(readingsBuffer[12 * j + i], HEX);
-            if (i % 8 == 0) {
-                Serial.println(" ");
-                Serial.print(j, HEX);
-                Serial.print("--");
-            } else Serial.print(" ");
+//            Serial.print(readingsBuffer[12 * j + i], HEX);
+//            if (i % 8 == 0) {
+//                Serial.println(" ");
+//                Serial.print(j, HEX);
+//                Serial.print("--");
+//            } else Serial.print(" ");
 
         }
 
@@ -169,7 +172,8 @@ String anem::getWindValues() {
     String val = "";
     readBuff();
 
-    double min = 256, max = 0, average, reducer;
+    double average, reducer;
+    uint8_t min = 255, max = 0;
     uint16_t mostCommonDirections[4], averageDirection = 0, maxDirectionCount = 0, reducerCount = 0;
     byte minDir = -1, maxDir = -1;
 
@@ -180,6 +184,7 @@ String anem::getWindValues() {
         if (readingsBuffer[i] > max) {
             max = readingsBuffer[i];
             maxDir = readingsBuffer[i + 1];
+            Serial.println(readingsBuffer[i]);
         }
         if (readingsBuffer[i] < min) {
             min = readingsBuffer[i];
@@ -205,8 +210,8 @@ String anem::getWindValues() {
     val += ",wind_direction_average=" + String(averageDirection);
 
     Serial.printf("average: %.4f\n", average);
-    Serial.printf("speed min: %.4f\n", min);
-    Serial.printf("speed max: %.4f\n", max);
+    Serial.printf("speed min: %d\n", min);
+    Serial.printf("speed max: %d\n", max);
     Serial.printf("direction: %d\n\n", averageDirection);
 
     return val;

@@ -7,7 +7,7 @@
 #include "Monitor/anemometer.h"
 
 TaskHandle_t monitorTask = NULL;
-u_long LOG_INTERVAL = 15 * 60 * 1000;
+u_long LOG_INTERVAL = 0.5 * 60 * 1000;
 
 void monitorSetup() {
     LOG_INTERVAL = (long) getNumberVal(doc["sensors"]["readFreq"]) * 60 * 1000;
@@ -37,7 +37,8 @@ void monitorSetup() {
 
         data += timeRead();
         logData(data);
-        delay(LOG_INTERVAL);
+        Serial.println(millis() / 1000);
+        delay(5000);
 //        if (batterySavingActivated && !digitalRead(POWER_PIN)) {
 //            esp_deep_sleep(LOG_INTERVAL * 1000);
 //        } else {
