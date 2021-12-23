@@ -29,7 +29,7 @@ namespace anem {
 //    void finishReading();
 
 
-    uint16_t readBurst();
+    void readBurst();
 
     uint16_t getCursor();
 

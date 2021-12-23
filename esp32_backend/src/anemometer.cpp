@@ -36,6 +36,7 @@ unsigned long timeNow = millis();
 int a = 0;
 
 uint8_t lightningCount;
+uint16_t waterCount;
 
 
 uint8_t readingsBuffer[400] = {0};
@@ -83,12 +84,12 @@ uint16_t anem::getCursor() {
     return bigEnd << 8 | smallEnd;
 }
 
-uint16_t anem::readBurst() {
+void anem::readBurst() {
     Wire.beginTransmission(SLAVE_ADDR);
     Wire.write(BURST_DATA);
     Wire.endTransmission();
 
-    Wire.requestFrom(SLAVE_ADDR, 4u);
+    Wire.requestFrom(SLAVE_ADDR, 5u);
 
     uint8_t smallEnd, bigEnd;
     Serial.print(Wire.read(), HEX);
@@ -101,13 +102,12 @@ uint16_t anem::readBurst() {
     bigEnd = Wire.read();
     Serial.print(bigEnd, HEX);
     Serial.print("  ");
-    Serial.print(bigEnd << 8 | smallEnd);
+    waterCount = bigEnd << 8 | smallEnd;
+    Serial.print(waterCount);
     Serial.print(" ");
     lightningCount = Wire.read();
-    Serial.print(lightningCount);
-
-
-    return bigEnd << 8 | smallEnd;
+    Serial.print(lightningCount, HEX);
+    Serial.println();
 }
 
 uint8_t anem::avail() {
@@ -225,15 +225,16 @@ String anem::getWindValues() {
 }
 
 String anem::getWaterCount() {
-    uint16_t count = readBurst();
+    readBurst();
 
-    Serial.println("water count" + String(count * 20));
-    return ",water_count=" + String(count * 20);
+    Serial.println("water count" + String(waterCount));
+    return ",water_count=" + String(waterCount * 20);
 }
 
 String anem::getLightnings() {
     String val = "";
 
+    Serial.println("lightnings" + String(lightningCount));
     readBurst();
     val += ",lightnings=" + String(lightningCount);
     return val;
