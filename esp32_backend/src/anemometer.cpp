@@ -1,77 +1,227 @@
-//
-// Created by lazaroofarrill on 10/22/21.
-//
 
-#include <pinout.h>
+#include <Wire.h>
+#include "Arduino.h"
 #include "Monitor/anemometer.h"
-#include "math.h"
-#include "HardwareSerial.h"
 
-#define TIMEOUT 1000
 
-#define TIME_GAP 5
 
-int pulses;
-int lastread = 0;
+/**
+ * @brief commands for send to ATTiny85 slave i2c
+ *
+ */
+#define BURST_DATA  0x23
+#define PLUVIO_ACC  0x24
+#define AVAILABLE   0x01
+#define DELETE_BUF  0xAA
 
-#define MILLIS_TO_SECOND 1000
-#define READING_TIME 5
-#define ANEMOMETER_RADIUS 0.06
+#define LAST_POS    0x21
 
-//void anem::countPulse() {
-//    if (millis() - lastread >= 200) {
-//        pulses++;
-//        lastread = millis();
-//    }
-//}
-//
-//void anem::startReading() {
-//    pulses = 0;
-//    attachInterrupt(digitalPinToInterrupt(ANEMOMETER_PIN), countPulse, FALLING);
-//    delay(READING_TIME * MILLIS_TO_SECOND);
-//    finishReading();
-//}
-//
-//void anem::finishReading() {
-//    detachInterrupt(ANEMOMETER_PIN);
-//    double w = pulses / READING_TIME;
-//    double linearSpeed = w * PI * ANEMOMETER_RADIUS;
-//    Serial.printf("pulses: %d\n", pulses);
-//    Serial.printf("linearspeed: %f\n", linearSpeed);
-//}
-//
-//void anem::anemometerStart() {
-//    pinMode(ANEMOMETER_PIN, INPUT_PULLUP);
-//}
+#define LIGHT_DATA  0xC0
 
-void anem::anemometerStart() {
-    Serial2.begin(9600);
+#define MAX_BUFFER_DATA 12
+
+#define ANEMOMETER_RADIUS 0.060
+
+
+const byte SLAVE_ADDR = 0x04;
+
+const byte NUM_BYTES = 1;
+
+byte data[NUM_BYTES] = {0};
+
+byte bytesReceived = 0;
+
+unsigned long timeNow = millis();
+
+int a = 0;
+
+uint8_t lightningCount;
+
+
+uint8_t readingsBuffer[400];
+
+
+[[noreturn]] void tickerTask(void *param) {
+    while (true) {
+        digitalWrite(2, !digitalRead(2));
+        digitalWrite(4, !digitalRead(4));
+        delay(50);
+    }
 }
 
-String anem::startReading() {
-    String message = "", data = "";
-    ulong timestamp = millis();
-    Serial2.print('s');
-    while (!Serial2.available() && (millis() - timestamp < TIMEOUT)) {
+
+//void loop() {
+//
+////    readBurst();
+////    getCursor();
+//    if (avail() == 1) {
+//
+//        readBuff();
+//    }
+//
+//    //if(a>=5)dele();
+//    delay(3000);
+//    //a++;
+//    //Serial.println("KK");
+//}
+
+uint16_t anem::getCursor() {
+    Wire.beginTransmission(SLAVE_ADDR);
+    Wire.write(LAST_POS);
+    Wire.endTransmission();
+
+    Wire.requestFrom(SLAVE_ADDR, 2u);
+
+    uint8_t smallEnd, bigEnd;
+    smallEnd = Wire.read();
+    bigEnd = Wire.read();
+//    Serial.print(Wire.read(), HEX);
+//    Serial.print("  ");
+//    Serial.print(Wire.read(), HEX);
+    Serial.print(smallEnd);
+    Serial.print(bigEnd);
+    return bigEnd << 8 | smallEnd;
+}
+
+uint16_t anem::readBurst() {
+    Wire.beginTransmission(SLAVE_ADDR);
+    Wire.write(BURST_DATA);
+    Wire.endTransmission();
+
+    Wire.requestFrom(SLAVE_ADDR, 4u);
+
+    uint8_t smallEnd, bigEnd;
+    Serial.print(Wire.read(), HEX);
+    Serial.print("  ");
+    Serial.print(Wire.read(), HEX);
+    Serial.print("  ");
+    smallEnd = Wire.read();
+    Serial.print(smallEnd, HEX);
+    Serial.print("  ");
+    bigEnd = Wire.read();
+    Serial.print(bigEnd, HEX);
+    Serial.print("  ");
+    Serial.print(bigEnd << 8 | smallEnd);
+    Serial.print(" ");
+    lightningCount = Wire.read();
+    Serial.print(lightningCount);
+
+
+    return bigEnd << 8 | smallEnd;
+}
+
+uint8_t anem::avail() {
+    Wire.beginTransmission(SLAVE_ADDR);
+    Wire.write(AVAILABLE);
+    Wire.endTransmission();
+
+    Wire.requestFrom(SLAVE_ADDR, 1u);
+
+    uint8_t mm = Wire.read();
+    //Serial.println(mm ,HEX);
+
+    return mm;
+}
+
+void anem::dele() {
+    Wire.beginTransmission(SLAVE_ADDR);
+    Wire.write(DELETE_BUF);
+    Wire.endTransmission();
+
+    Wire.requestFrom(SLAVE_ADDR, 1u);
+
+    Serial.println(Wire.read(), HEX);
+}
+
+void anem::readBuff() {
+    for (uint8_t j = 0; j < 30; j++) {
+
+        Wire.beginTransmission(SLAVE_ADDR);
+        Wire.write(0xC0 + j);
+        Wire.endTransmission();
+
+        Wire.requestFrom(SLAVE_ADDR, 12u);
+
+
+        for (uint8_t i = 0; i < 12; i++) {
+            readingsBuffer[12 * j + i] = Wire.read();
+            Serial.print(readingsBuffer[12 * j + i], HEX);
+            if (i % 8 == 0) {
+                Serial.println(" ");
+                Serial.print(j, HEX);
+                Serial.print("--");
+            } else Serial.print(" ");
+
+        }
 
     }
-    if (Serial2.available()) {
-        timestamp = millis();
-        while ((message.indexOf("end") == -1) && (millis() - timestamp < TIMEOUT)) {
-            if (Serial2.available()) {
-                message = Serial2.readStringUntil('\r');
-                if (message.toInt()) {
-                    pulses = message.toInt();
-                    Serial.printf("%d pulses where counted\n", pulses);
+//    for (int i = 0; i < 360; i++) {
+//        Serial.printf("%d\t", readingsBuffer[i]);
+//    }
+    //Serial.print(readingsBuffer[10]);
+    Serial.println(" ");
+    //Serial.print(readingsBuffer[0xBF]);
+    Serial.println("------");
 
-                    double w = (double) pulses / (double) READING_TIME;
-                    double linearSpeed = w * PI * ANEMOMETER_RADIUS;
-                    Serial.printf("linearspeed: %f\n", linearSpeed);
-                    data = "windSpeed=" + String(linearSpeed);
-                }
-                Serial.println(message);
-            }
+}
+
+String anem::getWindValues() {
+    String val = "";
+    readBuff();
+
+    double min = 256, max = 0, average, reducer;
+    uint16_t mostCommonDirections[4], averageDirection = 0, maxDirectionCount = 0, reducerCount = 0;
+    byte minDir = -1, maxDir = -1;
+
+    reducer = 0;
+    reducerCount = 0;
+    for (int i = 0; i < 360; i += 2) {
+        if (readingsBuffer[i] == 255) continue;
+        if (readingsBuffer[i] > max) {
+            max = readingsBuffer[i];
+            maxDir = readingsBuffer[i + 1];
+        }
+        if (readingsBuffer[i] < min) {
+            min = readingsBuffer[i];
+            minDir = readingsBuffer[i + 1];
+        }
+        reducer += readingsBuffer[i];
+        reducerCount++;
+        mostCommonDirections[readingsBuffer[i + 1] - 1]++;
+    }
+    for (int i = 0; i < 4; i++) {
+        if (mostCommonDirections[i] > maxDirectionCount) {
+            maxDirectionCount = mostCommonDirections[i];
+            averageDirection = i + 1;
         }
     }
-    return data;
+    average = (double) reducer / reducerCount;
+
+    val += ",wind_speed_average=" + String(average * ANEMOMETER_RADIUS);
+    val += ",wind_speed_min=" + String(min * ANEMOMETER_RADIUS);
+    val += ",wind_direction_min=" + String(minDir);
+    val += ",wind_speed_max=" + String(max * ANEMOMETER_RADIUS);
+    val += ",wind_direction_max=" + String(maxDir);
+    val += ",wind_direction_average=" + String(averageDirection);
+
+    Serial.printf("average: %.4f\n", average);
+    Serial.printf("speed min: %.4f\n", min);
+    Serial.printf("speed max: %.4f\n", max);
+    Serial.printf("direction: %d\n\n", averageDirection);
+
+    return val;
+}
+
+String anem::getWaterCount() {
+    uint16_t count = readBurst();
+
+    return ",water_count=" + String(count * 20);
+}
+
+String anem::getLightnings() {
+    String val = "";
+
+    readBurst();
+    val += ",lightnings=" + String(lightningCount);
+    return val;
 }

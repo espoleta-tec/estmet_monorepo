@@ -7,7 +7,7 @@
 #include "Monitor/anemometer.h"
 
 TaskHandle_t monitorTask = NULL;
-u_long LOG_INTERVAL = 0;
+u_long LOG_INTERVAL = 15 * 60 * 1000;
 
 void monitorSetup() {
     LOG_INTERVAL = (long) getNumberVal(doc["sensors"]["readFreq"]) * 60 * 1000;
@@ -17,7 +17,6 @@ void monitorSetup() {
     lightStart();
     pressureStart();
     timeStart();
-    anem::anemometerStart();
     xTaskCreatePinnedToCore(monitorLoop, "MONITOR_TSK", 50000,
                             NULL, 1, &monitorTask, 1);
 }
@@ -29,13 +28,16 @@ void monitorSetup() {
         data += humidityRead();
         data += lightRead();
         data += pressureRead();
+        data += anem::getWindValues();
+        data += anem::getWaterCount();
+        data += anem::getLightnings();
+//        data += anem::startReading();
+        anem::dele();
+
+
         data += timeRead();
-
-        data += anem::startReading();
-
-        delay(1000);
-
-//        logData(data);
+        logData(data);
+        delay(LOG_INTERVAL);
 //        if (batterySavingActivated && !digitalRead(POWER_PIN)) {
 //            esp_deep_sleep(LOG_INTERVAL * 1000);
 //        } else {
