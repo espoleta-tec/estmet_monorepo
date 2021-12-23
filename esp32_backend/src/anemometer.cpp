@@ -227,6 +227,7 @@ String anem::getWindValues() {
 String anem::getWaterCount() {
     uint16_t count = readBurst();
 
+    Serial.println("water count" + String(count * 20));
     return ",water_count=" + String(count * 20);
 }
 
