@@ -173,17 +173,14 @@ String anem::getWindValues() {
 
     double average, reducer;
     uint8_t min = 255, max = 0;
-    uint16_t mostCommonDirections[4], averageDirection = 0, maxDirectionCount = 0, reducerCount = 0;
+    uint16_t mostCommonDirections[4] = {0}, averageDirection = 0, maxDirectionCount = 0, reducerCount = 0;
     byte minDir = -1, maxDir = -1;
 
     reducer = 0;
     reducerCount = 0;
     for (int i = 0; i < 360; i += 2) {
-//        Serial.print(readingsBuffer[i]);
-//        Serial.print(" ");
 
-        if (readingsBuffer[i] == 0xFF) { break; }
-        if (readingsBuffer[i] == 255) continue;
+        if (readingsBuffer[i] == 0xFF) continue;
         if (readingsBuffer[i] > max) {
             max = readingsBuffer[i];
             maxDir = readingsBuffer[i + 1];
