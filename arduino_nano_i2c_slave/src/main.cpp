@@ -113,6 +113,9 @@ void setup() {
     Wire.onReceive(receiveEvent);
     Wire.onRequest(requestEvent);
 
+    for (unsigned char &buffer_sensor: buffer_sensors)
+        buffer_sensor = 0xFF;
+
     attachInterrupt(digitalPinToInterrupt(LIGHTNING_PIN), onLightning, RISING);
 
     pinMode(WIND_SPEED_PIN, INPUT);
