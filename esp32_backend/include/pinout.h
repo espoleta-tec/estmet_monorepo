@@ -10,8 +10,8 @@
 #include "DHT.h"
 
 //humidity and temperature
-#define DHTPIN 26
-#define DHTTYPE DHT11
+#define DHTPIN 25
+#define DHTTYPE DHT22
 
 //anemometer
 #define ANEMOMETER_PIN 15

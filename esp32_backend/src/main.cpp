@@ -28,13 +28,14 @@ void setup() {
     initFileSystem();
     loadConf();
     if ((!batterySavingActivated && digitalRead(POWER_PIN)) || true) {
-//        ledcWrite(LED_CHANNEL, int((float) 2 / (float) 5 * 255));
         serverSetup();
+//        ledcWrite(LED_CHANNEL, int((float) 2 / (float) 5 * 255));
     }
     digitalWrite(PRO_MINI_RESET, LOW);
     delay(50);
     digitalWrite(PRO_MINI_RESET, HIGH);
     monitorSetup();
+    humidityStart();
 }
 
 void loop() {
@@ -44,4 +45,6 @@ void loop() {
 //    digitalWrite(LED_BUILTIN, LOW);
 //    digitalWrite(4, LOW);
 //    delay(50);
+//    humidityRead();
+//    delay(1000);
 }
