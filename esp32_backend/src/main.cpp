@@ -35,7 +35,6 @@ void setup() {
     delay(50);
     digitalWrite(PRO_MINI_RESET, HIGH);
     monitorSetup();
-    humidityStart();
 }
 
 void loop() {
