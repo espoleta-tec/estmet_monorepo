@@ -25,8 +25,6 @@ void monitorSetup() {
     TickType_t xLastWakeTime = xTaskGetTickCount();
     for (;;) {
         String data = "";
-        humidityRead();
-        delay(2000);
         data += humidityRead();
         data += lightRead();
         data += pressureRead();

@@ -13,14 +13,14 @@ void humidityStart() {
 }
 
 String humidityRead() {
-        String vars = "";
-    
-      TempAndHumidity newValues = dht.getTempAndHumidity();
-      if (dht.getStatus() != 0) {
-		Serial.println("DHT11 error status: " + String(dht.getStatusString()));
+    String vars = "";
+
+    TempAndHumidity newValues = dht.getTempAndHumidity();
+    if (dht.getStatus() != 0) {
+        Serial.println("DHT11 error status: " + String(dht.getStatusString()));
         Serial.println("Failed to read from DHT sensor!");
-		return vars;
-	}
+        return vars;
+    }
     double h = newValues.humidity;
     double t = newValues.temperature;
 
@@ -33,7 +33,7 @@ String humidityRead() {
     vars += ",humidity=" + String(h);
     vars += ",temperature_c=" + String(t);
 
-    double hic =dht.computeHeatIndex(newValues.temperature, newValues.humidity);
+    double hic = dht.computeHeatIndex(newValues.temperature, newValues.humidity);
 
     vars += ",heatIndex_c=" + String(hic);
 

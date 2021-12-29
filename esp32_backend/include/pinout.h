@@ -7,10 +7,9 @@
 
 //DHT SENSORS
 #include "Adafruit_Sensor.h"
-#include "DHT.h"
 
 //humidity and temperature
-#define DHTPIN 25
+#define DHTPIN 33
 #define DHTTYPE DHT22
 
 //anemometer

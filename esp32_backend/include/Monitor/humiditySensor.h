@@ -7,8 +7,9 @@
 
 #include "pinout.h"
 #include "Logger/logger.h"
+#include "DHTesp.h"
 
-extern DHT dht;
+extern DHTesp dht;
 
 void humidityStart();
 
