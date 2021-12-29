@@ -1,0 +1,11 @@
+{
+  "humidity": {
+    "selected": 11,
+    "available": [
+      11,
+      12,
+      21,
+      22
+    ]
+  }
+}

@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "monitorprocess.h": "c",
+        "humiditysensor.h": "c"
+    }
+}
