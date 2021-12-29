@@ -7,7 +7,10 @@
 #include <Logger/logger.h>
 #include "WebServer/webServerProcess.h"
 
+#define RESET_PIN 1
+
 TaskHandle_t serverTask;
+TaskHandle_t resetTask;
 
 void serverSetup() {
     initWifi();
@@ -34,5 +37,34 @@ void serverSetup() {
         ws.loop();
         sessionWatch();
         delay(500);
+    }
+}
+
+void resetSetup() {
+    xTaskCreatePinnedToCore(
+            resetLoop,
+            "resetTask",
+            512,
+            nullptr,
+            1,
+            &resetTask,
+            1
+    );
+}
+
+void resetLoop(void *) {
+    while (true) {
+        if (digitalRead(RESET_PIN)) {
+            int i;
+            for (i = 1; i <= 10; i++) {
+                delay(500);
+                if (!digitalRead(RESET_PIN)) {
+                    break;
+                }
+            }
+            if (i == 10) {
+                resetConfig();
+            }
+        }
     }
 }

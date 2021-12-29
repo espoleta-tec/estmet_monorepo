@@ -14,8 +14,10 @@
 
 
 void serverSetup();
+void resetSetup();
 
 [[noreturn]] void serverLoop(void *);
+[[noreturn]] void resetLoop(void *);
 
 
 #endif //BACKEND_WEBSERVERPROCESS_H

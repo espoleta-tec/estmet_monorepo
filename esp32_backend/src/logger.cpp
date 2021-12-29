@@ -76,9 +76,6 @@ void logData(String data) {
         Serial.println("couldn't open file for writing");
         return;
     }
-    log.println(data);
-    Serial.println("data logged succesfully");
-    log.close();
 
     File log2 = SD.open(path2, FILE_APPEND);
     if (!log || !log2) {
@@ -87,7 +84,7 @@ void logData(String data) {
     }
     log.println(data);
     log2.println(data);
-    Serial.println("data logged succesfully");
+    Serial.println("data logged successfully");
     log.close();
     log2.close();
 }

@@ -27,6 +27,7 @@ void setup() {
     Serial.println("update 0");
     initFileSystem();
     loadConf();
+    resetSetup();
     if ((!batterySavingActivated && digitalRead(POWER_PIN)) || true) {
         serverSetup();
 //        ledcWrite(LED_CHANNEL, int((float) 2 / (float) 5 * 255));
