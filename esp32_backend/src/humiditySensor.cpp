@@ -4,32 +4,38 @@
 
 #include "Monitor/humiditySensor.h"
 
-DHT dht(DHTPIN, DHTTYPE);
+//DHT dht(DHTPIN, DHTTYPE);
+DHTesp dht;
+
 
 void humidityStart() {
-    dht.begin();
+    dht.setup(DHTPIN, DHTesp::DHT22);
 }
 
 String humidityRead() {
-    double h = dht.readHumidity();
-    double t = dht.readTemperature();
-    double f = dht.readTemperature(true);
-    String vars = "";
+        String vars = "";
+    
+      TempAndHumidity newValues = dht.getTempAndHumidity();
+      if (dht.getStatus() != 0) {
+		Serial.println("DHT11 error status: " + String(dht.getStatusString()));
+        Serial.println("Failed to read from DHT sensor!");
+		return vars;
+	}
+    double h = newValues.humidity;
+    double t = newValues.temperature;
 
-    if (isnan(h) || isnan(t) || isnan(f)) {
+
+    if (isnan(h) || isnan(t)) {
         Serial.println("Failed to read from DHT sensor!");
         return vars;
     }
 
     vars += ",humidity=" + String(h);
     vars += ",temperature_c=" + String(t);
-    vars += ",temperature_f=" + String(f);
 
-    double hif = dht.computeHeatIndex(f, h);
-    double hic = dht.computeHeatIndex(t, h, false);
+    double hic =dht.computeHeatIndex(newValues.temperature, newValues.humidity);
 
     vars += ",heatIndex_c=" + String(hic);
-    vars += ",heatIndex_f=" + String(hif);
 
 
     Serial.print(F("Humidity: "));
@@ -37,12 +43,9 @@ String humidityRead() {
     Serial.print(F("%  Temperature: "));
     Serial.print(t);
     Serial.print(F("°C "));
-    Serial.print(f);
-    Serial.print(F("°F  Heat index: "));
+    Serial.print(F("Heat index: "));
     Serial.print(hic);
-    Serial.print(F("°C "));
-    Serial.print(hif);
-    Serial.println(F("°F"));
+    Serial.println(F("°C "));
 
     return vars;
 }
