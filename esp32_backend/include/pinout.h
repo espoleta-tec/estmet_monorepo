@@ -19,7 +19,10 @@
 //light
 #define LIGHT_SENSOR_ADDRESS 0x23
 
-#define POWER_PIN 36
+#define POWER_PIN 15
 
+//power
+#define RESET_PIN 16
+#define BATTERY_LEVEL 27
 
 #endif //BACKEND_PINOUT_H

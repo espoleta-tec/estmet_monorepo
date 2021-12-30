@@ -18,19 +18,16 @@ void setup() {
     pinMode(LOGO_LED, OUTPUT);
     pinMode(4, OUTPUT);
     digitalWrite(4, HIGH);
-//    ledcSetup(LED_CHANNEL, 5000, 8);
-
-//    ledcAttachPin(LOGO_LED, LED_CHANNEL);
-    digitalWrite(LOGO_LED, HIGH);
 
 
     Serial.println("update 0");
     initFileSystem();
     loadConf();
     resetSetup();
-    if ((!batterySavingActivated && digitalRead(POWER_PIN)) || true) {
+    initSDCard();
+    if (digitalRead(POWER_PIN)) {
         serverSetup();
-//        ledcWrite(LED_CHANNEL, int((float) 2 / (float) 5 * 255));
+        digitalWrite(LOGO_LED, HIGH);
     }
     digitalWrite(PRO_MINI_RESET, LOW);
     delay(50);

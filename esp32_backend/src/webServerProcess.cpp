@@ -3,20 +3,17 @@
 //
 
 #include <FileSystem/fileSystem.h>
+#include "pinout.h"
 #include <WebServer/connection.h>
 #include <Logger/logger.h>
 #include "WebServer/webServerProcess.h"
 
-#define RESET_PIN 1
 
 TaskHandle_t serverTask;
 TaskHandle_t resetTask;
 
 void serverSetup() {
     initWifi();
-    if (USE_SDCARD) {
-        initSDCard();
-    }
     initWebServer();
     startLogs();
 
@@ -54,6 +51,9 @@ void resetSetup() {
 
 void resetLoop(void *) {
     while (true) {
+//        if (!digitalRead(POWER_PIN)) {
+//            ESP.restart();
+//        }
         if (digitalRead(RESET_PIN)) {
             int i;
             for (i = 1; i <= 10; i++) {

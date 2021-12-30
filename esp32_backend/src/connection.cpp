@@ -3,6 +3,7 @@
 //
 
 #include <Battery/batterySaving.h>
+#include <Monitor/anemometer.h>
 #include "WebServer/connection.h"
 
 WebServer server(80);
@@ -253,7 +254,8 @@ void initWebServer() {
             server.send(400, "mal formato de peticion");
         }
     });
-    server.on("/logs", []() {
+    server.on("/logs", HTTP_OPTIONS, sendCors);
+    server.on("/logs", HTTP_GET, []() {
         if (!authControl()) return;
         DateTime now = RTC.now();
         String path = "/logs/";
@@ -455,7 +457,9 @@ void webSocketEvent(byte num, WStype_t type, uint8_t *payload, size_t length) {
             data += humidityRead();
             data += lightRead();
             data += pressureRead();
-            data += timeRead();
+            data += anem::getWindValues();
+            data += anem::getWaterCount();
+            data += anem::getLightnings();
             logData(data);
             break;
         case WStype_TEXT:
