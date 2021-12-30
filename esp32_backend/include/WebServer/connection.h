@@ -57,6 +57,7 @@ void initWebServer();
 void handleUpload();
 
 void resetConfig();
+void triggerReset();
 
 void onFinishUpload();
 

@@ -25,4 +25,8 @@
 #define RESET_PIN 16
 #define BATTERY_LEVEL 27
 
+//control pins
+#define PRO_MINI_RESET 4
+#define LOGO_LED 2
+
 #endif //BACKEND_PINOUT_H

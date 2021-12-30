@@ -1,5 +1,5 @@
 #include <sys/cdefs.h>
-#include <Battery/batterySaving.h>
+#include <Battery/battery_level.h>
 #include "Monitor/monitorProcess.h"
 #include "Arduino.h"
 #include "FreeRTOS.h"
@@ -31,7 +31,7 @@ void monitorSetup() {
         data += anem::getWindValues();
         data += anem::getWaterCount();
         data += anem::getLightnings();
-//        data += anem::startReading();
+        data += getBatteryLevelString();
         anem::dele();
 
 

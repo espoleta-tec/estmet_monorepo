@@ -12,11 +12,14 @@
 #include "WiFiAP.h"
 #include "WebSocketsServer.h"
 
+extern boolean supplyState;
 
 void serverSetup();
+
 void resetSetup();
 
 [[noreturn]] void serverLoop(void *);
+
 [[noreturn]] void resetLoop(void *);
 
 

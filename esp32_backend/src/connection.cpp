@@ -314,6 +314,10 @@ void initWebServer() {
 
 void resetConfig() {
     if (!authControl()) return;
+    triggerReset();
+}
+
+void triggerReset() {
     File clean = SPIFFS.open("/clean_config.json", "r");
     if (!clean) {
         Serial.println("couldn't open 1");

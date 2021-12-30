@@ -12,6 +12,8 @@
 TaskHandle_t serverTask;
 TaskHandle_t resetTask;
 
+boolean supplyState = 0;
+
 void serverSetup() {
     initWifi();
     initWebServer();
@@ -38,10 +40,11 @@ void serverSetup() {
 }
 
 void resetSetup() {
+    pinMode(RESET_PIN, INPUT);
     xTaskCreatePinnedToCore(
             resetLoop,
             "resetTask",
-            512,
+            8192,
             nullptr,
             1,
             &resetTask,
@@ -51,20 +54,23 @@ void resetSetup() {
 
 void resetLoop(void *) {
     while (true) {
-//        if (!digitalRead(POWER_PIN)) {
-//            ESP.restart();
-//        }
-        if (digitalRead(RESET_PIN)) {
+        if (supplyState != digitalRead(POWER_PIN)) {
+            ESP.restart();
+        }
+
+        if (!digitalRead(RESET_PIN)) {
             int i;
-            for (i = 1; i <= 10; i++) {
+            for (i = 0; i < 10; i++) {
                 delay(500);
-                if (!digitalRead(RESET_PIN)) {
+                if (digitalRead(RESET_PIN)) {
                     break;
                 }
             }
             if (i == 10) {
-                resetConfig();
+                triggerReset();
             }
+
         }
+        delay(10);
     }
 }

@@ -3,9 +3,8 @@
 #include "Arduino.h"
 #include "WebServer/webServerProcess.h"
 #include "Monitor/monitorProcess.h"
+#include "pinout.h"
 
-#define PRO_MINI_RESET 4
-#define LOGO_LED 2
 
 #define LED_CHANNEL 0
 
@@ -16,19 +15,20 @@ void setup() {
     }
     pinMode(LED_BUILTIN, OUTPUT);
     pinMode(LOGO_LED, OUTPUT);
-    pinMode(4, OUTPUT);
-    digitalWrite(4, HIGH);
+    pinMode(PRO_MINI_RESET, OUTPUT);
+    digitalWrite(LOGO_LED, HIGH);
 
 
     Serial.println("update 0");
     initFileSystem();
     loadConf();
-    resetSetup();
     initSDCard();
-    if (digitalRead(POWER_PIN)) {
+    supplyState = digitalRead(POWER_PIN);
+    if (supplyState) {
         serverSetup();
-        digitalWrite(LOGO_LED, HIGH);
+        digitalWrite(LOGO_LED, LOW);
     }
+    resetSetup();
     digitalWrite(PRO_MINI_RESET, LOW);
     delay(50);
     digitalWrite(PRO_MINI_RESET, HIGH);
