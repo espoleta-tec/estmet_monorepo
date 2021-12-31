@@ -108,6 +108,7 @@ void receiveEvent(int num_bytes) {
 
 
 void setup() {
+    Serial.begin(9600);
 
     Wire.begin(I2C_SLAVE_ADDRESS);
     Wire.onReceive(receiveEvent);
@@ -141,6 +142,7 @@ void loop() {
     }
 
     read_sensors();
+    Serial.println(lightnings);
     // buffer_sensors[0]=0x45;
     // buffer_sensors[200]=0x23;
     // buffer_sensors[300]=0x12;
