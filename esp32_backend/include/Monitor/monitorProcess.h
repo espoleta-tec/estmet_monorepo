@@ -18,4 +18,6 @@ void monitorSetup();
 
 [[noreturn]] void monitorLoop(void *param);
 
+[[noreturn]] void lightningLoop(void *param);
+
 #endif //BACKEND_MONITORPROCESS_H

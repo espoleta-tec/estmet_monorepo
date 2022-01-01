@@ -29,4 +29,7 @@
 #define PRO_MINI_RESET 4
 #define LOGO_LED 2
 
+//lightning watcher
+#define LIGHTNING_PIN 32
+
 #endif //BACKEND_PINOUT_H
