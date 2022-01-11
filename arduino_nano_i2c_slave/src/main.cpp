@@ -22,10 +22,10 @@
 #define LIGHTNING_PIN 3
 #define WIND_DIRECTION_PIN A3
 
-#define AXIS_1 0
-#define AXIS_2 0
-#define AXIS_3 0
-#define AXIS_4 0
+#define AXIS_1 6
+#define AXIS_2 7
+#define AXIS_3 8
+#define AXIS_4 9
 
 int flag_axis_1 = 0;
 int flag_axis_2 = 0;
@@ -142,12 +142,17 @@ void setup() {
 
     pinMode(WIND_SPEED_PIN, INPUT);
     pinMode(WATER_COUNT_PIN, INPUT);
+    pinMode(AXIS_1, INPUT);
+    pinMode(AXIS_2, INPUT);
+    pinMode(AXIS_3, INPUT);
+    pinMode(AXIS_4, INPUT);
 
     tForRead = millis();
 }
 
 void loop() {
 
+    watchDirection();
     if (millis() - tForRead >= 5000) {
         isAvailableForRead = 0;
         buffer_sensors[counter] = wind_vel;
@@ -180,20 +185,15 @@ void loop() {
 
 
 void read_sensors() {
-
-    readWindDirection();
-
     lastMillis = millis();
 
     flag = 0;
     count = 0;
     flag1 = 0;
     count1 = 0;
-    asdf = 0;
 
     while ((millis() - lastMillis) <= 1000) {
-        readWindDirection();
-        asdf++;
+        watchDirection();
 
         if (digitalRead(WIND_SPEED_PIN) == 1) {
             if (flag == 0)
@@ -240,19 +240,19 @@ void watchDirection() {
     if (digitalRead(AXIS_4) == 1) flag_axis_4 = 1;
 
     if (digitalRead(AXIS_1) == 0 && flag_axis_1 == 1) {
-        wind_vel = 1;
+        wind_dir = 1;
         flag_axis_1 = 0;
     };
     if (digitalRead(AXIS_2) == 0 && flag_axis_2 == 1) {
-        wind_vel = 2;
+        wind_dir = 2;
         flag_axis_2 = 0;
     };
     if (digitalRead(AXIS_3) == 0 && flag_axis_3 == 1) {
-        wind_vel = 3;
+        wind_dir = 3;
         flag_axis_3 = 0;
     };
     if (digitalRead(AXIS_4) == 0 && flag_axis_4 == 1) {
-        wind_vel = 4;
+        wind_dir = 4;
         flag_axis_4 = 0;
     };
 }
