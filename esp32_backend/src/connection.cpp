@@ -255,52 +255,15 @@ void initWebServer() {
         }
     });
     server.on("/logs", HTTP_OPTIONS, sendCors);
-    server.on("/logs", HTTP_GET, []() {
-        if (!authControl()) return;
-        DateTime now = RTC.now();
-        String path = "/logs/";
-        path += now.year();
-        path += "-";
-        path += now.month();
-        path += "-";
-        path += now.day();
-
-        File log = SD.open(path, FILE_READ);
-        if (!log) {
-            Serial.println("couldn't open log for reading");
-            ESP.restart();
-            return;
-        }
-        passCors();
-        server.streamFile(log, "text/plain");
-        log.close();
-    });
+    server.on("/logs", HTTP_GET, getLogs);
+    server.on("/logs-global", HTTP_OPTIONS, sendCors);
+    server.on("/logs-global", HTTP_GET, getGlobalLogs);
     server.on("/battery/save", []() {
         if (!authControl()) return;
         batterySavingActivated = true;
         server.send(200, "battery saving activated successfully");
     });
-    server.on("/format", []() {
-        if (!authControl()) return;
-        File root;
-        root = SD.open("/logs");
-        delay(2000);
-
-        while (true) {
-            File entry = root.openNextFile();
-            String localPath;
-
-            Serial.println();
-            if (!entry) {
-                break;
-            }
-            if (!entry.isDirectory()) {
-                SD.remove(String("/logs/") + String(entry.name()));
-            }
-            delay(1);
-        }
-        server.send(200, "Todos los logs han sido borrados");
-    });
+    server.on("/format", formatSDCard);
     server.onNotFound([]() {
         passCors();
         server.send(404);
@@ -444,6 +407,66 @@ void configUser() {
 void sendCors() {
     passCors();
     server.send(204);
+}
+
+void getGlobalLogs() {
+    if (!authControl()) return;
+    DateTime now = RTC.now();
+    String path = "/logs/";
+    path += "global";
+
+    File log = SD.open(path, FILE_READ);
+    if (!log) {
+        Serial.println("couldn't open log for reading");
+        ESP.restart();
+        return;
+    }
+    passCors();
+    server.streamFile(log, "text/plain");
+    log.close();
+}
+
+void getLogs() {
+    if (!authControl()) return;
+    DateTime now = RTC.now();
+    String path = "/logs/";
+    path += now.year();
+    path += "-";
+    path += now.month();
+    path += "-";
+    path += now.day();
+
+    File log = SD.open(path, FILE_READ);
+    if (!log) {
+        Serial.println("couldn't open log for reading");
+        ESP.restart();
+        return;
+    }
+    passCors();
+    server.streamFile(log, "text/plain");
+    log.close();
+}
+
+void formatSDCard() {
+    if (!authControl()) return;
+    File root;
+    root = SD.open("/logs");
+    delay(2000);
+
+    while (true) {
+        File entry = root.openNextFile();
+        String localPath;
+
+        Serial.println();
+        if (!entry) {
+            break;
+        }
+        if (!entry.isDirectory()) {
+            SD.remove(String("/logs/") + String(entry.name()));
+        }
+        delay(1);
+    }
+    server.send(200, "Todos los logs han sido borrados");
 }
 
 

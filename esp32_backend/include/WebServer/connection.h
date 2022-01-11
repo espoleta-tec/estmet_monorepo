@@ -57,9 +57,16 @@ void initWebServer();
 void handleUpload();
 
 void resetConfig();
+
 void triggerReset();
 
 void onFinishUpload();
+
+void formatSDCard();
+
+void getLogs();
+
+void getGlobalLogs();
 
 void webSocketEvent(byte num, WStype_t type, uint8_t *payload, size_t length);
 
