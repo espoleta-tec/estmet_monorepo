@@ -37,9 +37,10 @@ void monitorSetup() {
         data += pressureRead();
         data += anem::getWindValues();
         data += anem::getWaterCount();
-        data += ",lightningCount=" + String(lightningCounter);
-        Serial.println(",lightningCount=" + String(lightningCounter));
-        lightningCounter = 0;
+        data += anem::getLightnings();
+//        data += ",lightningCount=" + String(lightningCounter);
+//        Serial.println(",lightningCount=" + String(lightningCounter));
+//        lightningCounter = 0;
 
 //        data += anem::getLightnings();
         data += getBatteryLevelString();
