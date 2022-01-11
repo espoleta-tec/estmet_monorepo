@@ -5,6 +5,8 @@
 #ifndef BACKEND_PINOUT_H
 #define BACKEND_PINOUT_H
 
+
+
 //DHT SENSORS
 #include "Adafruit_Sensor.h"
 
@@ -22,8 +24,10 @@
 #define POWER_PIN 15
 
 //power
+#include "driver/adc.h"
+
 #define RESET_PIN 16
-#define BATTERY_LEVEL 32
+#define BATTERY_LEVEL ADC1_CHANNEL_4
 
 //control pins
 #define PRO_MINI_RESET 4
