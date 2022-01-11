@@ -23,7 +23,7 @@
 
 //power
 #define RESET_PIN 16
-#define BATTERY_LEVEL 25
+#define BATTERY_LEVEL 32
 
 //control pins
 #define PRO_MINI_RESET 4

@@ -24,8 +24,8 @@ void monitorSetup() {
     timeStart();
     xTaskCreatePinnedToCore(monitorLoop, "MONITOR_TSK", 50000,
                             NULL, 1, &monitorTask, 1);
-    xTaskCreatePinnedToCore(lightningLoop, "LIGHTNING_TSK", 8192,
-                            NULL, 1, &lightningTask, 1);
+//    xTaskCreatePinnedToCore(lightningLoop, "LIGHTNING_TSK", 8192,
+//                            NULL, 1, &lightningTask, 1);
 }
 
 [[noreturn]] void monitorLoop(void *param) {
