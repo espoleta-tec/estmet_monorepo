@@ -22,6 +22,18 @@
 #define LIGHTNING_PIN 3
 #define WIND_DIRECTION_PIN A3
 
+#define AXIS_1 0
+#define AXIS_2 0
+#define AXIS_3 0
+#define AXIS_4 0
+
+int flag_axis_1 = 0;
+int flag_axis_2 = 0;
+int flag_axis_3 = 0;
+int flag_axis_4 = 0;
+
+int last_wind = 0;
+
 
 uint8_t command = 0;
 
@@ -64,7 +76,11 @@ void onWaterCount() {
     pluv_acc++;
 }
 
+void watchDirection();
+
 void read_sensors();
+
+void readWindDirection();
 
 void requestEvent() {
     if ((command & 0xC0) == LIGHT_DATA) {
@@ -147,7 +163,8 @@ void loop() {
     }
 
     read_sensors();
-    Serial.println(lightnings);
+//    Serial.println(lightnings);
+    Serial.println(wind_dir);
     // buffer_sensors[0]=0x45;
     // buffer_sensors[200]=0x23;
     // buffer_sensors[300]=0x12;
@@ -164,11 +181,7 @@ void loop() {
 
 void read_sensors() {
 
-    temp = analogRead(WIND_DIRECTION_PIN);
-    if (temp >= 70 && temp <= 116) wind_dir = 1;
-    if (temp >= 163 && temp <= 209) wind_dir = 2;
-    if (temp >= 318 && temp <= 364) wind_dir = 3;
-    if (temp >= 489 && temp <= 535) wind_dir = 4;
+    readWindDirection();
 
     lastMillis = millis();
 
@@ -179,6 +192,7 @@ void read_sensors() {
     asdf = 0;
 
     while ((millis() - lastMillis) <= 1000) {
+        readWindDirection();
         asdf++;
 
         if (digitalRead(WIND_SPEED_PIN) == 1) {
@@ -209,4 +223,36 @@ void read_sensors() {
     pluv_acc += count1;
     //pluv_acc=0x1234;
 
+}
+
+void readWindDirection() {
+    temp = analogRead(WIND_DIRECTION_PIN);
+    if (temp >= 77 && temp <= 82) wind_dir = 1;
+    if (temp >= 47 && temp <= 52) wind_dir = 2;
+    if (temp >= 37 && temp <= 42) wind_dir = 3;
+    if (temp >= 17 && temp <= 22) wind_dir = 4;
+}
+
+void watchDirection() {
+    if (digitalRead(AXIS_1) == 1) flag_axis_1 = 1;
+    if (digitalRead(AXIS_2) == 1) flag_axis_2 = 1;
+    if (digitalRead(AXIS_3) == 1) flag_axis_3 = 1;
+    if (digitalRead(AXIS_4) == 1) flag_axis_4 = 1;
+
+    if (digitalRead(AXIS_1) == 0 && flag_axis_1 == 1) {
+        wind_vel = 1;
+        flag_axis_1 = 0;
+    };
+    if (digitalRead(AXIS_2) == 0 && flag_axis_2 == 1) {
+        wind_vel = 2;
+        flag_axis_2 = 0;
+    };
+    if (digitalRead(AXIS_3) == 0 && flag_axis_3 == 1) {
+        wind_vel = 3;
+        flag_axis_3 = 0;
+    };
+    if (digitalRead(AXIS_4) == 0 && flag_axis_4 == 1) {
+        wind_vel = 4;
+        flag_axis_4 = 0;
+    };
 }
