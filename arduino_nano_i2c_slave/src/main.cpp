@@ -47,8 +47,13 @@ uint8_t asdf = 0;
 uint16_t temp = 0;
 byte lightnings = 0;
 
+unsigned long lastLightning = 0;
+
 void onLightning() {
-    lightnings++;
+    if (millis() - lastLightning >= 50) {
+        lightnings++;
+        lastLightning = millis();
+    }
 }
 
 void onWindSpeed() {
