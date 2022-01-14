@@ -32,8 +32,6 @@ int flag_axis_2 = 0;
 int flag_axis_3 = 0;
 int flag_axis_4 = 0;
 
-int last_wind = 0;
-
 
 uint8_t command = 0;
 
@@ -41,6 +39,7 @@ uint8_t buffer_sensors[360];
 
 uint8_t wind_vel = 0;
 uint8_t wind_dir = 0;
+uint8_t last_wind_dir = 0;
 uint16_t pluv_acc = 0;
 
 uint8_t isAvailableForRead = 0;
@@ -215,6 +214,7 @@ void read_sensors() {
             if (flag1 == 1) {
                 flag1 = 0;
                 count1++;
+                Serial.println("w+");
             }
         }
     }
@@ -234,25 +234,32 @@ void readWindDirection() {
 }
 
 void watchDirection() {
-    if (digitalRead(AXIS_1) == 1) flag_axis_1 = 1;
-    if (digitalRead(AXIS_2) == 1) flag_axis_2 = 1;
-    if (digitalRead(AXIS_3) == 1) flag_axis_3 = 1;
-    if (digitalRead(AXIS_4) == 1) flag_axis_4 = 1;
+    if (digitalRead(AXIS_1) == 1) wind_dir = 1;
+    if (digitalRead(AXIS_2) == 1) wind_dir = 2;
+    if (digitalRead(AXIS_3) == 1) wind_dir = 3;
+    if (digitalRead(AXIS_4) == 1) wind_dir = 4;
 
-    if (digitalRead(AXIS_1) == 0 && flag_axis_1 == 1) {
-        wind_dir = 1;
-        flag_axis_1 = 0;
-    };
-    if (digitalRead(AXIS_2) == 0 && flag_axis_2 == 1) {
-        wind_dir = 2;
-        flag_axis_2 = 0;
-    };
-    if (digitalRead(AXIS_3) == 0 && flag_axis_3 == 1) {
-        wind_dir = 3;
-        flag_axis_3 = 0;
-    };
-    if (digitalRead(AXIS_4) == 0 && flag_axis_4 == 1) {
-        wind_dir = 4;
-        flag_axis_4 = 0;
-    };
+//    if (digitalRead(AXIS_1) == 0 && flag_axis_1 == 1) {
+//        last_wind_dir = wind_dir;
+//        wind_dir = 1;
+//        flag_axis_1 = 0;
+//    };
+//    if (digitalRead(AXIS_2) == 0 && flag_axis_2 == 1) {
+//        last_wind_dir = wind_dir;
+//        wind_dir = 2;
+//        flag_axis_2 = 0;
+//    };
+//    if (digitalRead(AXIS_3) == 0 && flag_axis_3 == 1) {
+//        last_wind_dir = wind_dir;
+//        wind_dir = 3;
+//        flag_axis_3 = 0;
+//    };
+//    if (digitalRead(AXIS_4) == 0 && flag_axis_4 == 1) {
+//        last_wind_dir = wind_dir;
+//        wind_dir = 4;
+//        flag_axis_4 = 0;
+//    };
+//
+//
+
 }

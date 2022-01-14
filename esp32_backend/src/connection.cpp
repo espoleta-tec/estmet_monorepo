@@ -225,6 +225,7 @@ void initWebServer() {
     server.on("/update", HTTP_OPTIONS, sendCors);
     server.on("/update", HTTP_POST, onFinishUpload, handleUpload);
     server.on("/reset", resetConfig);
+    server.on("/storage", HTTP_OPTIONS, sendCors);
     server.on("/storage", HTTP_GET, []() {
         if (!authControl()) return;
         String space = "{";
