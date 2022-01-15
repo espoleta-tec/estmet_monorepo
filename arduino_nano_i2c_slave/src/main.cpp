@@ -40,6 +40,7 @@ uint8_t buffer_sensors[360];
 uint8_t wind_vel = 0;
 uint8_t wind_dir = 0;
 uint8_t last_wind_dir = 0;
+uint8_t second_last_wind_dir = 0;
 uint16_t pluv_acc = 0;
 
 uint8_t isAvailableForRead = 0;
@@ -234,28 +235,49 @@ void readWindDirection() {
 }
 
 void watchDirection() {
-    if (digitalRead(AXIS_1) == 1) wind_dir = 1;
-    if (digitalRead(AXIS_2) == 1) wind_dir = 2;
-    if (digitalRead(AXIS_3) == 1) wind_dir = 3;
-    if (digitalRead(AXIS_4) == 1) wind_dir = 4;
+//    if (digitalRead(AXIS_1) == 1) wind_dir = 1;
+//    if (digitalRead(AXIS_2) == 1) wind_dir = 2;
+//    if (digitalRead(AXIS_3) == 1) wind_dir = 3;
+//    if (digitalRead(AXIS_4) == 1) wind_dir = 4;
 
     if (digitalRead(AXIS_1) == 1 && flag_axis_1 == 0) {
+        second_last_wind_dir = last_wind_dir;
         last_wind_dir = wind_dir;
         wind_dir = 1;
         flag_axis_1 = 1;
     } else if (digitalRead(AXIS_2) == 1 && flag_axis_2 == 0) {
+        second_last_wind_dir = last_wind_dir;
         last_wind_dir = wind_dir;
         wind_dir = 3;
         flag_axis_2 = 1;
     } else if (digitalRead(AXIS_3) == 1 && flag_axis_3 == 0) {
+        second_last_wind_dir = last_wind_dir;
         last_wind_dir = wind_dir;
         wind_dir = 5;
         flag_axis_3 = 1;
     } else if (digitalRead(AXIS_4) == 1 && flag_axis_4 == 0) {
+        second_last_wind_dir = last_wind_dir;
         last_wind_dir = wind_dir;
         wind_dir = 7;
         flag_axis_4 = 1;
-    };
+    } else if ((!digitalRead(AXIS_1) &&
+                !digitalRead(AXIS_2) &&
+                !digitalRead(AXIS_3) &&
+                !digitalRead(AXIS_4)) && wind_dir % 2 != 0) {
+        if (wind_dir == 1 && (last_wind_dir == 8 || last_wind_dir == 7)) {
+            last_wind_dir = wind_dir;
+            wind_dir = 2;
+        } else if (wind_dir == 1 && (last_wind_dir == 2 || last_wind_dir == 3)) {
+            last_wind_dir = wind_dir;
+            wind_dir = 8;
+        } else if (wind_dir > last_wind_dir) {
+            last_wind_dir = wind_dir;
+            wind_dir++;
+        } else if (wind_dir < last_wind_dir) {
+            last_wind_dir = wind_dir;
+            wind_dir--;
+        }
+    }
 
     if (digitalRead(AXIS_1) == 0) {
         flag_axis_1 = 0;
