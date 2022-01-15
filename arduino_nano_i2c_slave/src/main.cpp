@@ -264,6 +264,7 @@ void watchDirection() {
                 !digitalRead(AXIS_2) &&
                 !digitalRead(AXIS_3) &&
                 !digitalRead(AXIS_4)) && wind_dir % 2 != 0) {
+        digitalWrite(12, !digitalRead(12));
         if (wind_dir == 1 && (last_wind_dir == 8 || last_wind_dir == 7)) {
             last_wind_dir = wind_dir;
             wind_dir = 2;
