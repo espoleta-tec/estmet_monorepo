@@ -239,27 +239,36 @@ void watchDirection() {
     if (digitalRead(AXIS_3) == 1) wind_dir = 3;
     if (digitalRead(AXIS_4) == 1) wind_dir = 4;
 
-//    if (digitalRead(AXIS_1) == 0 && flag_axis_1 == 1) {
-//        last_wind_dir = wind_dir;
-//        wind_dir = 1;
-//        flag_axis_1 = 0;
-//    };
-//    if (digitalRead(AXIS_2) == 0 && flag_axis_2 == 1) {
-//        last_wind_dir = wind_dir;
-//        wind_dir = 2;
-//        flag_axis_2 = 0;
-//    };
-//    if (digitalRead(AXIS_3) == 0 && flag_axis_3 == 1) {
-//        last_wind_dir = wind_dir;
-//        wind_dir = 3;
-//        flag_axis_3 = 0;
-//    };
-//    if (digitalRead(AXIS_4) == 0 && flag_axis_4 == 1) {
-//        last_wind_dir = wind_dir;
-//        wind_dir = 4;
-//        flag_axis_4 = 0;
-//    };
-//
-//
+    if (digitalRead(AXIS_1) == 1 && flag_axis_1 == 0) {
+        last_wind_dir = wind_dir;
+        wind_dir = 1;
+        flag_axis_1 = 1;
+    } else if (digitalRead(AXIS_2) == 1 && flag_axis_2 == 0) {
+        last_wind_dir = wind_dir;
+        wind_dir = 3;
+        flag_axis_2 = 1;
+    } else if (digitalRead(AXIS_3) == 1 && flag_axis_3 == 0) {
+        last_wind_dir = wind_dir;
+        wind_dir = 5;
+        flag_axis_3 = 1;
+    } else if (digitalRead(AXIS_4) == 1 && flag_axis_4 == 0) {
+        last_wind_dir = wind_dir;
+        wind_dir = 7;
+        flag_axis_4 = 1;
+    };
+
+    if (digitalRead(AXIS_1) == 0) {
+        flag_axis_1 = 0;
+    }
+    if (digitalRead(AXIS_2) == 0) {
+        flag_axis_2 = 0;
+    }
+    if (digitalRead(AXIS_3) == 0) {
+        flag_axis_3 = 0;
+    }
+    if (digitalRead(AXIS_4) == 0) {
+        flag_axis_4 = 0;
+    }
+
 
 }
