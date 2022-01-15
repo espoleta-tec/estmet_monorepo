@@ -15,7 +15,7 @@
 #define LIGHT_DATA 0xC0
 
 #define WIND_SPEED_PIN 5
-#define WATER_COUNT_PIN 2
+#define WATER_COUNT_PIN 4
 #define LIGHTNING_PIN 3
 #define WIND_DIRECTION_PIN A3
 
@@ -181,6 +181,8 @@ void loop()
 
     read_sensors();
     //    Serial.println(lightnings);
+    Serial.print(" ");
+    Serial.print(pluv_acc);
     Serial.println(wind_dir);
     // buffer_sensors[0]=0x45;
     // buffer_sensors[200]=0x23;
@@ -287,12 +289,13 @@ void watchDirection()
 
     uint8_t cardinalPoints[8] = {0xC, 0x1, 0x6, 0x8, 0x3, 0x4, 0x9, 0x2};
 
-    for (int i = 0; i < sizeof(cardinalPoints); i++) {
-        if (cardinalPoints[i] == value) {
-            wind_dir = i+1;
+    for (int i = 0; i < sizeof(cardinalPoints); i++)
+    {
+        if (cardinalPoints[i] == value)
+        {
+            wind_dir = i + 1;
         }
     }
-
 
     // if (digitalRead(AXIS_1) == 1 && flag_axis_1 == 0)
     // {

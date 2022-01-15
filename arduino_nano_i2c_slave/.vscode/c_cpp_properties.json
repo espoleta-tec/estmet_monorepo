@@ -8,8 +8,8 @@
         {
             "name": "PlatformIO",
             "includePath": [
-                "/media/alex/Datos/proyectos/ESPOLETA/vortice/estmet_monorepo/arduino_nano_i2c_slave/include",
-                "/media/alex/Datos/proyectos/ESPOLETA/vortice/estmet_monorepo/arduino_nano_i2c_slave/src",
+                "/home/alex/Escritorio/estmet_monorepo/arduino_nano_i2c_slave/include",
+                "/home/alex/Escritorio/estmet_monorepo/arduino_nano_i2c_slave/src",
                 "/home/alex/.platformio/packages/framework-arduino-avr/libraries/Wire/src",
                 "/home/alex/.platformio/packages/framework-arduino-avr/cores/arduino",
                 "/home/alex/.platformio/packages/framework-arduino-avr/variants/eightanaloginputs",
@@ -22,8 +22,8 @@
             "browse": {
                 "limitSymbolsToIncludedHeaders": true,
                 "path": [
-                    "/media/alex/Datos/proyectos/ESPOLETA/vortice/estmet_monorepo/arduino_nano_i2c_slave/include",
-                    "/media/alex/Datos/proyectos/ESPOLETA/vortice/estmet_monorepo/arduino_nano_i2c_slave/src",
+                    "/home/alex/Escritorio/estmet_monorepo/arduino_nano_i2c_slave/include",
+                    "/home/alex/Escritorio/estmet_monorepo/arduino_nano_i2c_slave/src",
                     "/home/alex/.platformio/packages/framework-arduino-avr/libraries/Wire/src",
                     "/home/alex/.platformio/packages/framework-arduino-avr/cores/arduino",
                     "/home/alex/.platformio/packages/framework-arduino-avr/variants/eightanaloginputs",
