@@ -198,7 +198,7 @@ String anem::getWindValues() {
         reducerCount++;
         mostCommonDirections[readingsBuffer[i + 1] - 1]++;
     }
-    for (int i = 0; i < 4; i++) {
+    for (int i = 0; i < 8; i++) {
         Serial.println(mostCommonDirections[i]);
         if (mostCommonDirections[i] > maxDirectionCount) {
             maxDirectionCount = mostCommonDirections[i];
