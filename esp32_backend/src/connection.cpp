@@ -441,7 +441,7 @@ void getLogs() {
     File log = SD.open(path, FILE_READ);
     if (!log) {
         Serial.println("couldn't open log for reading");
-        ESP.restart();
+        server.send(404, "text/plain", "no logs found for this day");
         return;
     }
     passCors();
