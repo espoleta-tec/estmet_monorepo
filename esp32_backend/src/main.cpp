@@ -16,7 +16,6 @@ void setup() {
     pinMode(LED_BUILTIN, OUTPUT);
     pinMode(LOGO_LED, OUTPUT);
     pinMode(PRO_MINI_RESET, OUTPUT);
-    digitalWrite(LOGO_LED, HIGH);
 
 
     Serial.println("update 0");
