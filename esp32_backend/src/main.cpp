@@ -23,11 +23,11 @@ void setup() {
     loadConf();
     initSDCard();
     supplyState = digitalRead(POWER_PIN);
-    if (supplyState) {
+    if (supplyState || true) {
         serverSetup();
         digitalWrite(LOGO_LED, LOW);
     }
-    resetSetup();
+//    resetSetup();
     digitalWrite(PRO_MINI_RESET, LOW);
     delay(50);
     digitalWrite(PRO_MINI_RESET, HIGH);

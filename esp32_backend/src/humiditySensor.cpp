@@ -34,8 +34,11 @@ String humidityRead() {
     vars += ",temperature_c=" + String(t);
 
     double hic = dht.computeHeatIndex(newValues.temperature, newValues.humidity);
+    double dewPoint = dht.computeDewPoint(t, h);
+
 
     vars += ",heatIndex_c=" + String(hic);
+    vars += ",dew_point_c=" + String(dewPoint);
 
 
     Serial.print(F("Humidity: "));
@@ -45,7 +48,10 @@ String humidityRead() {
     Serial.print(F("°C "));
     Serial.print(F("Heat index: "));
     Serial.print(hic);
+    Serial.print("dewPoint: ");
+    Serial.print(dewPoint);
     Serial.println(F("°C "));
+
 
     return vars;
 }

@@ -211,7 +211,8 @@ void authenticate() {
 
 
 void initWebServer() {
-    server.on("/", []() {
+    server.on("/testconn", HTTP_OPTIONS, sendCors);
+    server.on("/testconn", []() {
         passCors();
         server.send(200, "text/plain", "espoleta says hello");
     });

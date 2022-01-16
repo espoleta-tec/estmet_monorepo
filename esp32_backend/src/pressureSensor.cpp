@@ -24,7 +24,7 @@ String pressureRead() {
         Serial.print(temperature_c);
         Serial.print(" *C ");
 
-        vars += ",temperature_c=" + String(temperature_c);
+//        vars += ",temperature_c=" + String(temperature_c);
 
         auto pressure = bmp.readPressure();
         vars += ",pressure=" + String(pressure);

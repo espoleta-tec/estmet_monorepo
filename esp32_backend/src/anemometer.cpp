@@ -224,6 +224,7 @@ String anem::getWindValues() {
 
 String anem::getWaterCount() {
     readBurst();
+    if (waterCount == 0xFFFF) return "";
 
     Serial.println("water count" + String(waterCount));
     return ",water_count=" + String(waterCount * 20);
@@ -233,6 +234,7 @@ String anem::getLightnings() {
     String val = "";
 
     readBurst();
+    if (lightningCount == 0xFF) return "";
     Serial.println("lightningCount" + String(lightningCount));
     val += ",lightningCount=" + String(lightningCount);
     return val;

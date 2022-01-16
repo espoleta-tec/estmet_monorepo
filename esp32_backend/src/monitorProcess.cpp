@@ -32,17 +32,12 @@ void monitorSetup() {
     TickType_t xLastWakeTime = xTaskGetTickCount();
     for (;;) {
         String data = "";
-        data += humidityRead();
         data += lightRead();
         data += pressureRead();
+        data += humidityRead();
         data += anem::getWindValues();
         data += anem::getWaterCount();
         data += anem::getLightnings();
-//        data += ",lightningCount=" + String(lightningCounter);
-//        Serial.println(",lightningCount=" + String(lightningCounter));
-//        lightningCounter = 0;
-
-//        data += anem::getLightnings();
         data += getBatteryLevelString();
         anem::dele();
 
