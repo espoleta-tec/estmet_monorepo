@@ -232,7 +232,6 @@ String anem::getWaterCount() {
 String anem::getLightnings() {
     String val = "";
 
-
     readBurst();
     Serial.println("lightningCount" + String(lightningCount));
     val += ",lightningCount=" + String(lightningCount);
