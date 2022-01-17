@@ -1,14 +1,9 @@
 #include <Wire.h>
-#include <Battery/batterySaving.h>
 #include "Arduino.h"
 #include "WebServer/webServerProcess.h"
 #include "Monitor/monitorProcess.h"
 #include "pinout.h"
 
-
-#define LED_CHANNEL 0
-
-#define UNPLUGGED true
 
 void setup() {
     Serial.begin(9600);
