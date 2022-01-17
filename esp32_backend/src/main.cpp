@@ -8,6 +8,8 @@
 
 #define LED_CHANNEL 0
 
+#define UNPLUGGED true
+
 void setup() {
     Serial.begin(9600);
     if (!Wire.begin()) {
@@ -23,11 +25,12 @@ void setup() {
     loadConf();
     initSDCard();
     supplyState = digitalRead(POWER_PIN);
-    if (supplyState || true) {
+    if (supplyState) {
         serverSetup();
         digitalWrite(LOGO_LED, LOW);
     }
-//    resetSetup();
+    resetSetup();
+
     digitalWrite(PRO_MINI_RESET, LOW);
     delay(50);
     digitalWrite(PRO_MINI_RESET, HIGH);
@@ -35,12 +38,4 @@ void setup() {
 }
 
 void loop() {
-//    digitalWrite(LED_BUILTIN, HIGH);
-//    digitalWrite(4, HIGH);
-//    delay(50);
-//    digitalWrite(LED_BUILTIN, LOW);
-//    digitalWrite(4, LOW);
-//    delay(50);
-//    humidityRead();
-//    delay(1000);
 }
