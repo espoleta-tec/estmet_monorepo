@@ -227,7 +227,7 @@ String anem::getWaterCount() {
     if (waterCount == 0xFFFF) return "";
 
     Serial.println("water count" + String(waterCount));
-    return ",water_count=" + String(waterCount * 20);
+    return ",water_count=" + String(waterCount * 0.02); //mm of water
 }
 
 String anem::getLightnings() {
