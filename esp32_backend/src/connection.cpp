@@ -267,7 +267,8 @@ void initWebServer() {
         batterySavingActivated = true;
         server.send(200, "battery saving activated successfully");
     });
-    server.on("/format", formatSDCard);
+    server.on("/format", HTTP_OPTIONS, sendCors);
+    server.on("/format", HTTP_GET, formatSDCard);
     server.onNotFound([]() {
         passCors();
         server.send(404);
