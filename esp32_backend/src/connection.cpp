@@ -5,6 +5,7 @@
 #include <Battery/batterySaving.h>
 #include <Monitor/anemometer.h>
 #include "WebServer/connection.h"
+#include "ArduinoJson.h"
 
 WebServer server(80);
 WebSocketsServer ws(81);
@@ -219,6 +220,7 @@ void initWebServer() {
     server.on("/wifis", getWiFis);
     server.on("/net", HTTP_OPTIONS, sendCors);
     server.on("/net", HTTP_POST, configNet);
+    server.on("/net", HTTP_GET, getConfig);
     server.on("/user", HTTP_OPTIONS, sendCors);
     server.on("/user", HTTP_POST, configUser);
     server.on("/authenticate", HTTP_OPTIONS, sendCors);
@@ -468,7 +470,14 @@ void formatSDCard() {
         }
         delay(1);
     }
-    server.send(200, "Todos los logs han sido borrados");
+    server.send(200, "plain/text", "Todos los logs han sido borrados");
+}
+
+void getConfig() {
+    if (!authControl()) return;
+    String output;
+    deserializeJson(doc, output);
+    server.send(200, "application/json", output);
 }
 
 

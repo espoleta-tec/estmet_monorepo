@@ -42,6 +42,8 @@ void handleNotFound();
 
 void configNet();
 
+void getConfig();
+
 void configUser();
 
 void getWiFis();
