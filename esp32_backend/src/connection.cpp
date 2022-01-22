@@ -456,7 +456,7 @@ void formatSDCard() {
     if (!authControl()) return;
     File root;
     root = SD.open("/logs");
-    delay(2000);
+    delay(100);
 
     while (true) {
         File entry = root.openNextFile();
@@ -467,17 +467,19 @@ void formatSDCard() {
             break;
         }
         if (!entry.isDirectory()) {
-            SD.remove(String("/logs/") + String(entry.name()));
+            SD.remove(String(entry.name()));
         }
         delay(1);
     }
+    passCors();
     server.send(200, "plain/text", "Todos los logs han sido borrados");
 }
 
 void getConfig() {
     if (!authControl()) return;
     String output;
-    deserializeJson(doc, output);
+    serializeJson(doc, output);
+    passCors();
     server.send(200, "application/json", output);
 }
 

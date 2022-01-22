@@ -2,6 +2,7 @@
 #include <Wire.h>
 #include "Arduino.h"
 #include "Monitor/anemometer.h"
+#include "math.h"
 
 
 
@@ -21,6 +22,8 @@
 #define MAX_BUFFER_DATA 12
 
 #define ANEMOMETER_RADIUS 0.060
+
+#define LINEAL_WIND_FACTOR ANEMOMETER_RADIUS * 2 * M_PI
 
 
 const byte SLAVE_ADDR = 0x04;
@@ -207,10 +210,10 @@ String anem::getWindValues() {
     }
     average = (double) reducer / reducerCount;
 
-    val += ",wind_speed_average=" + String(average * ANEMOMETER_RADIUS);
-    val += ",wind_speed_min=" + String(min * ANEMOMETER_RADIUS);
+    val += ",wind_speed_average=" + String(average * LINEAL_WIND_FACTOR);
+    val += ",wind_speed_min=" + String(min * LINEAL_WIND_FACTOR);
     val += ",wind_direction_min=" + String(minDir);
-    val += ",wind_speed_max=" + String(max * ANEMOMETER_RADIUS);
+    val += ",wind_speed_max=" + String(max * LINEAL_WIND_FACTOR);
     val += ",wind_direction_max=" + String(maxDir);
     val += ",wind_direction_average=" + String(averageDirection);
 

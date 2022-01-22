@@ -23,6 +23,8 @@ void setup() {
     if (supplyState) {
         serverSetup();
         digitalWrite(LOGO_LED, LOW);
+    } else {
+        digitalWrite(LOGO_LED, HIGH);
     }
     resetSetup();
 
@@ -33,6 +35,10 @@ void setup() {
 }
 
 void loop() {
+    Serial.print(digitalRead(POWER_PIN));
+    Serial.print(" ");
+    Serial.println(digitalRead(LOGO_LED));
+    delay(1);
 }
 
 //void setup() {
