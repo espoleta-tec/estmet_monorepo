@@ -4,6 +4,7 @@
 
 #include <Battery/batterySaving.h>
 #include <Monitor/anemometer.h>
+#include "constants.h"
 #include "WebServer/connection.h"
 #include "ArduinoJson.h"
 
@@ -269,6 +270,11 @@ void initWebServer() {
     });
     server.on("/format", HTTP_OPTIONS, sendCors);
     server.on("/format", HTTP_GET, formatSDCard);
+    server.on("/firmware-version", HTTP_OPTIONS, sendCors);
+    server.on("/firmware-version", HTTP_GET, []() {
+        passCors();
+        server.send(200, "plain/text", FIRMWARE_VERSION);
+    });
     server.onNotFound([]() {
         passCors();
         server.send(404);
