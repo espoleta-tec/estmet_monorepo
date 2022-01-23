@@ -9,7 +9,7 @@
 
 TaskHandle_t monitorTask = NULL;
 TaskHandle_t lightningTask = NULL;
-u_long LOG_INTERVAL = 0.5 * 60 * 1000;
+u_long LOG_INTERVAL = 15 * 60 * 1000;
 
 int lightningFlag = 0;
 unsigned long lightningCounter = 0;
@@ -45,7 +45,7 @@ void monitorSetup() {
         data += timeRead();
         logData(data);
         Serial.println(millis() / 1000);
-        delay(30e3);
+        delay(LOG_INTERVAL);
 //        if (batterySavingActivated && !digitalRead(POWER_PIN)) {
 //            esp_deep_sleep(LOG_INTERVAL * 1000);
 //        } else {
