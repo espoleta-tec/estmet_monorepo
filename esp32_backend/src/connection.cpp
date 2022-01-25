@@ -4,6 +4,7 @@
 
 #include <Battery/batterySaving.h>
 #include <Monitor/anemometer.h>
+#include <Battery/battery_level.h>
 #include "constants.h"
 #include "WebServer/connection.h"
 #include "ArduinoJson.h"
@@ -501,12 +502,16 @@ void webSocketEvent(byte num, WStype_t type, uint8_t *payload, size_t length) {
             Serial.println("client connected");
             ws.sendTXT(num, "connected");
             ws.broadcastTXT("I'm broadcasting");
-            data += humidityRead();
             data += lightRead();
             data += pressureRead();
+            data += humidityRead();
             data += anem::getWindValues();
             data += anem::getWaterCount();
             data += anem::getLightnings();
+            data += getBatteryLevelString();
+            anem::dele();
+
+            data += timeRead();
             logData(data);
             break;
         case WStype_TEXT:

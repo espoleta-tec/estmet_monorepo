@@ -20,7 +20,7 @@ void setup() {
     loadConf();
     initSDCard();
     supplyState = digitalRead(POWER_PIN);
-    if (supplyState) {
+    if (supplyState || true) {
         serverSetup();
         digitalWrite(LOGO_LED, LOW);
     } else {
@@ -35,17 +35,8 @@ void setup() {
 }
 
 void loop() {
-    Serial.print(digitalRead(POWER_PIN));
-    Serial.print(" ");
-    Serial.println(digitalRead(LOGO_LED));
-    delay(1);
+//    Serial.print(digitalRead(POWER_PIN));
+//    Serial.print(" ");
+//    Serial.println(digitalRead(LOGO_LED));
+    delay(1000000);
 }
-
-//void setup() {
-//    pinMode(LED_BUILTIN, OUTPUT);
-//}
-//
-//void loop() {
-//    digitalWrite(LED_BUILTIN, !digitalRead(LED_BUILTIN));
-//    delay(1000);
-//}
