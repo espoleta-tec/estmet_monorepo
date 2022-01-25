@@ -237,10 +237,6 @@ void readWindDirection() {
 }
 
 void watchDirection() {
-    //    if (digitalRead(AXIS_1) == 1) wind_dir = 1;
-    //    if (digitalRead(AXIS_2) == 1) wind_dir = 2;
-    //    if (digitalRead(AXIS_3) == 1) wind_dir = 3;
-    //    if (digitalRead(AXIS_4) == 1) wind_dir = 4;
 
     uint8_t halls[4] = {0};
 
@@ -250,16 +246,7 @@ void watchDirection() {
     halls[3] = digitalRead(AXIS_4);
 
     uint8_t value = (halls[0] << 3) | (halls[1] << 2) | (halls[2] << 1) | halls[3];
-    // Serial.print(halls[0]);
-    // Serial.print(" ");
-    // Serial.print(halls[1]);
-    // Serial.print(" ");
-    // Serial.print(halls[2]);
-    // Serial.print(" ");
-    // Serial.println(halls[3]);
-    // Serial.println(value, HEX);
 
-//    uint8_t cardinalPoints[8] = {0xC, 0x1, 0x6, 0x8, 0x3, 0x4, 0x9, 0x2};
     uint8_t cardinalPoints[8] = {0xC, 0x2, 0x9, 0x4, 0x3, 0x8, 0x6, 0x1};
 
     for (int i = 0; i < sizeof(cardinalPoints); i++) {
@@ -267,78 +254,4 @@ void watchDirection() {
             wind_dir = i + 1;
         }
     }
-
-    // if (digitalRead(AXIS_1) == 1 && flag_axis_1 == 0)
-    // {
-    //     second_last_wind_dir = last_wind_dir;
-    //     last_wind_dir = wind_dir;
-    //     wind_dir = 1;
-    //     flag_axis_1 = 1;
-    // }
-    // else if (digitalRead(AXIS_2) == 1 && flag_axis_2 == 0)
-    // {
-    //     second_last_wind_dir = last_wind_dir;
-    //     last_wind_dir = wind_dir;
-    //     wind_dir = 3;
-    //     flag_axis_2 = 1;
-    // }
-    // else if (digitalRead(AXIS_3) == 1 && flag_axis_3 == 0)
-    // {
-    //     second_last_wind_dir = last_wind_dir;
-    //     last_wind_dir = wind_dir;
-    //     wind_dir = 5;
-    //     flag_axis_3 = 1;
-    // }
-    // else if (digitalRead(AXIS_4) == 1 && flag_axis_4 == 0)
-    // {
-    //     second_last_wind_dir = last_wind_dir;
-    //     last_wind_dir = wind_dir;
-    //     wind_dir = 7;
-    //     flag_axis_4 = 1;
-    // }
-    // else if ((!digitalRead(AXIS_1) &&
-    //           !digitalRead(AXIS_2) &&
-    //           !digitalRead(AXIS_3) &&
-    //           !digitalRead(AXIS_4)) &&
-    //          wind_dir % 2 != 0)
-    // {
-    //     digitalWrite(12, !digitalRead(12));
-    //     if (wind_dir == 1 && (last_wind_dir == 8 || last_wind_dir == 7))
-    //     {
-    //         last_wind_dir = wind_dir;
-    //         wind_dir = 2;
-    //     }
-    //     else if (wind_dir == 1 && (last_wind_dir == 2 || last_wind_dir == 3))
-    //     {
-    //         last_wind_dir = wind_dir;
-    //         wind_dir = 8;
-    //     }
-    //     else if (wind_dir > last_wind_dir)
-    //     {
-    //         last_wind_dir = wind_dir;
-    //         wind_dir++;
-    //     }
-    //     else if (wind_dir < last_wind_dir)
-    //     {
-    //         last_wind_dir = wind_dir;
-    //         wind_dir--;
-    //     }
-    // }
-
-    // if (digitalRead(AXIS_1) == 0)
-    // {
-    //     flag_axis_1 = 0;
-    // }
-    // if (digitalRead(AXIS_2) == 0)
-    // {
-    //     flag_axis_2 = 0;
-    // }
-    // if (digitalRead(AXIS_3) == 0)
-    // {
-    //     flag_axis_3 = 0;
-    // }
-    // if (digitalRead(AXIS_4) == 0)
-    // {
-    //     flag_axis_4 = 0;
-    // }
 }
