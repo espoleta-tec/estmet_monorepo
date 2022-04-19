@@ -26,7 +26,7 @@ void setup() {
     } else {
         digitalWrite(LOGO_LED, HIGH);
     }
-    resetSetup();
+//    resetSetup();
 
     digitalWrite(PRO_MINI_RESET, LOW);
     delay(50);

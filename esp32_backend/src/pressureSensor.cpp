@@ -6,6 +6,9 @@
 
 Adafruit_BMP085 bmp;
 
+const double PRESSURE_B0 = -1;
+const double PRESSURE_B1 = 1;
+
 bool ok = false;
 
 void pressureStart() {
@@ -20,13 +23,13 @@ String pressureRead() {
     String vars = "";
     if (ok) {
         auto temperature_c = bmp.readTemperature();
-        Serial.print("Temperature = ");
-        Serial.print(temperature_c);
-        Serial.print(" *C ");
+//        Serial.print("Temperature = ");
+//        Serial.print(temperature_c);
+//        Serial.print(" *C ");
 
 //        vars += ",temperature_c=" + String(temperature_c);
 
-        auto pressure = bmp.readPressure();
+        auto pressure = PRESSURE_B0 + PRESSURE_B1 * bmp.readPressure();
         vars += ",pressure=" + String(pressure);
         Serial.print("Pressure = ");
         Serial.print(pressure);

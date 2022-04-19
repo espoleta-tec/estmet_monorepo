@@ -7,9 +7,14 @@
 //DHT dht(DHTPIN, DHTTYPE);
 DHTesp dht;
 
+const double TEMP_B0 = -2.4722766403;
+const double TEMP_B1 = 1.0547831582;
+const double HUMIDITY_B0 = -14.1345353691;
+const double HUMIDITY_B1 = 1.2579750347;
+
 
 void humidityStart() {
-    dht.setup(DHTPIN, DHTesp::DHT22);
+    dht.setup(DHTPIN, DHTesp::DHT11);
 }
 
 String humidityRead() {
@@ -21,8 +26,8 @@ String humidityRead() {
         Serial.println("Failed to read from DHT sensor!");
         return vars;
     }
-    double h = newValues.humidity;
-    double t = newValues.temperature;
+    double h = HUMIDITY_B0 + HUMIDITY_B1 * newValues.humidity;
+    double t = TEMP_B0 + TEMP_B1 * newValues.temperature;
 
 
     if (isnan(h) || isnan(t)) {

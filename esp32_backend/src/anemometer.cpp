@@ -30,6 +30,9 @@ const byte SLAVE_ADDR = 0x04;
 
 const byte NUM_BYTES = 1;
 
+const double WIND_B0 = 0.9695617251;
+const double WIND_B1 = 1.1569123591;
+
 byte data[NUM_BYTES] = {0};
 
 byte bytesReceived = 0;
@@ -53,22 +56,6 @@ uint8_t readingsBuffer[400] = {0};
     }
 }
 
-
-//void loop() {
-//
-////    readBurst();
-////    getCursor();
-//    if (avail() == 1) {
-//
-//        readBuff();
-//    }
-//
-//    //if(a>=5)dele();
-//    delay(3000);
-//    //a++;
-//    //Serial.println("KK");
-//}
-
 uint16_t anem::getCursor() {
     Wire.beginTransmission(SLAVE_ADDR);
     Wire.write(LAST_POS);
@@ -79,11 +66,6 @@ uint16_t anem::getCursor() {
     uint8_t smallEnd, bigEnd;
     smallEnd = Wire.read();
     bigEnd = Wire.read();
-//    Serial.print(Wire.read(), HEX);
-//    Serial.print("  ");
-//    Serial.print(Wire.read(), HEX);
-//    Serial.print(smallEnd);
-//    Serial.print(bigEnd);
     return bigEnd << 8 | smallEnd;
 }
 
@@ -210,10 +192,13 @@ String anem::getWindValues() {
     }
     average = (double) reducer / reducerCount;
 
-    val += ",wind_speed_average=" + String(average * LINEAL_WIND_FACTOR);
-    val += ",wind_speed_min=" + String(min * LINEAL_WIND_FACTOR);
+    double averageWindSpeed = (average + LINEAL_WIND_FACTOR) * WIND_B1 + WIND_B0;
+    double minWindSpeed = (min + LINEAL_WIND_FACTOR) * WIND_B1 + WIND_B0;
+    double maxWindSpeed = (max + LINEAL_WIND_FACTOR) * WIND_B1 + WIND_B0;
+    val += ",wind_speed_average=" + String(averageWindSpeed);
+    val += ",wind_speed_min=" + String(minWindSpeed);
     val += ",wind_direction_min=" + String(minDir);
-    val += ",wind_speed_max=" + String(max * LINEAL_WIND_FACTOR);
+    val += ",wind_speed_max=" + String(maxWindSpeed);
     val += ",wind_direction_max=" + String(maxDir);
     val += ",wind_direction_average=" + String(averageDirection);
 
