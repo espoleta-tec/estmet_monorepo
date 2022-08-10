@@ -2,14 +2,13 @@
 #include <Battery/battery_level.h>
 #include "Monitor/monitorProcess.h"
 #include "Arduino.h"
-#include "FreeRTOS.h"
 #include "FileSystem/fileSystem.h"
 #include "Monitor/anemometer.h"
 #include "pinout.h"
 
 TaskHandle_t monitorTask = NULL;
 TaskHandle_t lightningTask = NULL;
-u_long LOG_INTERVAL = 15 * 60 * 1000;
+u_long LOG_INTERVAL = 5 * 1000;
 
 int lightningFlag = 0;
 unsigned long lightningCounter = 0;

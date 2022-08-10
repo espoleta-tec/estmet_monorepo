@@ -192,9 +192,9 @@ String anem::getWindValues() {
     }
     average = (double) reducer / reducerCount;
 
-    double averageWindSpeed = (average + LINEAL_WIND_FACTOR) * WIND_B1 + WIND_B0;
-    double minWindSpeed = (min + LINEAL_WIND_FACTOR) * WIND_B1 + WIND_B0;
-    double maxWindSpeed = (max + LINEAL_WIND_FACTOR) * WIND_B1 + WIND_B0;
+    double averageWindSpeed = (average * LINEAL_WIND_FACTOR) * WIND_B1 + WIND_B0;
+    double minWindSpeed = (min * LINEAL_WIND_FACTOR) * WIND_B1 + WIND_B0;
+    double maxWindSpeed = (max * LINEAL_WIND_FACTOR) * WIND_B1 + WIND_B0;
     val += ",wind_speed_average=" + String(averageWindSpeed);
     val += ",wind_speed_min=" + String(minWindSpeed);
     val += ",wind_direction_min=" + String(minDir);
