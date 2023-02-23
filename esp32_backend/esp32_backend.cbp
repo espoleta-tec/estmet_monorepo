@@ -1744,6 +1744,12 @@
 		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/src/humiditySensor.cpp">
 			<Option target="Z_DUMMY_TARGET"/>
 		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/src/i2cScanner.cpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/src/i2cScanner.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
 		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/src/lightSensor.cpp">
 			<Option target="Z_DUMMY_TARGET"/>
 		</Unit>

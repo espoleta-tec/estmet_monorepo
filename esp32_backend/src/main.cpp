@@ -10,6 +10,7 @@ void setup() {
     if (!Wire.begin()) {
         Serial.println("Failed to init i2c interface");
     }
+
     pinMode(LED_BUILTIN, OUTPUT);
     pinMode(LOGO_LED, OUTPUT);
     pinMode(PRO_MINI_RESET, OUTPUT);
@@ -26,7 +27,6 @@ void setup() {
     } else {
         digitalWrite(LOGO_LED, HIGH);
     }
-//    resetSetup();
 
     digitalWrite(PRO_MINI_RESET, LOW);
     delay(50);

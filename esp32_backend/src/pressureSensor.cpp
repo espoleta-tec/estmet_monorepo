@@ -15,6 +15,7 @@ bool ok = false;
 void pressureStart() {
     if (!bmp.begin()) {
         Serial.println("Could not find a valid BMP085 sensor, check wiring!");
+        Serial.println(bmp.sensorID(), 16);
         return;
     }
     ok = true;
@@ -24,11 +25,6 @@ String pressureRead() {
     String vars = "";
     if (ok) {
         auto temperature_c = bmp.readTemperature();
-//        Serial.print("Temperature = ");
-//        Serial.print(temperature_c);
-//        Serial.print(" *C ");
-
-//        vars += ",temperature_c=" + String(temperature_c);
 
         auto pressure = PRESSURE_B0 + PRESSURE_B1 * bmp.readPressure();
         vars += ",pressure=" + String(pressure);
@@ -49,14 +45,6 @@ String pressureRead() {
         Serial.print("Pressure at sealevel (calculated) = ");
         Serial.print(seaLevelPressure);
         Serial.println(" Pa ");
-
-        // you can get a more precise measurement of altitude
-        // if you know the current sea level pressure which will
-        // vary with weather and such. If it is 1015 millibars
-        // that is equal to 101500 Pascals.
-//        Serial.print("Real altitude = ");
-//        Serial.print(bmp.readAltitude(101500));
-//        Serial.println(" meters");
     }
     return vars;
 }
