@@ -25,6 +25,8 @@
 
 #define LINEAL_WIND_FACTOR ANEMOMETER_RADIUS * 2 * M_PI
 
+#define A
+
 
 const byte SLAVE_ADDR = 0x04;
 
@@ -192,9 +194,19 @@ String anem::getWindValues() {
     }
     average = (double) reducer / reducerCount;
 
-    double averageWindSpeed = (average * LINEAL_WIND_FACTOR) * WIND_B1 + WIND_B0;
-    double minWindSpeed = (min * LINEAL_WIND_FACTOR) * WIND_B1 + WIND_B0;
-    double maxWindSpeed = (max * LINEAL_WIND_FACTOR) * WIND_B1 + WIND_B0;
+    double averageWindSpeed = (average * LINEAL_WIND_FACTOR);
+    if (averageWindSpeed) {
+        averageWindSpeed = averageWindSpeed * WIND_B1 + WIND_B0;
+    }
+    double minWindSpeed = (min * LINEAL_WIND_FACTOR);
+    if (minWindSpeed) {
+        minWindSpeed = minWindSpeed * WIND_B1 + WIND_B0;
+    }
+    double maxWindSpeed = (max * LINEAL_WIND_FACTOR);
+    if (maxWindSpeed) {
+        maxWindSpeed = maxWindSpeed * WIND_B1 + WIND_B0;
+    }
+
     val += ",wind_speed_average=" + String(averageWindSpeed);
     val += ",wind_speed_min=" + String(minWindSpeed);
     val += ",wind_direction_min=" + String(minDir);

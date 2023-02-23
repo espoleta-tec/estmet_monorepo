@@ -3,8 +3,9 @@
 //
 
 #include "Monitor/pressureSensor.h"
+#include "Adafruit_BMP280.h"
 
-Adafruit_BMP085 bmp;
+Adafruit_BMP280 bmp;
 
 const double PRESSURE_B0 = -1;
 const double PRESSURE_B1 = 1;
@@ -43,7 +44,7 @@ String pressureRead() {
         Serial.print(altitude);
         Serial.print(" meters ");
 
-        auto seaLevelPressure = bmp.readSealevelPressure();
+        auto seaLevelPressure = bmp.readPressure();
         vars += ",pressure_sl=" + String(seaLevelPressure);
         Serial.print("Pressure at sealevel (calculated) = ");
         Serial.print(seaLevelPressure);

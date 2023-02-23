@@ -1,0 +1,1781 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="esp32_backend"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -f &quot;/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Production">
+				<Option working_dir="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/Makefile&quot;  VERBOSE=1 Production"/>
+					<CompileFile command="/usr/bin/make -f &quot;/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Debug">
+				<Option working_dir="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/Makefile&quot;  VERBOSE=1 Debug"/>
+					<CompileFile command="/usr/bin/make -f &quot;/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Z_DUMMY_TARGET">
+				<Option output="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/Z_DUMMY_TARGET" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DPLATFORMIO=60106"/>
+					<Add option="-DARDUINO_ESP32_DEV"/>
+					<Add option="-DHAVE_CONFIG_H"/>
+					<Add option="-DMBEDTLS_CONFIG_FILE=&quot;mbedtls/esp_config.h&quot;"/>
+					<Add option="-DUNITY_INCLUDE_CONFIG_H"/>
+					<Add option="-DWITH_POSIX"/>
+					<Add option="-D_GNU_SOURCE"/>
+					<Add option="-DIDF_VER=&quot;v4.4.1-472-gc9140caf8c&quot;"/>
+					<Add option="-DESP_PLATFORM"/>
+					<Add option="-D_POSIX_READER_WRITER_LOCKS"/>
+					<Add option="-DARDUINO_ARCH_ESP32"/>
+					<Add option="-DESP32"/>
+					<Add option="-DF_CPU=240000000L"/>
+					<Add option="-DARDUINO=10812"/>
+					<Add option="-DARDUINO_VARIANT=&quot;doitESP32devkitV1&quot;"/>
+					<Add option="-DARDUINO_BOARD=&quot;DOIT ESP32 DEVKIT V1&quot;"/>
+					<Add option="-DARDUINO_PARTITION_default"/>
+					<Add directory="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/include"/>
+					<Add directory="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/src"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/SD/src"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/SPIFFS/src"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/WebServer/src"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/FS/src"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/Update/src"/>
+					<Add directory="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/lib/arduinoWebSockets-master/src"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/WiFiClientSecure/src"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/Ethernet/src"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/WiFi/src"/>
+					<Add directory="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BMP280 Library"/>
+					<Add directory="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit Unified Sensor"/>
+					<Add directory="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src"/>
+					<Add directory="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/RTClib/src"/>
+					<Add directory="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BMP085 Library"/>
+					<Add directory="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BusIO"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/SPI/src"/>
+					<Add directory="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/BH1750/src"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/Wire/src"/>
+					<Add directory="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/DHT sensor library for ESPx"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/newlib/platform_include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/freertos/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/freertos/include/esp_additions/freertos"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/freertos/port/xtensa/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/freertos/include/esp_additions"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_hw_support/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_hw_support/include/soc"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_hw_support/include/soc/esp32"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_hw_support/port/esp32"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_hw_support/port/esp32/private_include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/heap/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/log/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/lwip/include/apps"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/lwip/include/apps/sntp"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/lwip/lwip/src/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/lwip/port/esp32/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/lwip/port/esp32/include/arch"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/soc/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/soc/esp32"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/soc/esp32/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/hal/esp32/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/hal/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/hal/platform_port/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_rom/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_rom/include/esp32"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_rom/esp32"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_common/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_system/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_system/port/soc"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_system/port/public_compat"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp32/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/xtensa/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/xtensa/esp32/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/driver/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/driver/esp32/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_pm/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_ringbuf/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/efuse/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/efuse/esp32/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/vfs/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_wifi/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_event/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_netif/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_eth/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/tcpip_adapter/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_phy/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_phy/esp32/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_ipc/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/app_trace/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_timer/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/mbedtls/port/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/mbedtls/mbedtls/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/mbedtls/esp_crt_bundle/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/app_update/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/spi_flash/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/bootloader_support/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/nvs_flash/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/pthread/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_gdbstub/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_gdbstub/xtensa"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_gdbstub/esp32"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/espcoredump/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/espcoredump/include/port/xtensa"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/wpa_supplicant/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/wpa_supplicant/port/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/wpa_supplicant/esp_supplicant/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/ieee802154/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/console"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/asio/asio/asio/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/asio/port/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/bt/common/osi/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/bt/include/esp32/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/bt/common/api/include/api"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/bt/common/btc/profile/esp/blufi/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/bt/common/btc/profile/esp/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/bt/host/bluedroid/api/include/api"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/bt/esp_ble_mesh/mesh_common/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/bt/esp_ble_mesh/mesh_common/tinycrypt/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/bt/esp_ble_mesh/mesh_core"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/bt/esp_ble_mesh/mesh_core/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/bt/esp_ble_mesh/mesh_core/storage"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/bt/esp_ble_mesh/btc/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/bt/esp_ble_mesh/mesh_models/common/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/bt/esp_ble_mesh/mesh_models/client/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/bt/esp_ble_mesh/mesh_models/server/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/bt/esp_ble_mesh/api/core/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/bt/esp_ble_mesh/api/models/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/bt/esp_ble_mesh/api"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/cbor/port/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/unity/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/unity/unity/src"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/cmock/CMock/src"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/coap/port/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/coap/libcoap/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/nghttp/port/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/nghttp/nghttp2/lib/includes"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-tls"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-tls/esp-tls-crypto"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_adc_cal/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_hid/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/tcp_transport/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_http_client/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_http_server/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_https_ota/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_https_server/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_lcd/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_lcd/interface"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/protobuf-c/protobuf-c"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/protocomm/include/common"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/protocomm/include/security"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/protocomm/include/transports"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/mdns/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_local_ctrl/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/sdmmc/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_serial_slave_link/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_websocket_client/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/expat/expat/expat/lib"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/expat/port/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/wear_levelling/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/fatfs/diskio"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/fatfs/vfs"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/fatfs/src"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/freemodbus/common/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/idf_test/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/idf_test/include/esp32"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/jsmn/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/json/cJSON"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/libsodium/libsodium/src/libsodium/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/libsodium/port_include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/mqtt/esp-mqtt/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/openssl/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/perfmon/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/spiffs/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/ulp/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/wifi_provisioning/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/button/button/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/rmaker_common/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/json_parser/upstream/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/json_parser/upstream"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/json_generator/upstream"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_schedule/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_rainmaker/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/qrcode/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/ws2812_led"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dsp/modules/dotprod/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dsp/modules/support/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dsp/modules/windows/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dsp/modules/windows/hann/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dsp/modules/windows/blackman/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dsp/modules/windows/blackman_harris/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dsp/modules/windows/blackman_nuttall/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dsp/modules/windows/nuttall/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dsp/modules/windows/flat_top/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dsp/modules/iir/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dsp/modules/fir/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dsp/modules/math/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dsp/modules/math/add/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dsp/modules/math/sub/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dsp/modules/math/mul/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dsp/modules/math/addc/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dsp/modules/math/mulc/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dsp/modules/math/sqrt/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dsp/modules/matrix/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dsp/modules/fft/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dsp/modules/dct/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dsp/modules/conv/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dsp/modules/common/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dsp/modules/kalman/ekf/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dsp/modules/kalman/ekf_imu13states/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_littlefs/src"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_littlefs/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dl/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dl/include/tool"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dl/include/typedef"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dl/include/image"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dl/include/math"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dl/include/nn"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dl/include/layer"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dl/include/detect"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dl/include/model_zoo"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-sr/esp-tts/esp_tts_chinese/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-sr/include/esp32"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp32-camera/driver/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp32-camera/conversions/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/fb_gfx/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/qio_qspi/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/cores/esp32"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/variants/doitESP32devkitV1"/>
+					<Add directory="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BMP280 Library@src-3479d6453d854df9d2cc4f0fee2d1f5e"/>
+					<Add directory="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/TinyWireM"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/ArduinoOTA/src"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/AsyncUDP/src"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/BLE/src"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/BluetoothSerial/src"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/DNSServer/src"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/EEPROM/src"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/ESP32/src"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/ESPmDNS/src"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/FFat/src"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/HTTPClient/src"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/HTTPUpdate/src"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/HTTPUpdateServer/src"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/I2S/src"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/LittleFS/src"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/NetBIOS/src"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/Preferences/src"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/RainMaker/src"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/SD_MMC/src"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/SimpleBLE/src"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/Ticker/src"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/USB/src"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/WiFiProv/src"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/toolchain-xtensa-esp32/xtensa-esp32-elf/include/c++/8.4.0"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/toolchain-xtensa-esp32/xtensa-esp32-elf/include/c++/8.4.0/xtensa-esp32-elf"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/toolchain-xtensa-esp32/lib/gcc/xtensa-esp32-elf/8.4.0/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/toolchain-xtensa-esp32/lib/gcc/xtensa-esp32-elf/8.4.0/include-fixed"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/toolchain-xtensa-esp32/xtensa-esp32-elf/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/Makefile&quot;  VERBOSE=1 Z_DUMMY_TARGET"/>
+					<CompileFile command="/usr/bin/make -f &quot;/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Z_DUMMY_TARGET/fast">
+				<Option output="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/Z_DUMMY_TARGET" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DPLATFORMIO=60106"/>
+					<Add option="-DARDUINO_ESP32_DEV"/>
+					<Add option="-DHAVE_CONFIG_H"/>
+					<Add option="-DMBEDTLS_CONFIG_FILE=&quot;mbedtls/esp_config.h&quot;"/>
+					<Add option="-DUNITY_INCLUDE_CONFIG_H"/>
+					<Add option="-DWITH_POSIX"/>
+					<Add option="-D_GNU_SOURCE"/>
+					<Add option="-DIDF_VER=&quot;v4.4.1-472-gc9140caf8c&quot;"/>
+					<Add option="-DESP_PLATFORM"/>
+					<Add option="-D_POSIX_READER_WRITER_LOCKS"/>
+					<Add option="-DARDUINO_ARCH_ESP32"/>
+					<Add option="-DESP32"/>
+					<Add option="-DF_CPU=240000000L"/>
+					<Add option="-DARDUINO=10812"/>
+					<Add option="-DARDUINO_VARIANT=&quot;doitESP32devkitV1&quot;"/>
+					<Add option="-DARDUINO_BOARD=&quot;DOIT ESP32 DEVKIT V1&quot;"/>
+					<Add option="-DARDUINO_PARTITION_default"/>
+					<Add directory="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/include"/>
+					<Add directory="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/src"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/SD/src"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/SPIFFS/src"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/WebServer/src"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/FS/src"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/Update/src"/>
+					<Add directory="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/lib/arduinoWebSockets-master/src"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/WiFiClientSecure/src"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/Ethernet/src"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/WiFi/src"/>
+					<Add directory="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BMP280 Library"/>
+					<Add directory="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit Unified Sensor"/>
+					<Add directory="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src"/>
+					<Add directory="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/RTClib/src"/>
+					<Add directory="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BMP085 Library"/>
+					<Add directory="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BusIO"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/SPI/src"/>
+					<Add directory="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/BH1750/src"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/Wire/src"/>
+					<Add directory="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/DHT sensor library for ESPx"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/newlib/platform_include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/freertos/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/freertos/include/esp_additions/freertos"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/freertos/port/xtensa/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/freertos/include/esp_additions"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_hw_support/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_hw_support/include/soc"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_hw_support/include/soc/esp32"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_hw_support/port/esp32"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_hw_support/port/esp32/private_include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/heap/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/log/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/lwip/include/apps"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/lwip/include/apps/sntp"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/lwip/lwip/src/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/lwip/port/esp32/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/lwip/port/esp32/include/arch"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/soc/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/soc/esp32"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/soc/esp32/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/hal/esp32/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/hal/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/hal/platform_port/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_rom/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_rom/include/esp32"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_rom/esp32"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_common/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_system/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_system/port/soc"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_system/port/public_compat"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp32/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/xtensa/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/xtensa/esp32/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/driver/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/driver/esp32/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_pm/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_ringbuf/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/efuse/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/efuse/esp32/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/vfs/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_wifi/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_event/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_netif/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_eth/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/tcpip_adapter/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_phy/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_phy/esp32/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_ipc/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/app_trace/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_timer/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/mbedtls/port/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/mbedtls/mbedtls/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/mbedtls/esp_crt_bundle/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/app_update/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/spi_flash/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/bootloader_support/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/nvs_flash/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/pthread/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_gdbstub/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_gdbstub/xtensa"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_gdbstub/esp32"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/espcoredump/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/espcoredump/include/port/xtensa"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/wpa_supplicant/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/wpa_supplicant/port/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/wpa_supplicant/esp_supplicant/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/ieee802154/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/console"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/asio/asio/asio/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/asio/port/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/bt/common/osi/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/bt/include/esp32/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/bt/common/api/include/api"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/bt/common/btc/profile/esp/blufi/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/bt/common/btc/profile/esp/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/bt/host/bluedroid/api/include/api"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/bt/esp_ble_mesh/mesh_common/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/bt/esp_ble_mesh/mesh_common/tinycrypt/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/bt/esp_ble_mesh/mesh_core"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/bt/esp_ble_mesh/mesh_core/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/bt/esp_ble_mesh/mesh_core/storage"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/bt/esp_ble_mesh/btc/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/bt/esp_ble_mesh/mesh_models/common/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/bt/esp_ble_mesh/mesh_models/client/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/bt/esp_ble_mesh/mesh_models/server/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/bt/esp_ble_mesh/api/core/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/bt/esp_ble_mesh/api/models/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/bt/esp_ble_mesh/api"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/cbor/port/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/unity/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/unity/unity/src"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/cmock/CMock/src"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/coap/port/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/coap/libcoap/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/nghttp/port/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/nghttp/nghttp2/lib/includes"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-tls"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-tls/esp-tls-crypto"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_adc_cal/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_hid/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/tcp_transport/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_http_client/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_http_server/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_https_ota/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_https_server/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_lcd/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_lcd/interface"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/protobuf-c/protobuf-c"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/protocomm/include/common"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/protocomm/include/security"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/protocomm/include/transports"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/mdns/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_local_ctrl/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/sdmmc/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_serial_slave_link/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_websocket_client/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/expat/expat/expat/lib"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/expat/port/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/wear_levelling/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/fatfs/diskio"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/fatfs/vfs"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/fatfs/src"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/freemodbus/common/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/idf_test/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/idf_test/include/esp32"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/jsmn/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/json/cJSON"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/libsodium/libsodium/src/libsodium/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/libsodium/port_include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/mqtt/esp-mqtt/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/openssl/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/perfmon/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/spiffs/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/ulp/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/wifi_provisioning/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/button/button/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/rmaker_common/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/json_parser/upstream/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/json_parser/upstream"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/json_generator/upstream"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_schedule/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_rainmaker/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/qrcode/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/ws2812_led"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dsp/modules/dotprod/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dsp/modules/support/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dsp/modules/windows/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dsp/modules/windows/hann/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dsp/modules/windows/blackman/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dsp/modules/windows/blackman_harris/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dsp/modules/windows/blackman_nuttall/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dsp/modules/windows/nuttall/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dsp/modules/windows/flat_top/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dsp/modules/iir/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dsp/modules/fir/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dsp/modules/math/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dsp/modules/math/add/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dsp/modules/math/sub/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dsp/modules/math/mul/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dsp/modules/math/addc/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dsp/modules/math/mulc/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dsp/modules/math/sqrt/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dsp/modules/matrix/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dsp/modules/fft/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dsp/modules/dct/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dsp/modules/conv/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dsp/modules/common/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dsp/modules/kalman/ekf/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dsp/modules/kalman/ekf_imu13states/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_littlefs/src"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_littlefs/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dl/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dl/include/tool"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dl/include/typedef"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dl/include/image"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dl/include/math"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dl/include/nn"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dl/include/layer"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dl/include/detect"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dl/include/model_zoo"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-sr/esp-tts/esp_tts_chinese/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-sr/include/esp32"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp32-camera/driver/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp32-camera/conversions/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/fb_gfx/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/qio_qspi/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/cores/esp32"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/variants/doitESP32devkitV1"/>
+					<Add directory="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BMP280 Library@src-3479d6453d854df9d2cc4f0fee2d1f5e"/>
+					<Add directory="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/TinyWireM"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/ArduinoOTA/src"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/AsyncUDP/src"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/BLE/src"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/BluetoothSerial/src"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/DNSServer/src"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/EEPROM/src"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/ESP32/src"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/ESPmDNS/src"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/FFat/src"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/HTTPClient/src"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/HTTPUpdate/src"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/HTTPUpdateServer/src"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/I2S/src"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/LittleFS/src"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/NetBIOS/src"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/Preferences/src"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/RainMaker/src"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/SD_MMC/src"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/SimpleBLE/src"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/Ticker/src"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/USB/src"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/WiFiProv/src"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/toolchain-xtensa-esp32/xtensa-esp32-elf/include/c++/8.4.0"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/toolchain-xtensa-esp32/xtensa-esp32-elf/include/c++/8.4.0/xtensa-esp32-elf"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/toolchain-xtensa-esp32/lib/gcc/xtensa-esp32-elf/8.4.0/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/toolchain-xtensa-esp32/lib/gcc/xtensa-esp32-elf/8.4.0/include-fixed"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/toolchain-xtensa-esp32/xtensa-esp32-elf/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/Makefile&quot;  VERBOSE=1 Z_DUMMY_TARGET/fast"/>
+					<CompileFile command="/usr/bin/make -f &quot;/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -f &quot;/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -f &quot;/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BMP085 Library/.github/ISSUE_TEMPLATE.md">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BMP085 Library/.github/PULL_REQUEST_TEMPLATE.md">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BMP085 Library/.github/workflows/githubci.yml">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BMP085 Library/.piopm">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BMP085 Library/Adafruit_BMP085.cpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BMP085 Library/Adafruit_BMP085.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BMP085 Library/README.md">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BMP085 Library/examples/BMP085test/BMP085test.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BMP085 Library/library.properties">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BMP280 Library/.github/ISSUE_TEMPLATE.md">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BMP280 Library/.github/PULL_REQUEST_TEMPLATE.md">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BMP280 Library/.github/workflows/githubci.yml">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BMP280 Library/.gitignore">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BMP280 Library/.piopm">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BMP280 Library/Adafruit_BMP280.cpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BMP280 Library/Adafruit_BMP280.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BMP280 Library/README.md">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BMP280 Library/examples/bmp280_forced/bmp280_forced.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BMP280 Library/examples/bmp280_sensortest/bmp280_sensortest.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BMP280 Library/examples/bmp280test/bmp280test.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BMP280 Library/keywords.txt">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BMP280 Library/library.properties">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BMP280 Library@src-3479d6453d854df9d2cc4f0fee2d1f5e/.git/.piopm">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BMP280 Library@src-3479d6453d854df9d2cc4f0fee2d1f5e/.git/hooks/applypatch-msg.sample">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BMP280 Library@src-3479d6453d854df9d2cc4f0fee2d1f5e/.git/hooks/commit-msg.sample">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BMP280 Library@src-3479d6453d854df9d2cc4f0fee2d1f5e/.git/hooks/fsmonitor-watchman.sample">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BMP280 Library@src-3479d6453d854df9d2cc4f0fee2d1f5e/.git/hooks/post-update.sample">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BMP280 Library@src-3479d6453d854df9d2cc4f0fee2d1f5e/.git/hooks/pre-applypatch.sample">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BMP280 Library@src-3479d6453d854df9d2cc4f0fee2d1f5e/.git/hooks/pre-commit.sample">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BMP280 Library@src-3479d6453d854df9d2cc4f0fee2d1f5e/.git/hooks/pre-merge-commit.sample">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BMP280 Library@src-3479d6453d854df9d2cc4f0fee2d1f5e/.git/hooks/pre-push.sample">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BMP280 Library@src-3479d6453d854df9d2cc4f0fee2d1f5e/.git/hooks/pre-rebase.sample">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BMP280 Library@src-3479d6453d854df9d2cc4f0fee2d1f5e/.git/hooks/pre-receive.sample">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BMP280 Library@src-3479d6453d854df9d2cc4f0fee2d1f5e/.git/hooks/prepare-commit-msg.sample">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BMP280 Library@src-3479d6453d854df9d2cc4f0fee2d1f5e/.git/hooks/push-to-checkout.sample">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BMP280 Library@src-3479d6453d854df9d2cc4f0fee2d1f5e/.git/hooks/update.sample">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BMP280 Library@src-3479d6453d854df9d2cc4f0fee2d1f5e/.git/objects/pack/pack-57ced2ad5e348582c32cde442c7c1f1d23fabb09.idx">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BMP280 Library@src-3479d6453d854df9d2cc4f0fee2d1f5e/.git/objects/pack/pack-57ced2ad5e348582c32cde442c7c1f1d23fabb09.pack">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BMP280 Library@src-3479d6453d854df9d2cc4f0fee2d1f5e/.git/refs/tags/2.6.6">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BMP280 Library@src-3479d6453d854df9d2cc4f0fee2d1f5e/.github/ISSUE_TEMPLATE.md">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BMP280 Library@src-3479d6453d854df9d2cc4f0fee2d1f5e/.github/PULL_REQUEST_TEMPLATE.md">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BMP280 Library@src-3479d6453d854df9d2cc4f0fee2d1f5e/.github/workflows/githubci.yml">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BMP280 Library@src-3479d6453d854df9d2cc4f0fee2d1f5e/.gitignore">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BMP280 Library@src-3479d6453d854df9d2cc4f0fee2d1f5e/Adafruit_BMP280.cpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BMP280 Library@src-3479d6453d854df9d2cc4f0fee2d1f5e/Adafruit_BMP280.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BMP280 Library@src-3479d6453d854df9d2cc4f0fee2d1f5e/README.md">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BMP280 Library@src-3479d6453d854df9d2cc4f0fee2d1f5e/assets/board.jpg">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BMP280 Library@src-3479d6453d854df9d2cc4f0fee2d1f5e/examples/bmp280_forced/bmp280_forced.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BMP280 Library@src-3479d6453d854df9d2cc4f0fee2d1f5e/examples/bmp280_sensortest/bmp280_sensortest.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BMP280 Library@src-3479d6453d854df9d2cc4f0fee2d1f5e/examples/bmp280test/bmp280test.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BMP280 Library@src-3479d6453d854df9d2cc4f0fee2d1f5e/keywords.txt">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BMP280 Library@src-3479d6453d854df9d2cc4f0fee2d1f5e/library.properties">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BusIO/.github/ISSUE_TEMPLATE.md">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BusIO/.github/PULL_REQUEST_TEMPLATE.md">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BusIO/.github/workflows/githubci.yml">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BusIO/.piopm">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BusIO/Adafruit_BusIO_Register.cpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BusIO/Adafruit_BusIO_Register.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BusIO/Adafruit_I2CDevice.cpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BusIO/Adafruit_I2CDevice.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BusIO/Adafruit_I2CRegister.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BusIO/Adafruit_SPIDevice.cpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BusIO/Adafruit_SPIDevice.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BusIO/CMakeLists.txt">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BusIO/README.md">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BusIO/component.mk">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BusIO/examples/i2c_address_detect/i2c_address_detect.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BusIO/examples/i2c_readwrite/i2c_readwrite.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BusIO/examples/i2c_registers/i2c_registers.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BusIO/examples/i2corspi_register/i2corspi_register.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BusIO/examples/spi_modetest/spi_modetest.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BusIO/examples/spi_readwrite/spi_readwrite.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BusIO/examples/spi_register_bits/spi_register_bits.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BusIO/examples/spi_registers/spi_registers.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BusIO/library.properties">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit Unified Sensor/.gitignore">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit Unified Sensor/.piopm">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit Unified Sensor/Adafruit_Sensor.cpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit Unified Sensor/Adafruit_Sensor.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit Unified Sensor/LICENSE.txt">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit Unified Sensor/README.md">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit Unified Sensor/examples/sensortest/sensortest.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit Unified Sensor/library.properties">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/.clang-format">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/.gitattributes">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/.gitignore">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/.mbedignore">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/.piopm">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/.prettierignore">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/ArduinoJson.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/CHANGELOG.md">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/CMakeLists.txt">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/CONTRIBUTING.md">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/LICENSE.md">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/README.md">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/SUPPORT.md">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/appveyor.yml">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/banner.svg">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/component.mk">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/examples/JsonConfigFile/JsonConfigFile.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/examples/JsonFilterExample/JsonFilterExample.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/examples/JsonGeneratorExample/JsonGeneratorExample.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/examples/JsonHttpClient/JsonHttpClient.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/examples/JsonParserExample/JsonParserExample.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/examples/JsonServer/JsonServer.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/examples/JsonUdpBeacon/JsonUdpBeacon.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/examples/MsgPackParser/MsgPackParser.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/examples/ProgmemExample/ProgmemExample.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/examples/StringExample/StringExample.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/keywords.txt">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/library.json">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/library.properties">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Array/ArrayFunctions.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Array/ArrayImpl.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Array/ArrayIterator.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Array/ArrayRef.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Array/ArrayShortcuts.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Array/ElementProxy.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Array/Utilities.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Collection/CollectionData.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Collection/CollectionImpl.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Configuration.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Deserialization/DeserializationError.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Deserialization/Filter.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Deserialization/NestingLimit.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Deserialization/Reader.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Deserialization/Readers/ArduinoStreamReader.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Deserialization/Readers/ArduinoStringReader.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Deserialization/Readers/FlashReader.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Deserialization/Readers/IteratorReader.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Deserialization/Readers/RamReader.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Deserialization/Readers/StdStreamReader.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Deserialization/Readers/VariantReader.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Deserialization/deserialize.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Document/BasicJsonDocument.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Document/DynamicJsonDocument.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Document/JsonDocument.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Document/StaticJsonDocument.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Json/EscapeSequence.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Json/JsonDeserializer.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Json/JsonSerializer.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Json/Latch.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Json/PrettyJsonSerializer.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Json/TextFormatter.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Json/Utf16.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Json/Utf8.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Memory/Alignment.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Memory/MemoryPool.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Misc/SafeBoolIdiom.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Misc/SerializedValue.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Misc/Visitable.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/MsgPack/MsgPackDeserializer.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/MsgPack/MsgPackSerializer.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/MsgPack/endianess.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/MsgPack/ieee754.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Namespace.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Numbers/Float.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Numbers/FloatParts.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Numbers/FloatTraits.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Numbers/Integer.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Numbers/arithmeticCompare.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Numbers/convertNumber.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Numbers/parseNumber.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Object/MemberProxy.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Object/ObjectFunctions.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Object/ObjectImpl.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Object/ObjectIterator.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Object/ObjectRef.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Object/ObjectShortcuts.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Object/Pair.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Polyfills/alias_cast.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Polyfills/assert.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Polyfills/attributes.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Polyfills/ctype.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Polyfills/integer.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Polyfills/limits.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Polyfills/math.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Polyfills/mpl/max.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Polyfills/pgmspace.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Polyfills/pgmspace_generic.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Polyfills/preprocessor.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Polyfills/static_array.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Polyfills/type_traits.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Polyfills/type_traits/conditional.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Polyfills/type_traits/declval.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Polyfills/type_traits/enable_if.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Polyfills/type_traits/integral_constant.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Polyfills/type_traits/is_array.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Polyfills/type_traits/is_base_of.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Polyfills/type_traits/is_class.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Polyfills/type_traits/is_const.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Polyfills/type_traits/is_convertible.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Polyfills/type_traits/is_enum.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Polyfills/type_traits/is_floating_point.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Polyfills/type_traits/is_integral.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Polyfills/type_traits/is_pointer.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Polyfills/type_traits/is_same.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Polyfills/type_traits/is_signed.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Polyfills/type_traits/is_unsigned.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Polyfills/type_traits/make_unsigned.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Polyfills/type_traits/make_void.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Polyfills/type_traits/remove_const.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Polyfills/type_traits/remove_cv.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Polyfills/type_traits/remove_reference.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Polyfills/type_traits/type_identity.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Serialization/CountingDecorator.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Serialization/Writer.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Serialization/Writers/ArduinoStringWriter.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Serialization/Writers/DummyWriter.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Serialization/Writers/PrintWriter.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Serialization/Writers/StaticStringWriter.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Serialization/Writers/StdStreamWriter.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Serialization/Writers/StdStringWriter.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Serialization/measure.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Serialization/serialize.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/StringStorage/StringCopier.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/StringStorage/StringMover.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/StringStorage/StringStorage.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Strings/Adapters/ArduinoString.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Strings/Adapters/FlashString.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Strings/Adapters/JsonString.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Strings/Adapters/RamString.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Strings/Adapters/StdString.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Strings/Adapters/StringView.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Strings/IsString.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Strings/StoragePolicy.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Strings/String.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Strings/StringAdapters.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Variant/Converter.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Variant/ConverterImpl.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Variant/SlotFunctions.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Variant/VariantCompare.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Variant/VariantContent.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Variant/VariantData.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Variant/VariantFunctions.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Variant/VariantImpl.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Variant/VariantOperators.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Variant/VariantRef.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Variant/VariantShortcuts.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Variant/VariantSlot.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Variant/VariantTag.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Variant/VariantTo.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/Variant/Visitor.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/compatibility.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/ArduinoJson/version.hpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src/CMakeLists.txt">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/BH1750/.clang-format">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/BH1750/.github/workflows/ci.yml">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/BH1750/.gitignore">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/BH1750/.piopm">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/BH1750/README.md">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/BH1750/ci/code-format.bash">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/BH1750/ci/compile-examples.bash">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/BH1750/component.mk">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/BH1750/examples/BH1750advanced/BH1750advanced.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/BH1750/examples/BH1750autoadjust/BH1750autoadjust.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/BH1750/examples/BH1750onetime/BH1750onetime.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/BH1750/examples/BH1750test/BH1750test.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/BH1750/examples/BH1750two_i2c/BH1750two_i2c.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/BH1750/keywords.txt">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/BH1750/library.json">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/BH1750/library.properties">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/BH1750/src/BH1750.cpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/BH1750/src/BH1750.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/DHT sensor library for ESPx/.piopm">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/DHT sensor library for ESPx/.travis.yml">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/DHT sensor library for ESPx/DHTesp.cpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/DHT sensor library for ESPx/DHTesp.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/DHT sensor library for ESPx/README.md">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/DHT sensor library for ESPx/examples/DHT_ESP32/.esp8266.test.skip">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/DHT sensor library for ESPx/examples/DHT_ESP32/DHT_ESP32.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/DHT sensor library for ESPx/examples/DHT_ESP8266/.esp32.test.skip">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/DHT sensor library for ESPx/examples/DHT_ESP8266/DHT_ESP8266.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/DHT sensor library for ESPx/examples/DHT_Multi_ESP32/.esp8266.test.skip">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/DHT sensor library for ESPx/examples/DHT_Multi_ESP32/DHT_Multi_ESP32.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/DHT sensor library for ESPx/keywords.txt">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/DHT sensor library for ESPx/library.json">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/DHT sensor library for ESPx/library.properties">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/RTClib/.github/ISSUE_TEMPLATE.md">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/RTClib/.github/PULL_REQUEST_TEMPLATE.md">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/RTClib/.github/workflows/githubci.yml">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/RTClib/.gitignore">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/RTClib/.piopm">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/RTClib/README.md">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/RTClib/code-of-conduct.md">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/RTClib/examples/DS3231_alarm/DS3231_alarm.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/RTClib/examples/customWire_DS3231onSAMD21/.metro_m4.test.only">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/RTClib/examples/customWire_DS3231onSAMD21/customWire_DS3231onSAMD21.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/RTClib/examples/datecalc/datecalc.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/RTClib/examples/ds1307/ds1307.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/RTClib/examples/ds1307SqwPin/ds1307SqwPin.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/RTClib/examples/ds1307nvram/ds1307nvram.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/RTClib/examples/ds3231/ds3231.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/RTClib/examples/interrupts1Hz/.leonardo.test.only">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/RTClib/examples/interrupts1Hz/.mega2560.test.only">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/RTClib/examples/interrupts1Hz/.uno.test.only">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/RTClib/examples/interrupts1Hz/interrupts1Hz.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/RTClib/examples/pcf8523/pcf8523.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/RTClib/examples/pcf8523Countdown/pcf8523Countdown.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/RTClib/examples/pcf8563/pcf8563.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/RTClib/examples/pcf8563_interrupt/pcf8563_interrupt.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/RTClib/examples/softrtc/softrtc.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/RTClib/examples/timestamp/timestamp.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/RTClib/examples/toString/toString.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/RTClib/keywords.txt">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/RTClib/library.properties">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/RTClib/license.txt">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/RTClib/src/RTClib.cpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/RTClib/src/RTClib.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/TinyWireM/.github/ISSUE_TEMPLATE.md">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/TinyWireM/.github/PULL_REQUEST_TEMPLATE.md">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/TinyWireM/.github/workflows/githubci.yml">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/TinyWireM/.piopm">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/TinyWireM/README.md">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/TinyWireM/TinyWireM.cpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/TinyWireM/TinyWireM.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/TinyWireM/USI_TWI_Master.cpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/TinyWireM/USI_TWI_Master.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/TinyWireM/examples/Tiny85_Temp/Tiny85_Temp.pde">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/TinyWireM/examples/Tiny85_Temp_LCD/Tiny85_Temp_LCD.pde">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/TinyWireM/examples/Tiny85_Temp_LCD_RTC/Tiny85_Temp_LCD_RTC.pde">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/TinyWireM/keywords.txt">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/TinyWireM/library.properties">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/integrity.dat">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/lib/arduinoWebSockets-master.zip">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/lib/arduinoWebSockets-master/.clang-format">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/lib/arduinoWebSockets-master/.github/workflows/main.yml">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/lib/arduinoWebSockets-master/.gitignore">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/lib/arduinoWebSockets-master/.travis.yml">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/lib/arduinoWebSockets-master/README.md">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/lib/arduinoWebSockets-master/examples/Nginx/esp8266.ssl.reverse.proxy.conf">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/lib/arduinoWebSockets-master/examples/avr/WebSocketClientAVR/WebSocketClientAVR.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/lib/arduinoWebSockets-master/examples/esp32/WebSocketClient/WebSocketClient.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/lib/arduinoWebSockets-master/examples/esp32/WebSocketClientSSL/WebSocketClientSSL.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/lib/arduinoWebSockets-master/examples/esp32/WebSocketServer/WebSocketServer.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/lib/arduinoWebSockets-master/examples/esp8266/WebSocketClient/WebSocketClient.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/lib/arduinoWebSockets-master/examples/esp8266/WebSocketClientSSL/WebSocketClientSSL.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/lib/arduinoWebSockets-master/examples/esp8266/WebSocketClientSSLWithCA/WebSocketClientSSLWithCA.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/lib/arduinoWebSockets-master/examples/esp8266/WebSocketClientSocketIO/WebSocketClientSocketIO.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/lib/arduinoWebSockets-master/examples/esp8266/WebSocketClientSocketIOack/WebSocketClientSocketIOack.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/lib/arduinoWebSockets-master/examples/esp8266/WebSocketClientStomp/WebSocketClientStomp.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/lib/arduinoWebSockets-master/examples/esp8266/WebSocketClientStompOverSockJs/WebSocketClientStompOverSockJs.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/lib/arduinoWebSockets-master/examples/esp8266/WebSocketServer/WebSocketServer.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/lib/arduinoWebSockets-master/examples/esp8266/WebSocketServerAllFunctionsDemo/WebSocketServerAllFunctionsDemo.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/lib/arduinoWebSockets-master/examples/esp8266/WebSocketServerFragmentation/WebSocketServerFragmentation.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/lib/arduinoWebSockets-master/examples/esp8266/WebSocketServerHooked/WebSocketServerHooked.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/lib/arduinoWebSockets-master/examples/esp8266/WebSocketServerHooked/ws-testclient.py">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/lib/arduinoWebSockets-master/examples/esp8266/WebSocketServerHttpHeaderValidation/WebSocketServerHttpHeaderValidation.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/lib/arduinoWebSockets-master/examples/esp8266/WebSocketServer_LEDcontrol/WebSocketServer_LEDcontrol.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/lib/arduinoWebSockets-master/examples/particle/ParticleWebSocketClient/application.cpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/lib/arduinoWebSockets-master/library.json">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/lib/arduinoWebSockets-master/library.properties">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/lib/arduinoWebSockets-master/src/SocketIOclient.cpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/lib/arduinoWebSockets-master/src/SocketIOclient.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/lib/arduinoWebSockets-master/src/WebSockets.cpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/lib/arduinoWebSockets-master/src/WebSockets.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/lib/arduinoWebSockets-master/src/WebSockets4WebServer.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/lib/arduinoWebSockets-master/src/WebSocketsClient.cpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/lib/arduinoWebSockets-master/src/WebSocketsClient.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/lib/arduinoWebSockets-master/src/WebSocketsServer.cpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/lib/arduinoWebSockets-master/src/WebSocketsServer.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/lib/arduinoWebSockets-master/src/WebSocketsVersion.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/lib/arduinoWebSockets-master/src/libb64/cdecode.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/lib/arduinoWebSockets-master/src/libb64/cdecode_inc.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/lib/arduinoWebSockets-master/src/libb64/cencode.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/lib/arduinoWebSockets-master/src/libb64/cencode_inc.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/lib/arduinoWebSockets-master/src/libsha1/libsha1.c">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/lib/arduinoWebSockets-master/src/libsha1/libsha1.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/lib/arduinoWebSockets-master/tests/webSocket.html">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/lib/arduinoWebSockets-master/tests/webSocketServer/index.js">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/lib/arduinoWebSockets-master/tests/webSocketServer/package.json">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/lib/arduinoWebSockets-master/travis/common.sh">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/lib/arduinoWebSockets-master/travis/version.py">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/src/anemometer.cpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/src/batterySaving.cpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/src/battery_level.cpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/src/config.cpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/src/connection.cpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/src/fileSystem.cpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/src/humiditySensor.cpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/src/lightSensor.cpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/src/logger.cpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/src/main.cpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/src/monitorProcess.cpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/src/pressureSensor.cpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/src/realTimeClock.cpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/src/sdcard.cpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/src/utils.cpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/src/webServerProcess.cpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/CMakeListsPrivate.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

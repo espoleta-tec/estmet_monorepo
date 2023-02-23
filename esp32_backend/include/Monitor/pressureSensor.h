@@ -5,10 +5,10 @@
 #ifndef BACKEND_PRESSURESENSOR_H
 #define BACKEND_PRESSURESENSOR_H
 
-
-#include "Adafruit_BMP085.h"
+#include "Arduino.h"
 
 void pressureStart();
+
 String pressureRead();
 
 #endif //BACKEND_PRESSURESENSOR_H
