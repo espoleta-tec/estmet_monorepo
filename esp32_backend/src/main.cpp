@@ -35,8 +35,5 @@ void setup() {
 }
 
 void loop() {
-//    Serial.print(digitalRead(POWER_PIN));
-//    Serial.print(" ");
-//    Serial.println(digitalRead(LOGO_LED));
     delay(1000000);
 }
