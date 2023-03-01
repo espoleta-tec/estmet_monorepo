@@ -50,7 +50,7 @@ bool validateHttpHeader(String headerName, String headerValue) {
 	return valid;
 }
 
-void setup() {
+[[noreturn]] void setup() {
     // USE_SERIAL.begin(921600);
     USE_SERIAL.begin(115200);
 

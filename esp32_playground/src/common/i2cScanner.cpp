@@ -2,7 +2,7 @@
 // Created by Lazaro O'Farrill on 23/02/2023.
 //
 
-#include "../include/i2cScanner.h"
+#include "i2cScanner.h"
 #include <Wire.h>
 #include "Arduino.h"
 

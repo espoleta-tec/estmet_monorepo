@@ -5,14 +5,34 @@
 #ifndef BACKEND_HUMIDITYSENSOR_H
 #define BACKEND_HUMIDITYSENSOR_H
 
-#include "pinout.h"
-#include "Logger/logger.h"
-#include "DHTesp.h"
+#include "Arduino.h"
 
-extern DHTesp dht;
+namespace Vortice {
+    typedef struct TempAndHumidity {
+        float temperature;
+        float humidity;
+    } TempAndHumidity;
 
-void humidityStart();
+    class HumidityReader {
+    public:
+        virtual void humidityStart();
 
-String humidityRead();
+        String humidityRead();
+
+    private:
+        virtual TempAndHumidity getTemperatureAndHumidity();
+
+        float getHeatIndex(float temperatureInCelsius, float relativeHumidity);
+
+        float getDewPoint(float tempInCelsisu, float relativeHumidity);
+    };
+
+    void humidityStart();
+
+    String humidityRead();
+}
+
+#define USE_DHT20
+//#define USE_DHT11
 
 #endif //BACKEND_HUMIDITYSENSOR_H

@@ -9,6 +9,8 @@
 #include "WebServer/connection.h"
 #include "ArduinoJson.h"
 
+using namespace Vortice;
+
 WebServer server(80);
 WebSocketsServer ws(81);
 
@@ -505,11 +507,11 @@ void webSocketEvent(byte num, WStype_t type, uint8_t *payload, size_t length) {
             data += lightRead();
             data += pressureRead();
             data += humidityRead();
-            data += anem::getWindValues();
-            data += anem::getWaterCount();
-            data += anem::getLightnings();
+            data += nano::getWindValues();
+            data += nano::getWaterCount();
+            data += nano::getLightnings();
             data += getBatteryLevelString();
-            anem::dele();
+            nano::deleteBuffer();
 
             data += timeRead();
             logData(data);

@@ -19,7 +19,7 @@
 extern uint8_t readingsBuffer[400];
 
 
-namespace anem {
+namespace nano {
 //    void IRAM_ATTR countPulse();
 
 //    void anemometerStart();
@@ -37,7 +37,7 @@ namespace anem {
 
     String getWaterCount();
 
-    void dele();
+    void deleteBuffer();
 
     void readBuff();
 

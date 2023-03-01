@@ -3,6 +3,7 @@
 #include "WebServer/webServerProcess.h"
 #include "Monitor/monitorProcess.h"
 #include "pinout.h"
+#include "utils/i2cScanner.h"
 
 
 void setup() {
@@ -10,6 +11,7 @@ void setup() {
     if (!Wire.begin()) {
         Serial.println("Failed to init i2c interface");
     }
+
 
     pinMode(LED_BUILTIN, OUTPUT);
     pinMode(LOGO_LED, OUTPUT);
@@ -31,6 +33,7 @@ void setup() {
     digitalWrite(PRO_MINI_RESET, LOW);
     delay(50);
     digitalWrite(PRO_MINI_RESET, HIGH);
+
     monitorSetup();
 }
 

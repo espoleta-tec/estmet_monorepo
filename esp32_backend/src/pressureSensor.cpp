@@ -14,7 +14,7 @@ bool ok = false;
 
 void pressureStart() {
     if (!bmp.begin()) {
-        Serial.println("Could not find a valid BMP085 sensor, check wiring!");
+        Serial.println("Could not find a valid BMP280 sensor, check wiring!");
         Serial.println(bmp.sensorID(), 16);
         return;
     }

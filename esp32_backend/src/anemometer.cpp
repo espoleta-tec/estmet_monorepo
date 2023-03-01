@@ -58,7 +58,7 @@ uint8_t readingsBuffer[400] = {0};
     }
 }
 
-uint16_t anem::getCursor() {
+uint16_t nano::getCursor() {
     Wire.beginTransmission(SLAVE_ADDR);
     Wire.write(LAST_POS);
     Wire.endTransmission();
@@ -71,7 +71,7 @@ uint16_t anem::getCursor() {
     return bigEnd << 8 | smallEnd;
 }
 
-void anem::readBurst() {
+void nano::readBurst() {
     Wire.beginTransmission(SLAVE_ADDR);
     Wire.write(BURST_DATA);
     Wire.endTransmission();
@@ -97,7 +97,7 @@ void anem::readBurst() {
     Serial.println();
 }
 
-uint8_t anem::avail() {
+uint8_t nano::avail() {
     Wire.beginTransmission(SLAVE_ADDR);
     Wire.write(AVAILABLE);
     Wire.endTransmission();
@@ -110,7 +110,7 @@ uint8_t anem::avail() {
     return mm;
 }
 
-void anem::dele() {
+void nano::deleteBuffer() {
     Wire.beginTransmission(SLAVE_ADDR);
     Wire.write(DELETE_BUF);
     Wire.endTransmission();
@@ -123,7 +123,7 @@ void anem::dele() {
     }
 }
 
-void anem::readBuff() {
+void nano::readBuff() {
     for (uint8_t j = 0; j < 30; j++) {
 
         Wire.beginTransmission(SLAVE_ADDR);
@@ -154,7 +154,7 @@ void anem::readBuff() {
 
 }
 
-String anem::getWindValues() {
+String nano::getWindValues() {
     String val = "";
     readBuff();
 
@@ -222,7 +222,7 @@ String anem::getWindValues() {
     return val;
 }
 
-String anem::getWaterCount() {
+String nano::getWaterCount() {
     readBurst();
     if (waterCount == 0xFFFF) return "";
 
@@ -230,7 +230,7 @@ String anem::getWaterCount() {
     return ",water_count=" + String(waterCount * 0.02); //mm of water
 }
 
-String anem::getLightnings() {
+String nano::getLightnings() {
     String val = "";
 
     readBurst();

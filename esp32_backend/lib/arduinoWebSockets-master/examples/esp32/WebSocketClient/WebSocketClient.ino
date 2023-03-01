@@ -67,7 +67,7 @@ void webSocketEvent(WStype_t type, uint8_t * payload, size_t length) {
 
 }
 
-void setup() {
+[[noreturn]] void setup() {
 	// USE_SERIAL.begin(921600);
 	USE_SERIAL.begin(115200);
 

@@ -72,6 +72,8 @@
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/WiFiClientSecure/src"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/Ethernet/src"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/WiFi/src"/>
+					<Add directory="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/SparkFun AS3935 Lightning Detector Arduino Library/src"/>
+					<Add directory="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/DHT20"/>
 					<Add directory="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BMP280 Library"/>
 					<Add directory="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit Unified Sensor"/>
 					<Add directory="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src"/>
@@ -342,6 +344,8 @@
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/WiFiClientSecure/src"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/Ethernet/src"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/WiFi/src"/>
+					<Add directory="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/SparkFun AS3935 Lightning Detector Arduino Library/src"/>
+					<Add directory="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/DHT20"/>
 					<Add directory="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BMP280 Library"/>
 					<Add directory="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit Unified Sensor"/>
 					<Add directory="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/ArduinoJson/src"/>
@@ -1438,6 +1442,144 @@
 		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/DHT sensor library for ESPx/library.properties">
 			<Option target="Z_DUMMY_TARGET"/>
 		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/DHT20/.arduino-ci.yml">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/DHT20/.git/.piopm">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/DHT20/.git/hooks/applypatch-msg.sample">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/DHT20/.git/hooks/commit-msg.sample">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/DHT20/.git/hooks/fsmonitor-watchman.sample">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/DHT20/.git/hooks/post-update.sample">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/DHT20/.git/hooks/pre-applypatch.sample">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/DHT20/.git/hooks/pre-commit.sample">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/DHT20/.git/hooks/pre-merge-commit.sample">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/DHT20/.git/hooks/pre-push.sample">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/DHT20/.git/hooks/pre-rebase.sample">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/DHT20/.git/hooks/pre-receive.sample">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/DHT20/.git/hooks/prepare-commit-msg.sample">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/DHT20/.git/hooks/push-to-checkout.sample">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/DHT20/.git/hooks/update.sample">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/DHT20/.git/objects/pack/pack-e7c28d8f5d8b85d7f6a616744be44c6c5906bad0.idx">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/DHT20/.git/objects/pack/pack-e7c28d8f5d8b85d7f6a616744be44c6c5906bad0.pack">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/DHT20/.git/refs/tags/0.2.2">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/DHT20/.github/FUNDING.yml">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/DHT20/.github/workflows/arduino-lint.yml">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/DHT20/.github/workflows/arduino_test_runner.yml">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/DHT20/.github/workflows/jsoncheck.yml">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/DHT20/CHANGELOG.md">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/DHT20/DHT20.cpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/DHT20/DHT20.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/DHT20/README.md">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/DHT20/documents/data sheet dht20  a1.pdf">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/DHT20/examples/DHT20/DHT20.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/DHT20/examples/DHT20/performance_0.1.2.txt">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/DHT20/examples/DHT20/performance_0.1.3.txt">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/DHT20/examples/DHT20/performance_0.1.4.txt">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/DHT20/examples/DHT20/performance_0.2.0.txt">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/DHT20/examples/DHT20_I2C_speed/DHT20_I2C_speed.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/DHT20/examples/DHT20_I2C_speed/performance_0.2.2.txt">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/DHT20/examples/DHT20_async/DHT20_async.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/DHT20/examples/DHT20_lcd/.arduino-ci.yml">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/DHT20/examples/DHT20_lcd/DHT20_lcd.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/DHT20/examples/DHT20_offset/DHT20_offset.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/DHT20/examples/DHT20_plotter/DHT20_plotter.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/DHT20/examples/DHT20_read_status/DHT20_read_status.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/DHT20/examples/DHT20_test_esp/.arduino-ci.yml">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/DHT20/examples/DHT20_test_esp/DHT20_test_esp.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/DHT20/keywords.txt">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/DHT20/library.json">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/DHT20/library.properties">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/DHT20/test/unit_test_001.cpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
 		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/RTClib/.github/ISSUE_TEMPLATE.md">
 			<Option target="Z_DUMMY_TARGET"/>
 		</Unit>
@@ -1529,6 +1671,99 @@
 			<Option target="Z_DUMMY_TARGET"/>
 		</Unit>
 		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/RTClib/src/RTClib.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/SparkFun AS3935 Lightning Detector Arduino Library/.git/.piopm">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/SparkFun AS3935 Lightning Detector Arduino Library/.git/hooks/applypatch-msg.sample">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/SparkFun AS3935 Lightning Detector Arduino Library/.git/hooks/commit-msg.sample">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/SparkFun AS3935 Lightning Detector Arduino Library/.git/hooks/fsmonitor-watchman.sample">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/SparkFun AS3935 Lightning Detector Arduino Library/.git/hooks/post-update.sample">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/SparkFun AS3935 Lightning Detector Arduino Library/.git/hooks/pre-applypatch.sample">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/SparkFun AS3935 Lightning Detector Arduino Library/.git/hooks/pre-commit.sample">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/SparkFun AS3935 Lightning Detector Arduino Library/.git/hooks/pre-merge-commit.sample">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/SparkFun AS3935 Lightning Detector Arduino Library/.git/hooks/pre-push.sample">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/SparkFun AS3935 Lightning Detector Arduino Library/.git/hooks/pre-rebase.sample">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/SparkFun AS3935 Lightning Detector Arduino Library/.git/hooks/pre-receive.sample">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/SparkFun AS3935 Lightning Detector Arduino Library/.git/hooks/prepare-commit-msg.sample">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/SparkFun AS3935 Lightning Detector Arduino Library/.git/hooks/push-to-checkout.sample">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/SparkFun AS3935 Lightning Detector Arduino Library/.git/hooks/update.sample">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/SparkFun AS3935 Lightning Detector Arduino Library/.git/objects/pack/pack-4111adeda031a515dd8057bdfe987f15bcbe31a5.idx">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/SparkFun AS3935 Lightning Detector Arduino Library/.git/objects/pack/pack-4111adeda031a515dd8057bdfe987f15bcbe31a5.pack">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/SparkFun AS3935 Lightning Detector Arduino Library/.git/refs/tags/v1.4.3">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/SparkFun AS3935 Lightning Detector Arduino Library/.gitignore">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/SparkFun AS3935 Lightning Detector Arduino Library/ISSUE_TEMPLATE.md">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/SparkFun AS3935 Lightning Detector Arduino Library/LICENSE.md">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/SparkFun AS3935 Lightning Detector Arduino Library/README.md">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/SparkFun AS3935 Lightning Detector Arduino Library/examples/Example1_BasicLightning_I2C/Example1_BasicLightning_I2C.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/SparkFun AS3935 Lightning Detector Arduino Library/examples/Example1_BasicLightning_SPI/Example1_BasicLightning_SPI.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/SparkFun AS3935 Lightning Detector Arduino Library/examples/Example2_More_Lightning_Features_I2C/Example2_More_Lightning_Features_I2C.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/SparkFun AS3935 Lightning Detector Arduino Library/examples/Example2_More_Lightning_Features_SPI/Example2_More_Lightning_Features_SPI.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/SparkFun AS3935 Lightning Detector Arduino Library/examples/Example3_Tune_Antenna_I2C/Example3_Tune_Antenna_I2C.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/SparkFun AS3935 Lightning Detector Arduino Library/examples/Example3_Tune_Antenna_SPI/Example3_Tune_Antenna_SPI.ino">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/SparkFun AS3935 Lightning Detector Arduino Library/keywords.txt">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/SparkFun AS3935 Lightning Detector Arduino Library/library.properties">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/SparkFun AS3935 Lightning Detector Arduino Library/src/SparkFun_AS3935.cpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/SparkFun AS3935 Lightning Detector Arduino Library/src/SparkFun_AS3935.h">
 			<Option target="Z_DUMMY_TARGET"/>
 		</Unit>
 		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/TinyWireM/.github/ISSUE_TEMPLATE.md">
@@ -1741,13 +1976,16 @@
 		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/src/fileSystem.cpp">
 			<Option target="Z_DUMMY_TARGET"/>
 		</Unit>
-		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/src/humiditySensor.cpp">
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/src/humidity/common.cpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/src/humidity/dht11.cpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/src/humidity/dht20.cpp">
 			<Option target="Z_DUMMY_TARGET"/>
 		</Unit>
 		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/src/i2cScanner.cpp">
-			<Option target="Z_DUMMY_TARGET"/>
-		</Unit>
-		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/src/i2cScanner.h">
 			<Option target="Z_DUMMY_TARGET"/>
 		</Unit>
 		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/src/lightSensor.cpp">

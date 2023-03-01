@@ -1,11 +1,15 @@
 //
 // Created by lazt on 4/23/21.
 //
-
 #include "Monitor/humiditySensor.h"
 
-//DHT dht(DHTPIN, DHTTYPE);
-DHTesp dht;
+#ifdef USE_DHT11
+
+#include "pinout.h"
+#include "DHTesp.h"
+
+//DHT dht20(DHTPIN, DHTTYPE);
+DHTesp dht20;
 
 const double TEMP_B0 = -2.4722766403;
 const double TEMP_B1 = 1.0547831582;
@@ -14,15 +18,15 @@ const double HUMIDITY_B1 = 1.2579750347;
 
 
 void humidityStart() {
-    dht.setup(DHTPIN, DHTesp::DHT11);
+    dht20.setup(DHTPIN, DHTesp::DHT22);
 }
 
 String humidityRead() {
     String vars = "";
 
-    TempAndHumidity newValues = dht.getTempAndHumidity();
-    if (dht.getStatus() != 0) {
-        Serial.println("DHT11 error status: " + String(dht.getStatusString()));
+    TempAndHumidity newValues = dht20.getTempAndHumidity();
+    if (dht20.getStatus() != 0) {
+        Serial.println("DHT11 error status: " + String(dht20.getStatusString()));
         Serial.println("Failed to read from DHT sensor!");
         return vars;
     }
@@ -38,8 +42,8 @@ String humidityRead() {
     vars += ",humidity=" + String(h);
     vars += ",temperature_c=" + String(t);
 
-    double hic = dht.computeHeatIndex(newValues.temperature, newValues.humidity);
-    double dewPoint = dht.computeDewPoint(t, h);
+    double hic = dht20.computeHeatIndex(newValues.temperature, newValues.humidity);
+    double dewPoint = dht20.computeDewPoint(t, h);
 
 
     vars += ",heatIndex_c=" + String(hic);
@@ -53,10 +57,12 @@ String humidityRead() {
     Serial.print(F("°C "));
     Serial.print(F("Heat index: "));
     Serial.print(hic);
-    Serial.print("dewPoint: ");
+    Serial.print("computeDewPoint: ");
     Serial.print(dewPoint);
     Serial.println(F("°C "));
 
 
     return vars;
 }
+
+#endif
