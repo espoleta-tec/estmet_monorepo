@@ -1,4 +1,4 @@
-#include <Wire.h>
+#include "Wire.h"
 #include "Arduino.h"
 #include "WebServer/webServerProcess.h"
 #include "Monitor/monitorProcess.h"
@@ -12,9 +12,9 @@ void setup() {
         Serial.println("Failed to init i2c interface");
     }
 
-    while (true) {
-        scanI2C();
-    }
+//    while (true) {
+//        scanI2C();
+//    }
 
     pinMode(LED_BUILTIN, OUTPUT);
     pinMode(LOGO_LED, OUTPUT);
