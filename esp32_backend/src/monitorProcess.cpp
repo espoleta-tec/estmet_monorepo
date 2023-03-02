@@ -4,6 +4,7 @@
 #include "Arduino.h"
 #include "FileSystem/fileSystem.h"
 #include "Monitor/anemometer.h"
+#include "Monitor/lightningDetector.h"
 
 using namespace Vortice;
 
@@ -17,6 +18,7 @@ void monitorSetup() {
     Serial.println(LOG_INTERVAL);
     humidityStart();
     lightStart();
+    startLightning();
     pressureStart();
     timeStart();
     xTaskCreatePinnedToCore(monitorLoop, "MONITOR_TSK", 50000,

@@ -1991,6 +1991,9 @@
 		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/src/lightSensor.cpp">
 			<Option target="Z_DUMMY_TARGET"/>
 		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/src/lightning/common.cpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
 		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/src/logger.cpp">
 			<Option target="Z_DUMMY_TARGET"/>
 		</Unit>

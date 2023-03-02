@@ -12,6 +12,9 @@ void setup() {
         Serial.println("Failed to init i2c interface");
     }
 
+    while (true) {
+        scanI2C();
+    }
 
     pinMode(LED_BUILTIN, OUTPUT);
     pinMode(LOGO_LED, OUTPUT);
