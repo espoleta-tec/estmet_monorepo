@@ -3,14 +3,18 @@
 //
 
 #include "Monitor/realTimeClock.h"
+#include "utils/utils.h"
 
 RTC_DS1307 RTC;
 
 
 void timeStart() {
+    const char *rtcLabel = "RTC";
     RTC.begin();
     if (!RTC.isrunning()) {
-        Serial.println("RTC is NOT running!");
+        Vortice::printDiagnostic(rtcLabel, "NOT RUNNING");
+    } else {
+        Vortice::printDiagnostic(rtcLabel, Vortice::Status[Vortice::OK]);
     }
 }
 

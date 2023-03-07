@@ -3,6 +3,7 @@
 //
 
 #include "FileSystem/sdcard.h"
+#include "utils/utils.h"
 
 bool cardMounted = false;
 
@@ -10,28 +11,37 @@ bool cardMounted = false;
 
 void initSDCard() {
     cardMounted = SD.begin(SD_PIN);
+    const char *sdCardLabel = "SD Card Status";
     if (!cardMounted) {
-        Serial.println("Card mount failed");
+        Vortice::printDiagnostic(sdCardLabel, "FAILED TO MOUNT");
         return;
     }
 
     uint8_t cardType = SD.cardType();
 
     if (cardType == CARD_NONE) {
-        Serial.println("No SD card attached");
+        Vortice::printDiagnostic(sdCardLabel, "NOT ATTACHED");
         return;
     }
-    Serial.print("SD Card Type: ");
+    const char *sdCardTypeLabel = "SD Card Type";
+    String sdCardType = "UNKNOWN";
+
     if (cardType == CARD_MMC) {
-        Serial.println("MMC");
+        sdCardType = "MMC";
     } else if (cardType == CARD_SD) {
-        Serial.println("SDSC");
+        sdCardType = "SDSC";
     } else if (cardType == CARD_SDHC) {
-        Serial.println("SDHC");
-    } else {
-        Serial.println("UNKNOWN");
+        sdCardType = "SDHC";
     }
+    Vortice::printDiagnostic(sdCardTypeLabel, sdCardType);
+
+    const char *sdCardSizeLabel = "SD Card Size";
 
     uint64_t cardSize = SD.cardSize() / (1024 * 1024);
-    Serial.printf("SD Card Size: %lluMB\n", cardSize);
+    uint64_t cardUsed = SD.usedBytes() / (1024 * 1024);
+
+    char *label = (char *) malloc(sizeof(char) * 20);
+    sprintf(label, "%lu/%luMB used", cardUsed, cardSize);
+    Vortice::printDiagnostic(sdCardSizeLabel, label);
+    free(label);
 }

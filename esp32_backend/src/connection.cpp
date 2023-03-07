@@ -363,7 +363,6 @@ void onFinishUpload() {
     server.sendHeader("Connection", "close");
     passCors();
     server.send(200, "text/plain", (Update.hasError()) ? "FAIL" : "OK");
-    writeLog();
     delay(500);
     ESP.restart();
 }

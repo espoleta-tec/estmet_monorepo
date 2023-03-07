@@ -4,11 +4,6 @@
 
 #include "Logger/logger.h"
 
-String dataToLog[LOG_SPLIT];
-int logCounter = 0;
-long loggedLast = 0;
-
-
 void startLogs() {
     if (!cardMounted) return;
     if (!SD.mkdir("/logs")) {
@@ -16,76 +11,34 @@ void startLogs() {
     };
 }
 
-
-int lastLog() {
-    File logRoot = SD.open("/logs");
-    if (!logRoot) {
-        Serial.println("couldn't open logs directory");
-        return -1;
-    }
-    int count = 0;
-    while (true) {
-        File entry = logRoot.openNextFile();
-        if (!entry) {
-            break;
-        }
-        count++;
-        // Serial.println(entry.name());
-    }
-    logRoot.close();
-
-    return count;
-}
-
-
-void writeLog() {
-    if (!cardMounted) {
-        Serial.println("Card not mounted");
-        return;
-    }
-    File log = SD.open("/logs/" + String(lastLog() + 1), "w");
-    if (!log) {
-        Serial.println("couldn't open file for writing");
-        return;
-    }
-
-    for (int i = 0; i < logCounter; i++) {
-        log.println(dataToLog[i]);
-    }
-
-    Serial.println("data logged succesfully");
-    log.close();
-}
-
-
 void logData(String data) {
     ws.broadcastTXT(data);
 
     DateTime now = RTC.now();
-    String path = "/logs/";
-    path += now.year();
-    path += "-";
-    path += now.month();
-    path += "-";
-    path += now.day();
+    String todayLogsPath = "/logs/";
+    todayLogsPath += now.year();
+    todayLogsPath += "-";
+    todayLogsPath += now.month();
+    todayLogsPath += "-";
+    todayLogsPath += now.day();
 
-    String path2 = "/logs/global";
+    String globalLogsPath = "/logs/global";
 
-    File log = SD.open(path, FILE_APPEND);
-    if (!log) {
+    File todayLogs = SD.open(todayLogsPath, FILE_APPEND);
+    if (!todayLogs) {
         Serial.println("couldn't open file for writing");
         return;
     }
 
-    File log2 = SD.open(path2, FILE_APPEND);
-    if (!log || !log2) {
+    File allLogs = SD.open(globalLogsPath, FILE_APPEND);
+    if (!todayLogs || !allLogs) {
         Serial.println("couldn't open file for writing");
         return;
     }
-    log.println(data);
-    log2.println(data);
+    todayLogs.println(data);
+    allLogs.println(data);
     Serial.println("data logged successfully");
-    log.close();
-    log2.close();
+    todayLogs.close();
+    allLogs.close();
 }
 

@@ -4,6 +4,7 @@
 
 #include "Monitor/pressureSensor.h"
 #include "Adafruit_BMP280.h"
+#include "utils/utils.h"
 
 Adafruit_BMP280 bmp;
 
@@ -13,10 +14,16 @@ const double PRESSURE_B1 = 1;
 bool ok = false;
 
 void pressureStart() {
+    const char *bmp280Label = "Pressure (BMP280)";
+
     if (!bmp.begin()) {
-        Serial.println("Could not find a valid BMP280 sensor, check wiring!");
-        Serial.println(bmp.sensorID(), 16);
+        Vortice::printDiagnostic(bmp280Label,
+                                 Vortice::Status[Vortice::FAILED_TO_START],
+                                 "Could not find a valid BMP280");
         return;
+    } else {
+        Vortice::printDiagnostic(bmp280Label,
+                                 Vortice::Status[Vortice::OK]);
     }
     ok = true;
 }

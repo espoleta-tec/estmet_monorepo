@@ -3,6 +3,7 @@
 //
 #include "Monitor/lightningDetector.h"
 #include "SparkFun_AS3935.h"
+#include "utils/utils.h"
 
 #define AS3935_ADDR 0x03
 #define INDOOR 0x12
@@ -13,7 +14,10 @@
 SparkFun_AS3935 lightning(AS3935_ADDR);
 
 void Vortice::startLightning() {
+    const char *lightningLabel = "Lightning (AS3935)";
     if (lightning.begin()) {
-        Serial.println("Lightning sensor started correctly.");
-    } else { Serial.println("Error starting lightning sensor."); }
+        Vortice::printDiagnostic(lightningLabel, Vortice::Status[OK]);
+    } else {
+        Vortice::printDiagnostic(lightningLabel, Vortice::Status[Vortice::FAILED_TO_START]);
+    }
 }

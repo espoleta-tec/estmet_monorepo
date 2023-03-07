@@ -3,30 +3,39 @@
 #include "WebServer/webServerProcess.h"
 #include "Monitor/monitorProcess.h"
 #include "pinout.h"
-#include "utils/i2cScanner.h"
+#include "utils/utils.h"
 
+
+using namespace Vortice;
 
 void setup() {
     Serial.begin(9600);
+    Serial.flush();
+    Vortice::printDiagnosticsHeader();
+
+
+    const char *i2cLabel = "I2C";
+
     if (!Wire.begin()) {
-        Serial.println("Failed to init i2c interface");
+        printDiagnostic(i2cLabel, Status[FAILED_TO_START]);
+    } else {
+        printDiagnostic(i2cLabel, Status[Vortice::OK]);
     }
 
-//    while (true) {
-//        scanI2C();
-//    }
 
     pinMode(LED_BUILTIN, OUTPUT);
     pinMode(LOGO_LED, OUTPUT);
     pinMode(PRO_MINI_RESET, OUTPUT);
+    pinMode(POWER_PIN, INPUT);
 
-
-    Serial.println("update 0");
     initFileSystem();
     loadConf();
     initSDCard();
     supplyState = digitalRead(POWER_PIN);
-    if (supplyState || true) {
+    Vortice::printDiagnostic("Power Supply", supplyState ? "ON" : "OFF");
+    resetSetup();
+
+    if (supplyState) {
         serverSetup();
         digitalWrite(LOGO_LED, LOW);
     } else {
@@ -38,6 +47,7 @@ void setup() {
     digitalWrite(PRO_MINI_RESET, HIGH);
 
     monitorSetup();
+    Vortice::printDivider();
 }
 
 void loop() {

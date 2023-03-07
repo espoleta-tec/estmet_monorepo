@@ -5,6 +5,7 @@
 #include "FileSystem/fileSystem.h"
 #include "Monitor/anemometer.h"
 #include "Monitor/lightningDetector.h"
+#include "utils/utils.h"
 
 using namespace Vortice;
 
@@ -14,8 +15,8 @@ u_long LOG_INTERVAL = 5 * 1000;
 
 void monitorSetup() {
     LOG_INTERVAL = (long) getNumberVal(doc["sensors"]["readFreq"]) * 60 * 1000;
-    Serial.print("Read freq is ");
-    Serial.println(LOG_INTERVAL);
+    Vortice::printDiagnostic("LOG INTERVALS", String(LOG_INTERVAL));
+
     humidityStart();
     lightStart();
     startLightning();
@@ -42,7 +43,7 @@ void monitorSetup() {
 
         data += timeRead();
         logData(data);
-        Serial.println(millis() / 1000);
+
         delay(5e3);
 //        if (batterySavingActivated && !digitalRead(POWER_PIN)) {
 //            esp_deep_sleep(LOG_INTERVAL * 1000);

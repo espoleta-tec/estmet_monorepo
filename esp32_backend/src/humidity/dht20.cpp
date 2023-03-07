@@ -9,14 +9,17 @@
 using namespace Vortice;
 
 #include "DHT20.h"
+#include "utils/utils.h"
 
 DHT20 dht20;
 
 void HumidityReader::humidityStart() {
+    const char *dht20Label = "Temp and Humidity (DHT20)";
+
     if (dht20.isConnected()) {
-        Serial.println("DHT20 is connected correctly.");
+        Vortice::printDiagnostic(dht20Label, Status[OK]);
     } else {
-        Serial.printf("Fail to connect to DHT20 at %x", dht20.getAddress());
+        Vortice::printDiagnostic(dht20Label, Status[FAILED_TO_START]);
     }
 }
 

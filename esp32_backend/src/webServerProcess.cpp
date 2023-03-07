@@ -7,6 +7,7 @@
 #include <WebServer/connection.h>
 #include <Logger/logger.h>
 #include "WebServer/webServerProcess.h"
+#include "utils/utils.h"
 
 
 TaskHandle_t serverTask;
@@ -41,6 +42,7 @@ void serverSetup() {
 
 void resetSetup() {
     pinMode(RESET_PIN, INPUT);
+    Vortice::printDiagnostic("RESET PIN", digitalRead(RESET_PIN) ? "HIGH" : "LOW");
     xTaskCreatePinnedToCore(
             resetLoop,
             "resetTask",
@@ -54,9 +56,9 @@ void resetSetup() {
 
 void resetLoop(void *) {
     while (true) {
-        if (supplyState != digitalRead(POWER_PIN)) {
-            ESP.restart();
-        }
+//        if (supplyState != digitalRead(POWER_PIN)) {
+//            ESP.restart();
+//        }
 
         if (!digitalRead(RESET_PIN)) {
             int i;
@@ -69,7 +71,6 @@ void resetLoop(void *) {
             if (i == 10) {
                 triggerReset();
             }
-
         }
         delay(10);
     }

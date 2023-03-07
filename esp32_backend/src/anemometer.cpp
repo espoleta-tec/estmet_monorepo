@@ -135,23 +135,9 @@ void nano::readBuff() {
 
         for (uint8_t i = 0; i < 12; i++) {
             readingsBuffer[12 * j + i] = Wire.read();
-            if (i % 8 == 0) {
-                Serial.println(" ");
-                Serial.print(j);
-                Serial.print("--");
-            } else Serial.print(" ");
-            Serial.print(readingsBuffer[12 * j + i]);
         }
 
     }
-//    for (int i = 0; i < 360; i++) {
-//        Serial.printf("%d\t", readingsBuffer[i]);
-//    }
-    //Serial.print(readingsBuffer[10]);
-    Serial.println(" ");
-    //Serial.print(readingsBuffer[0xBF]);
-    Serial.println("------");
-
 }
 
 String nano::getWindValues() {
@@ -186,7 +172,6 @@ String nano::getWindValues() {
         mostCommonDirections[readingsBuffer[i + 1] - 1]++;
     }
     for (int i = 0; i < sizeof(mostCommonDirections) / sizeof(*mostCommonDirections); i++) {
-        Serial.println(mostCommonDirections[i]);
         if (mostCommonDirections[i] > maxDirectionCount) {
             maxDirectionCount = mostCommonDirections[i];
             averageDirection = i + 1;

@@ -5,8 +5,29 @@
 #ifndef BACKEND_UTILS_H
 #define BACKEND_UTILS_H
 
-#include <IPAddress.h>
+#include "Arduino.h"
 
-IPAddress stringToIp();
+namespace Vortice {
+
+    enum ComponentState {
+        OK, FAILED_TO_START, ON, OFF
+    };
+    const String Status[] = {
+            "OK",
+            "FAILED_TO_START",
+            "ON",
+            "OFF"
+    };
+
+    void printDiagnosticsHeader();
+
+    void printDiagnosticsFooter();
+
+    void printDiagnostic(String component, String status, String reason = "");
+
+    void log(String data);
+
+    void printDivider();
+}
 
 #endif //BACKEND_UTILS_H

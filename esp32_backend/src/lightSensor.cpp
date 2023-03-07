@@ -3,16 +3,23 @@
 //
 
 #include "Monitor/lightSensor.h"
+#include "utils/utils.h"
 
 BH1750 lightMeter(LIGHT_SENSOR_ADDRESS);
 
 bool lightReady = false;
 
 void lightStart() {
-    if ((lightReady = lightMeter.begin(BH1750::CONTINUOUS_HIGH_RES_MODE))) {
-        Serial.println(F("BH1750 Advanced begin"));
+    const char *bh1750Label = "Light (BH1750)";
+
+    Serial.flush();
+    Serial.end();
+    lightReady = lightMeter.begin(BH1750::CONTINUOUS_HIGH_RES_MODE);
+    Serial.begin(9600);
+    if (lightReady) {
+        Vortice::printDiagnostic(bh1750Label, Vortice::Status[Vortice::OK]);
     } else {
-        Serial.println(F("Error initializing BH1750"));
+        Vortice::printDiagnostic(bh1750Label, Vortice::Status[Vortice::FAILED_TO_START]);
     }
 }
 

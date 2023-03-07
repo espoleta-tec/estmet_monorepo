@@ -3,24 +3,33 @@
 //
 
 #include "FileSystem/fileSystem.h"
+#include "utils/utils.h"
+#include "string"
 
 DynamicJsonDocument doc = DynamicJsonDocument(1024);
-
+using namespace Vortice;
 
 void initFileSystem() {
+    const char *spiffs = "SPIFFS";
+
     if (!SPIFFS.begin()) {
-        Serial.println("Couldn't init filesystem");
+        Vortice::printDiagnostic(spiffs, Vortice::Status[Vortice::FAILED_TO_START]);
     }
-//    double toMB = 1 / (1024 * 1024);
+
     ulong total = SPIFFS.totalBytes();
     ulong used = SPIFFS.usedBytes();
     double free = (double) used / (double) total * 100.0;
 
-    Serial.printf("Loading SPIFFS filesystem: \n"
-                  "Capacity: %lu\n"
-                  "Used: %lu\n"
-                  "%.2f%% used\n",
-                  total, used, free);
+    char *memoryUsage = (char *) malloc(sizeof(char) * 100);
+    sprintf(memoryUsage, "%lu/%luKB used", used / 1000, total / 1000);
+    printDiagnostic("SPIFFS", memoryUsage);
+    std::free(memoryUsage);
+
+//    Serial.printf("Loading SPIFFS filesystem: \n"
+//                  "Capacity: %lu\n"
+//                  "Used: %lu\n"
+//                  "%.2f%% used\n",
+//                  total, used, free);
 }
 
 void saveConfig() {
