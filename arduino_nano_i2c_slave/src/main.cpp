@@ -81,8 +81,7 @@ void read_sensors();
 void readWindDirection();
 
 void requestEvent() {
-    Wire.write(command);
-    return;
+
     if ((command & LIGHT_DATA) == LIGHT_DATA) {
         for (uint8_t i = 0; i < 12; i++)
             Wire.write(buffer_sensors[(command & 0x3F) * 12 + i]);
