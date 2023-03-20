@@ -44,6 +44,7 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add option="-DBMP280"/>
 					<Add option="-DPLATFORMIO=60106"/>
 					<Add option="-DARDUINO_ESP32_DEV"/>
 					<Add option="-DHAVE_CONFIG_H"/>
@@ -316,6 +317,7 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add option="-DBMP280"/>
 					<Add option="-DPLATFORMIO=60106"/>
 					<Add option="-DARDUINO_ESP32_DEV"/>
 					<Add option="-DHAVE_CONFIG_H"/>
@@ -1991,7 +1993,7 @@
 		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/src/lightSensor.cpp">
 			<Option target="Z_DUMMY_TARGET"/>
 		</Unit>
-		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/src/lightning/common.cpp">
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/src/lightning/as3935.cpp">
 			<Option target="Z_DUMMY_TARGET"/>
 		</Unit>
 		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/src/logger.cpp">
@@ -2003,7 +2005,10 @@
 		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/src/monitorProcess.cpp">
 			<Option target="Z_DUMMY_TARGET"/>
 		</Unit>
-		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/src/pressureSensor.cpp">
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/src/pressure/bmp085.cpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/src/pressure/bmp280.cpp">
 			<Option target="Z_DUMMY_TARGET"/>
 		</Unit>
 		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/src/realTimeClock.cpp">
