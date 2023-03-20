@@ -54,6 +54,9 @@ uint8_t asdf = 0;
 uint16_t temp = 0;
 byte lightnings = 0;
 
+uint32_t command_count = 0;
+
+
 unsigned long lastLightning = 0;
 
 void onLightning() {
@@ -78,7 +81,9 @@ void read_sensors();
 void readWindDirection();
 
 void requestEvent() {
-    if ((command & 0xC0) == LIGHT_DATA) {
+    Wire.write(command);
+    return;
+    if ((command & LIGHT_DATA) == LIGHT_DATA) {
         for (uint8_t i = 0; i < 12; i++)
             Wire.write(buffer_sensors[(command & 0x3F) * 12 + i]);
     }
@@ -86,18 +91,18 @@ void requestEvent() {
     if ((command) == BURST_DATA) {
         Wire.write(wind_vel);
         Wire.write(wind_dir);
-        Wire.write((uint8_t) (pluv_acc & 0xFF));
+        Wire.write((uint8_t)(pluv_acc & 0xFF));
         Wire.write(pluv_acc >> 8);
         Wire.write(lightnings);
     }
 
     if ((command) == PLUVIO_ACC) {
-        Wire.write((uint8_t) (pluv_acc & 0xFF));
+        Wire.write((uint8_t)(pluv_acc & 0xFF));
         Wire.write(pluv_acc >> 8);
     }
 
     if ((command) == LAST_POS) {
-        Wire.write((uint8_t) (lastPosition & 0xFF));
+        Wire.write((uint8_t)(lastPosition & 0xFF));
         Wire.write(lastPosition >> 8);
     }
 
@@ -119,6 +124,7 @@ void requestEvent() {
 
 void receiveEvent(int num_bytes) {
     command = Wire.read();
+    command_count++;
     // buffer_sensors[0] =command;
 }
 
@@ -164,6 +170,9 @@ void loop() {
 
     read_sensors();
     //    Serial.println(lightnings);
+    Serial.print(command);
+    Serial.print(":");
+    Serial.print(command_count);
     Serial.print(" ");
     Serial.print(pluv_acc);
     Serial.println(wind_dir);

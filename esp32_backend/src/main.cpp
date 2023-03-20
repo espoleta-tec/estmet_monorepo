@@ -4,6 +4,7 @@
 #include "Monitor/monitorProcess.h"
 #include "pinout.h"
 #include "utils/utils.h"
+#include "utils/i2cScanner.h"
 
 
 using namespace Vortice;
@@ -12,6 +13,7 @@ void setup() {
     Serial.begin(9600);
     Serial.flush();
     Vortice::printDiagnosticsHeader();
+    Wire.begin(SDA, SCL, 1e5);
 
 
     const char *i2cLabel = "I2C";

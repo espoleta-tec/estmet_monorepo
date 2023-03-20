@@ -10,4 +10,6 @@
 
 void scanI2C();
 
+void i2cSlave();
+
 #endif //ESP32_BACKEND_I2CSCANNER_H

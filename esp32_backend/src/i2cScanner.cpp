@@ -4,6 +4,18 @@
 
 #include "utils/i2cScanner.h"
 
+#define SLAVE_ADDRESS 0x05
+
+uint8_t command = 0;
+
+void onRecive(int num_bytes) {
+    command = Wire.read();
+}
+
+void onRequest() {
+    Wire.write(0x01);
+}
+
 void scanI2C() {
     int nDevices = 0;
 
@@ -40,3 +52,8 @@ void scanI2C() {
     }
     delay(5000); // Wait 5 seconds for next scan
 }
+
+void i2cSlave() {
+
+}
+

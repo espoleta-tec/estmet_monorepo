@@ -3,6 +3,9 @@
 //
 
 #include "Monitor/pressureSensor.h"
+
+#ifdef BMP280
+
 #include "Adafruit_BMP280.h"
 #include "utils/utils.h"
 
@@ -55,3 +58,6 @@ String pressureRead() {
     }
     return vars;
 }
+
+
+#endif
