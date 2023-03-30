@@ -14,7 +14,7 @@ void Vortice::printDiagnosticsHeader() {
 }
 
 void Vortice::printDiagnostic(String component, String status, String reason) {
-    Serial.printf("| %30s | %20s |\n", component.c_str(), status.c_str());
+    Serial.printf("| %40s | %40s |\n", component.c_str(), status.c_str());
 }
 
 void Vortice::log(String data) {

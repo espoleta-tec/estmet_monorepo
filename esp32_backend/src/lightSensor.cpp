@@ -12,10 +12,9 @@ bool lightReady = false;
 void lightStart() {
     const char *bh1750Label = "Light (BH1750)";
 
-    Serial.flush();
-    Serial.end();
+
     lightReady = lightMeter.begin(BH1750::CONTINUOUS_HIGH_RES_MODE);
-    Serial.begin(9600);
+
     if (lightReady) {
         Vortice::printDiagnostic(bh1750Label, Vortice::Status[Vortice::OK]);
     } else {

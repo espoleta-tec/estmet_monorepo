@@ -1,0 +1,3 @@
+#Enable one of the two accordingly
+add_compile_definitions(BMP085)
+#add_compile_definitions(BMP280)

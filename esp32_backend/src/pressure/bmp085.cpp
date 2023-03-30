@@ -3,6 +3,8 @@
 //
 
 #include "Monitor/pressureSensor.h"
+
+#ifdef BMP085
 #include "Adafruit_BMP085.h"
 #include "utils/utils.h"
 
@@ -15,9 +17,16 @@ const double PRESSURE_B1 = 1;
 bool ok = false;
 
 void pressureStart() {
+    const char *bmp085Label = "Pressure (BMP085)";
+
     if (!bmp.begin()) {
-        Serial.println("Could not find a valid BMP085 sensor, check wiring!");
+        Vortice::printDiagnostic(bmp085Label,
+                                 Vortice::Status[Vortice::FAILED_TO_START],
+                                 "Could not find a valid BMP085");
         return;
+    } else {
+        Vortice::printDiagnostic(bmp085Label,
+                                 Vortice::Status[Vortice::OK]);
     }
     ok = true;
 }
@@ -42,3 +51,4 @@ String pressureRead() {
     }
     return vars;
 }
+#endif

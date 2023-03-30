@@ -44,7 +44,6 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add option="-DBMP280"/>
 					<Add option="-DPLATFORMIO=60106"/>
 					<Add option="-DARDUINO_ESP32_DEV"/>
 					<Add option="-DHAVE_CONFIG_H"/>
@@ -52,7 +51,7 @@
 					<Add option="-DUNITY_INCLUDE_CONFIG_H"/>
 					<Add option="-DWITH_POSIX"/>
 					<Add option="-D_GNU_SOURCE"/>
-					<Add option="-DIDF_VER=&quot;v4.4.1-472-gc9140caf8c&quot;"/>
+					<Add option="-DIDF_VER=&quot;v4.4.4&quot;"/>
 					<Add option="-DESP_PLATFORM"/>
 					<Add option="-D_POSIX_READER_WRITER_LOCKS"/>
 					<Add option="-DARDUINO_ARCH_ESP32"/>
@@ -83,8 +82,8 @@
 					<Add directory="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BusIO"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/SPI/src"/>
 					<Add directory="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/BH1750/src"/>
-					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/Wire/src"/>
 					<Add directory="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/DHT sensor library for ESPx"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/Wire/src"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/newlib/platform_include"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/freertos/include"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/freertos/include/esp_additions/freertos"/>
@@ -207,7 +206,7 @@
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/fatfs/diskio"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/fatfs/vfs"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/fatfs/src"/>
-					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/freemodbus/common/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/freemodbus/freemodbus/common/include"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/idf_test/include"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/idf_test/include/esp32"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/jsmn/include"/>
@@ -220,15 +219,18 @@
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/spiffs/include"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/ulp/include"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/wifi_provisioning/include"/>
-					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/button/button/include"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/rmaker_common/include"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/json_parser/upstream/include"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/json_parser/upstream"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/json_generator/upstream"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_schedule/include"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_rainmaker/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/gpio_button/button/include"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/qrcode/include"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/ws2812_led"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_diagnostics/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/rtc_store/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_insights/include"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dsp/modules/dotprod/include"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dsp/modules/support/include"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dsp/modules/windows/include"/>
@@ -254,7 +256,6 @@
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dsp/modules/common/include"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dsp/modules/kalman/ekf/include"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dsp/modules/kalman/ekf_imu13states/include"/>
-					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_littlefs/src"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_littlefs/include"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dl/include"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dl/include/tool"/>
@@ -265,12 +266,13 @@
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dl/include/layer"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dl/include/detect"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dl/include/model_zoo"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-sr/src/include"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-sr/esp-tts/esp_tts_chinese/include"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-sr/include/esp32"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp32-camera/driver/include"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp32-camera/conversions/include"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/fb_gfx/include"/>
-					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/qio_qspi/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/dio_qspi/include"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/cores/esp32"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/variants/doitESP32devkitV1"/>
 					<Add directory="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BMP280 Library@src-3479d6453d854df9d2cc4f0fee2d1f5e"/>
@@ -288,6 +290,7 @@
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/HTTPUpdate/src"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/HTTPUpdateServer/src"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/I2S/src"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/Insights/src"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/LittleFS/src"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/NetBIOS/src"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/Preferences/src"/>
@@ -297,11 +300,11 @@
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/Ticker/src"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/USB/src"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/WiFiProv/src"/>
-					<Add directory="/Users/lazaroofarrill/.platformio/packages/toolchain-xtensa-esp32/xtensa-esp32-elf/include/c++/8.4.0"/>
-					<Add directory="/Users/lazaroofarrill/.platformio/packages/toolchain-xtensa-esp32/xtensa-esp32-elf/include/c++/8.4.0/xtensa-esp32-elf"/>
-					<Add directory="/Users/lazaroofarrill/.platformio/packages/toolchain-xtensa-esp32/lib/gcc/xtensa-esp32-elf/8.4.0/include"/>
-					<Add directory="/Users/lazaroofarrill/.platformio/packages/toolchain-xtensa-esp32/lib/gcc/xtensa-esp32-elf/8.4.0/include-fixed"/>
-					<Add directory="/Users/lazaroofarrill/.platformio/packages/toolchain-xtensa-esp32/xtensa-esp32-elf/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/toolchain-xtensa-esp32@8.4.0+2021r2-patch5/xtensa-esp32-elf/include/c++/8.4.0"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/toolchain-xtensa-esp32@8.4.0+2021r2-patch5/xtensa-esp32-elf/include/c++/8.4.0/xtensa-esp32-elf"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/toolchain-xtensa-esp32@8.4.0+2021r2-patch5/lib/gcc/xtensa-esp32-elf/8.4.0/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/toolchain-xtensa-esp32@8.4.0+2021r2-patch5/lib/gcc/xtensa-esp32-elf/8.4.0/include-fixed"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/toolchain-xtensa-esp32@8.4.0+2021r2-patch5/xtensa-esp32-elf/include"/>
 				</Compiler>
 				<MakeCommands>
 					<Build command="/usr/bin/make -f &quot;/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/Makefile&quot;  VERBOSE=1 Z_DUMMY_TARGET"/>
@@ -317,7 +320,6 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add option="-DBMP280"/>
 					<Add option="-DPLATFORMIO=60106"/>
 					<Add option="-DARDUINO_ESP32_DEV"/>
 					<Add option="-DHAVE_CONFIG_H"/>
@@ -325,7 +327,7 @@
 					<Add option="-DUNITY_INCLUDE_CONFIG_H"/>
 					<Add option="-DWITH_POSIX"/>
 					<Add option="-D_GNU_SOURCE"/>
-					<Add option="-DIDF_VER=&quot;v4.4.1-472-gc9140caf8c&quot;"/>
+					<Add option="-DIDF_VER=&quot;v4.4.4&quot;"/>
 					<Add option="-DESP_PLATFORM"/>
 					<Add option="-D_POSIX_READER_WRITER_LOCKS"/>
 					<Add option="-DARDUINO_ARCH_ESP32"/>
@@ -356,8 +358,8 @@
 					<Add directory="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BusIO"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/SPI/src"/>
 					<Add directory="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/BH1750/src"/>
-					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/Wire/src"/>
 					<Add directory="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/DHT sensor library for ESPx"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/Wire/src"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/newlib/platform_include"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/freertos/include"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/freertos/include/esp_additions/freertos"/>
@@ -480,7 +482,7 @@
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/fatfs/diskio"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/fatfs/vfs"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/fatfs/src"/>
-					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/freemodbus/common/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/freemodbus/freemodbus/common/include"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/idf_test/include"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/idf_test/include/esp32"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/jsmn/include"/>
@@ -493,15 +495,18 @@
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/spiffs/include"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/ulp/include"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/wifi_provisioning/include"/>
-					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/button/button/include"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/rmaker_common/include"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/json_parser/upstream/include"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/json_parser/upstream"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/json_generator/upstream"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_schedule/include"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_rainmaker/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/gpio_button/button/include"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/qrcode/include"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/ws2812_led"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_diagnostics/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/rtc_store/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_insights/include"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dsp/modules/dotprod/include"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dsp/modules/support/include"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dsp/modules/windows/include"/>
@@ -527,7 +532,6 @@
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dsp/modules/common/include"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dsp/modules/kalman/ekf/include"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dsp/modules/kalman/ekf_imu13states/include"/>
-					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_littlefs/src"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_littlefs/include"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dl/include"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dl/include/tool"/>
@@ -538,12 +542,13 @@
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dl/include/layer"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dl/include/detect"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-dl/include/model_zoo"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-sr/src/include"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-sr/esp-tts/esp_tts_chinese/include"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp-sr/include/esp32"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp32-camera/driver/include"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp32-camera/conversions/include"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/fb_gfx/include"/>
-					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/qio_qspi/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/dio_qspi/include"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/cores/esp32"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/variants/doitESP32devkitV1"/>
 					<Add directory="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/.pio/libdeps/esp32doit-devkit-v1/Adafruit BMP280 Library@src-3479d6453d854df9d2cc4f0fee2d1f5e"/>
@@ -561,6 +566,7 @@
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/HTTPUpdate/src"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/HTTPUpdateServer/src"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/I2S/src"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/Insights/src"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/LittleFS/src"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/NetBIOS/src"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/Preferences/src"/>
@@ -570,11 +576,11 @@
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/Ticker/src"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/USB/src"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/WiFiProv/src"/>
-					<Add directory="/Users/lazaroofarrill/.platformio/packages/toolchain-xtensa-esp32/xtensa-esp32-elf/include/c++/8.4.0"/>
-					<Add directory="/Users/lazaroofarrill/.platformio/packages/toolchain-xtensa-esp32/xtensa-esp32-elf/include/c++/8.4.0/xtensa-esp32-elf"/>
-					<Add directory="/Users/lazaroofarrill/.platformio/packages/toolchain-xtensa-esp32/lib/gcc/xtensa-esp32-elf/8.4.0/include"/>
-					<Add directory="/Users/lazaroofarrill/.platformio/packages/toolchain-xtensa-esp32/lib/gcc/xtensa-esp32-elf/8.4.0/include-fixed"/>
-					<Add directory="/Users/lazaroofarrill/.platformio/packages/toolchain-xtensa-esp32/xtensa-esp32-elf/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/toolchain-xtensa-esp32@8.4.0+2021r2-patch5/xtensa-esp32-elf/include/c++/8.4.0"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/toolchain-xtensa-esp32@8.4.0+2021r2-patch5/xtensa-esp32-elf/include/c++/8.4.0/xtensa-esp32-elf"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/toolchain-xtensa-esp32@8.4.0+2021r2-patch5/lib/gcc/xtensa-esp32-elf/8.4.0/include"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/toolchain-xtensa-esp32@8.4.0+2021r2-patch5/lib/gcc/xtensa-esp32-elf/8.4.0/include-fixed"/>
+					<Add directory="/Users/lazaroofarrill/.platformio/packages/toolchain-xtensa-esp32@8.4.0+2021r2-patch5/xtensa-esp32-elf/include"/>
 				</Compiler>
 				<MakeCommands>
 					<Build command="/usr/bin/make -f &quot;/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/Makefile&quot;  VERBOSE=1 Z_DUMMY_TARGET/fast"/>

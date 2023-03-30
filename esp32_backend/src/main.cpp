@@ -29,6 +29,7 @@ void setup() {
     pinMode(LOGO_LED, OUTPUT);
     pinMode(PRO_MINI_RESET, OUTPUT);
     pinMode(POWER_PIN, INPUT);
+    pinMode(RESET_PIN, INPUT_PULLUP);
 
     initFileSystem();
     loadConf();
