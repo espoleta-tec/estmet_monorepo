@@ -16,10 +16,9 @@ void timeStart() {
         Vortice::printDiagnostic(rtcLabel, "NOT RUNNING");
     } else {
         Vortice::printDiagnostic(rtcLabel, Vortice::Status[Vortice::OK]);
-    }
-
-    if (!RTC.isrunning()) {
-        RTC.adjust(DateTime((uint32_t) 0));
+        uint8_t status = RTC.readnvram(0);
+        status = status & 0x7F;
+        RTC.writenvram(0, status);
     }
 }
 
