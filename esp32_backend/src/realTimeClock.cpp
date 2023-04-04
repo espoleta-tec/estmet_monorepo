@@ -10,11 +10,16 @@ RTC_DS1307 RTC;
 
 void timeStart() {
     const char *rtcLabel = "RTC";
-    RTC.begin();
-    if (!RTC.isrunning()) {
+
+
+    if (!RTC.begin()) {
         Vortice::printDiagnostic(rtcLabel, "NOT RUNNING");
     } else {
         Vortice::printDiagnostic(rtcLabel, Vortice::Status[Vortice::OK]);
+    }
+
+    if (!RTC.isrunning()) {
+        RTC.adjust(DateTime((uint32_t) 0));
     }
 }
 

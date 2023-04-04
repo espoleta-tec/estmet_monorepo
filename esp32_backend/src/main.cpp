@@ -5,6 +5,7 @@
 #include "pinout.h"
 #include "utils/utils.h"
 #include "utils/i2cScanner.h"
+#include "Monitor/realTimeClock.h"
 
 
 using namespace Vortice;
@@ -19,7 +20,7 @@ void setup() {
     const char *i2cLabel = "I2C";
 
     if (!Wire.begin()) {
-        printDiagnostic(i2cLabel, Status[FAILED_TO_START]);
+        printDiagnostic(i2cLabel, Status[Vortice::FAILED_TO_START]);
     } else {
         printDiagnostic(i2cLabel, Status[Vortice::OK]);
     }

@@ -61,6 +61,7 @@
 					<Add option="-DARDUINO_VARIANT=&quot;doitESP32devkitV1&quot;"/>
 					<Add option="-DARDUINO_BOARD=&quot;DOIT ESP32 DEVKIT V1&quot;"/>
 					<Add option="-DARDUINO_PARTITION_default"/>
+					<Add option="-DBMP085"/>
 					<Add directory="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/include"/>
 					<Add directory="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/src"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/SD/src"/>
@@ -337,6 +338,7 @@
 					<Add option="-DARDUINO_VARIANT=&quot;doitESP32devkitV1&quot;"/>
 					<Add option="-DARDUINO_BOARD=&quot;DOIT ESP32 DEVKIT V1&quot;"/>
 					<Add option="-DARDUINO_PARTITION_default"/>
+					<Add option="-DBMP085"/>
 					<Add directory="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/include"/>
 					<Add directory="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/src"/>
 					<Add directory="/Users/lazaroofarrill/.platformio/packages/framework-arduinoespressif32/libraries/SD/src"/>
@@ -2033,6 +2035,9 @@
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/CMakeListsPrivate.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/Users/lazaroofarrill/Documents/Work/espoleta/estmet_monorepo/esp32_backend/CMakeListsUser.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>
