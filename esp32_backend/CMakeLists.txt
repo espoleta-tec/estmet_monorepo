@@ -14,8 +14,6 @@ project("esp32_backend" C CXX)
 
 include(CMakeListsPrivate.txt)
 
-set(BMP085)
-
 
 if(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/CMakeListsUser.txt)
 include(CMakeListsUser.txt)
