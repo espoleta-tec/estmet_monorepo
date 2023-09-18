@@ -1,1 +1,10 @@
 # estmet_firmware
+
+## Device Addressess
+
+BMP280 0x77
+Arduino 0x04
+DHT20 0x38
+AS3935 0x02
+RTC 0x68
+BH1750 0x23

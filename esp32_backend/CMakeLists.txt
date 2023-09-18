@@ -31,4 +31,10 @@ add_custom_target(
     WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
 )
 
+file(GLOB DUMMY_SRC "src/*.c" "src/*.cpp" "src/*.cc" "src/*.h")
+
+list(APPEND SRC_LIST ${DUMMY_SRC})
+
 add_executable(Z_DUMMY_TARGET ${SRC_LIST})
+
+target_include_directories(Z_DUMMY_TARGET PRIVATE include)
