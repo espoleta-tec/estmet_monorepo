@@ -4,6 +4,7 @@
 #include "Monitor/vane.h"
 #include "WString.h"
 #include "Wire.h"
+#include "esp32-hal.h"
 #include "sys/_stdint.h"
 #include "utils/utils.h"
 #include <string>
@@ -16,12 +17,18 @@ namespace vane {
 
 AMS_5600 ams_5600;
 
+static bool ams_ready = false;
+
 void start() {
   if (ams_5600.detectMagnet() == 0) {
-    while (1) {
+    for (int i = 0; i < 10; i++) {
       if (ams_5600.detectMagnet() == 1) {
         Vortice::printDiagnostic("AS5600", String(ams_5600.getMagnitude()));
+        break;
       }
+
+      Vortice::printDiagnostic("AS5600", "PENDING");
+      delay(1000);
     }
   }
 }
@@ -40,6 +47,10 @@ String getAngle() {
   val += ",wind_direction_max=" +
          String(average_direction); // Legacy to be removed in next iteration
   val += ",wind_direction_average=" + String(average_direction);
+
+  Serial.printf("wind_direction: %d\n", average_direction);
+
+  return val;
 }
 
 } // namespace vane

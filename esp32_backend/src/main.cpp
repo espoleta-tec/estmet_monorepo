@@ -15,9 +15,9 @@ void setup() {
   Vortice::printDiagnosticsHeader();
   Wire.begin(SDA, SCL, 1e5);
 
-  while (1) {
-    scanI2C();
-  }
+  //  while (1) {
+  //    scanI2C();
+  //  }
 
   const char *i2cLabel = "I2C";
 
