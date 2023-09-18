@@ -35,8 +35,10 @@ String getAngle() {
   word raw_angle = ams_5600.getRawAngle();
   uint8_t average_direction = uint8_t(raw_angle * 8 / 4096) + 1;
   String val;
-  val += ",wind_direction_min=" + String(average_direction);
-  val += ",wind_direction_max=" + String(average_direction);
+  val += ",wind_direction_min=" +
+         String(average_direction); // Legacy to be removed in next iteration
+  val += ",wind_direction_max=" +
+         String(average_direction); // Legacy to be removed in next iteration
   val += ",wind_direction_average=" + String(average_direction);
 }
 
