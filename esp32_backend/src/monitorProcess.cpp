@@ -17,9 +17,9 @@ void monitorSetup() {
   Vortice::printDiagnostic("LOG INTERVALS", String(LOG_INTERVAL));
 
   humidityStart();
-  lightStart();
-  startLightning();
   vortice::sensors::vane::start();
+  // lightStart(); //Don't start light
+  startLightning();
   pressureStart();
   timeStart();
   xTaskCreatePinnedToCore(monitorLoop, "MONITOR_TSK", 50000, NULL, 1,
@@ -31,7 +31,7 @@ void monitorSetup() {
 
   for (;;) {
     String data = "";
-    data += lightRead();
+    // data += lightRead(); //Light disabled
     data += pressureRead();
     data += humidityRead();
     data += nano::getWindValues();

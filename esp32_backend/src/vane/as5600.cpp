@@ -20,16 +20,20 @@ AMS_5600 ams_5600;
 static bool ams_ready = false;
 
 void start() {
+  const char *as5600_label = "AS5600";
+
   if (ams_5600.detectMagnet() == 0) {
     for (int i = 0; i < 10; i++) {
       if (ams_5600.detectMagnet() == 1) {
-        Vortice::printDiagnostic("AS5600", String(ams_5600.getMagnitude()));
+        Vortice::printDiagnostic(as5600_label, String(ams_5600.getMagnitude()));
         break;
       }
 
-      Vortice::printDiagnostic("AS5600", "PENDING");
+      Vortice::printDiagnostic(as5600_label, "PENDING");
       delay(1000);
     }
+  } else {
+    Vortice::printDiagnostic(as5600_label, String(ams_5600.getMagnitude()));
   }
 }
 
@@ -40,7 +44,10 @@ String getAngle() {
   }
 
   word raw_angle = ams_5600.getRawAngle();
-  uint8_t average_direction = uint8_t(raw_angle * 8 / 4096) + 1;
+  //  uint8_t average_direction = uint8_t(raw_angle * 8 / 4096) + 1;
+
+  Serial.printf("Raw angle is %d\n", raw_angle);
+  float average_direction = float(raw_angle) / 4096.0 * 360.0;
   String val;
   val += ",wind_direction_min=" +
          String(average_direction); // Legacy to be removed in next iteration
@@ -48,7 +55,7 @@ String getAngle() {
          String(average_direction); // Legacy to be removed in next iteration
   val += ",wind_direction_average=" + String(average_direction);
 
-  Serial.printf("wind_direction: %d\n", average_direction);
+  Serial.printf("wind_direction: %f\n", average_direction);
 
   return val;
 }
