@@ -7,7 +7,16 @@
 
 #include "Arduino.h"
 
+typedef struct TPressureSensorData {
+    int error_code;
+    float pressure;
+    float pressure_mercury;
+    float altitude;
+} TPressureSensorData;
+
 void pressureStart();
+
+TPressureSensorData getPressure();
 
 String pressureRead();
 

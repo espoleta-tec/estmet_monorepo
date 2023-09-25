@@ -1,4 +1,5 @@
 
+#include "pins_arduino.h"
 #include <Arduino.h>
 
 #define I2C_SLAVE_ADDRESS 0x04
@@ -13,9 +14,8 @@
 #define LAST_POS 0x21
 
 #define LIGHT_DATA 0xC0
-
-#define WIND_SPEED_PIN 5
-#define WATER_COUNT_PIN 4
+#define WIND_SPEED_PIN 2
+#define WATER_COUNT_PIN 5
 #define LIGHTNING_PIN 3
 #define WIND_DIRECTION_PIN A3
 
@@ -56,23 +56,18 @@ byte lightnings = 0;
 
 uint32_t command_count = 0;
 
-
 unsigned long lastLightning = 0;
 
 void onLightning() {
-    if (millis() - lastLightning >= 50) {
-        lightnings++;
-        lastLightning = millis();
-    }
+  if (millis() - lastLightning >= 50) {
+    lightnings++;
+    lastLightning = millis();
+  }
 }
 
-void onWindSpeed() {
-    wind_vel++;
-}
+void onWindSpeed() { wind_vel++; }
 
-void onWaterCount() {
-    pluv_acc++;
-}
+void onWaterCount() { pluv_acc++; }
 
 void watchDirection();
 
@@ -82,184 +77,192 @@ void readWindDirection();
 
 void requestEvent() {
 
-    if ((command & LIGHT_DATA) == LIGHT_DATA) {
-        for (uint8_t i = 0; i < 12; i++)
-            Wire.write(buffer_sensors[(command & 0x3F) * 12 + i]);
-    }
+  if ((command & LIGHT_DATA) == LIGHT_DATA) {
+    for (uint8_t i = 0; i < 12; i++)
+      Wire.write(buffer_sensors[(command & 0x3F) * 12 + i]);
+  }
 
-    if ((command) == BURST_DATA) {
-        Wire.write(wind_vel);
-        Wire.write(wind_dir);
-        Wire.write((uint8_t)(pluv_acc & 0xFF));
-        Wire.write(pluv_acc >> 8);
-        Wire.write(lightnings);
-    }
+  if ((command) == BURST_DATA) {
+    Wire.write(wind_vel);
+    Wire.write(wind_dir);
+    Wire.write((uint8_t)(pluv_acc & 0xFF));
+    Wire.write(pluv_acc >> 8);
+    Wire.write(lightnings);
+  }
 
-    if ((command) == PLUVIO_ACC) {
-        Wire.write((uint8_t)(pluv_acc & 0xFF));
-        Wire.write(pluv_acc >> 8);
-    }
+  if ((command) == PLUVIO_ACC) {
+    Wire.write((uint8_t)(pluv_acc & 0xFF));
+    Wire.write(pluv_acc >> 8);
+  }
 
-    if ((command) == LAST_POS) {
-        Wire.write((uint8_t)(lastPosition & 0xFF));
-        Wire.write(lastPosition >> 8);
-    }
+  if ((command) == LAST_POS) {
+    Wire.write((uint8_t)(lastPosition & 0xFF));
+    Wire.write(lastPosition >> 8);
+  }
 
-    if ((command) == AVAILABLE) {
-        Wire.write(isAvailableForRead);
-    }
+  if ((command) == AVAILABLE) {
+    Wire.write(isAvailableForRead);
+  }
 
-    if ((command) == DELETE_BUF) {
-        for (unsigned char &buffer_sensor: buffer_sensors)
-            buffer_sensor = 0xFF;
+  if ((command) == DELETE_BUF) {
+    for (unsigned char &buffer_sensor : buffer_sensors)
+      buffer_sensor = 0xFF;
 
-        pluv_acc = 0;
-        counter = 0;
-        lightnings = 0;
+    pluv_acc = 0;
+    counter = 0;
+    lightnings = 0;
 
-        Wire.write(DELETE_BUF);
-    }
+    Wire.write(DELETE_BUF);
+  }
 }
 
 void receiveEvent(int num_bytes) {
-    command = Wire.read();
-    command_count++;
-    // buffer_sensors[0] =command;
+  command = Wire.read();
+  command_count++;
+  // buffer_sensors[0] =command;
 }
 
 void setup() {
-    Serial.begin(9600);
+  Serial.begin(9600);
 
-    Wire.begin(I2C_SLAVE_ADDRESS);
-    Wire.onReceive(receiveEvent);
-    Wire.onRequest(requestEvent);
+  Wire.begin(I2C_SLAVE_ADDRESS);
+  Wire.onReceive(receiveEvent);
+  Wire.onRequest(requestEvent);
 
-    for (unsigned char &buffer_sensor: buffer_sensors)
-        buffer_sensor = 0xFF;
+  for (unsigned char &buffer_sensor : buffer_sensors)
+    buffer_sensor = 0xFF;
 
-    attachInterrupt(digitalPinToInterrupt(LIGHTNING_PIN), onLightning, RISING);
+  attachInterrupt(digitalPinToInterrupt(LIGHTNING_PIN), onLightning, RISING);
 
-    pinMode(WIND_SPEED_PIN, INPUT);
-    pinMode(WATER_COUNT_PIN, INPUT);
-    pinMode(AXIS_1, INPUT);
-    pinMode(AXIS_2, INPUT);
-    pinMode(AXIS_3, INPUT);
-    pinMode(AXIS_4, INPUT);
+  pinMode(WIND_SPEED_PIN, INPUT);
+  pinMode(WATER_COUNT_PIN, INPUT);
+  pinMode(AXIS_1, INPUT);
+  pinMode(AXIS_2, INPUT);
+  pinMode(AXIS_3, INPUT);
+  pinMode(AXIS_4, INPUT);
 
-    tForRead = millis();
+  tForRead = millis();
 }
 
 void loop() {
 
-    watchDirection();
-    if (millis() - tForRead >= 5000) {
-        isAvailableForRead = 0;
-        buffer_sensors[counter] = wind_vel;
-        buffer_sensors[counter + 1] = wind_dir;
-        if (counter < 360) {
-            counter += 2;
-            lastPosition = counter;
-        } else
-            counter = 0;
+  watchDirection();
+  if (millis() - tForRead >= 5000) {
+    isAvailableForRead = 0;
+    buffer_sensors[counter] = wind_vel;
+    buffer_sensors[counter + 1] = wind_dir;
+    if (counter < 360) {
+      counter += 2;
+      lastPosition = counter;
+    } else
+      counter = 0;
 
-        tForRead = millis();
-        isAvailableForRead = 1;
-        wind_vel = 0;
-    }
+    tForRead = millis();
+    isAvailableForRead = 1;
+    wind_vel = 0;
+  }
 
-    read_sensors();
-    //    Serial.println(lightnings);
-    Serial.print(command);
-    Serial.print(":");
-    Serial.print(command_count);
-    Serial.print(" ");
-    Serial.print(pluv_acc);
-    Serial.println(wind_dir);
-    // buffer_sensors[0]=0x45;
-    // buffer_sensors[200]=0x23;
-    // buffer_sensors[300]=0x12;
-    // buffer_sensors[359]=0x78;
+  read_sensors();
+  //    Serial.println(lightnings);
+  Serial.print(command);
+  Serial.print(":");
+  Serial.print(command_count);
+  Serial.print(" ");
+  Serial.print(pluv_acc);
+  Serial.print(" ");
+  Serial.print(wind_dir);
+  Serial.print(" ");
+  Serial.println(buffer_sensors[counter - 2]);
+  Serial.println(digitalRead(WIND_SPEED_PIN));
+  // buffer_sensors[0]=0x45;
+  // buffer_sensors[200]=0x23;
+  // buffer_sensors[300]=0x12;
+  // buffer_sensors[359]=0x78;
 
-    // tws_delay(4000);
-    /**
-     * This is the only way we can detect stop condition (http://www.avrfreaks.net/index.php?name=PNphpBB2&file=viewtopic&p=984716&sid=82e9dc7299a8243b86cf7969dd41b5b5#984716)
-     * it needs to be called in a very tight loop in order not to miss any (REMINDER: Do *not* use delay() anywhere, use tws_delay() instead).
-     * It will call the function registered via Wire.onReceive(); if there is data in the buffer on stop.
-     */
+  // tws_delay(4000);
+  /**
+   * This is the only way we can detect stop condition
+   * (http://www.avrfreaks.net/index.php?name=PNphpBB2&file=viewtopic&p=984716&sid=82e9dc7299a8243b86cf7969dd41b5b5#984716)
+   * it needs to be called in a very tight loop in order not to miss any
+   * (REMINDER: Do *not* use delay() anywhere, use tws_delay() instead). It will
+   * call the function registered via Wire.onReceive(); if there is data in the
+   * buffer on stop.
+   */
 }
 
 void read_sensors() {
-    lastMillis = millis();
-    long lastPluvio = millis();
+  lastMillis = millis();
+  long lastPluvio = millis();
 
-    flag = 0;
-    count = 0;
-    flag1 = digitalRead(WATER_COUNT_PIN);
-    count1 = 0;
+  flag = 0;
+  count = 0;
+  flag1 = digitalRead(WATER_COUNT_PIN);
+  count1 = 0;
 
-    while ((millis() - lastMillis) <= 1000) {
-        watchDirection();
+  while ((millis() - lastMillis) <= 1000) {
+    watchDirection();
 
-        if (digitalRead(WIND_SPEED_PIN) == 1) {
-            if (flag == 0)
-                flag = 1;
-        }
-        if (digitalRead(WATER_COUNT_PIN) == 1) {
-            if (flag1 == 0 && (millis() - lastPluvio > 50)) {
-                lastPluvio = millis();
-                count1++;
-                flag1 = 1;
-            }
-        }
-
-        if (digitalRead(WIND_SPEED_PIN) == 0) {
-            if (flag == 1) {
-                flag = 0;
-                count++;
-            }
-        }
-        if (digitalRead(WATER_COUNT_PIN) == 0) {
-            if (flag1 == 1 && (millis() - lastPluvio > 50)) {
-                lastPluvio = millis();
-                flag1 = 0;
-                count1++;
-            }
-        }
+    if (digitalRead(WIND_SPEED_PIN) == 1) {
+      if (flag == 0)
+        flag = 1;
+    }
+    if (digitalRead(WATER_COUNT_PIN) == 1) {
+      if (flag1 == 0 && (millis() - lastPluvio > 50)) {
+        lastPluvio = millis();
+        count1++;
+        flag1 = 1;
+      }
     }
 
-    wind_vel = count;
-    pluv_acc += count1;
-    // pluv_acc=0x1234;
+    if (digitalRead(WIND_SPEED_PIN) == 0) {
+      if (flag == 1) {
+        flag = 0;
+        count++;
+      }
+    }
+    if (digitalRead(WATER_COUNT_PIN) == 0) {
+      if (flag1 == 1 && (millis() - lastPluvio > 50)) {
+        lastPluvio = millis();
+        flag1 = 0;
+        count1++;
+      }
+    }
+  }
+
+  wind_vel = count;
+  pluv_acc += count1;
+  // pluv_acc=0x1234;
 }
 
 void readWindDirection() {
-    temp = analogRead(WIND_DIRECTION_PIN);
-    if (temp >= 77 && temp <= 82)
-        wind_dir = 1;
-    if (temp >= 47 && temp <= 52)
-        wind_dir = 2;
-    if (temp >= 37 && temp <= 42)
-        wind_dir = 3;
-    if (temp >= 17 && temp <= 22)
-        wind_dir = 4;
+  temp = analogRead(WIND_DIRECTION_PIN);
+  if (temp >= 77 && temp <= 82)
+    wind_dir = 1;
+  if (temp >= 47 && temp <= 52)
+    wind_dir = 2;
+  if (temp >= 37 && temp <= 42)
+    wind_dir = 3;
+  if (temp >= 17 && temp <= 22)
+    wind_dir = 4;
 }
 
 void watchDirection() {
 
-    uint8_t halls[4] = {0};
+  uint8_t halls[4] = {0};
 
-    halls[0] = digitalRead(AXIS_1);
-    halls[1] = digitalRead(AXIS_2);
-    halls[2] = digitalRead(AXIS_3);
-    halls[3] = digitalRead(AXIS_4);
+  halls[0] = digitalRead(AXIS_1);
+  halls[1] = digitalRead(AXIS_2);
+  halls[2] = digitalRead(AXIS_3);
+  halls[3] = digitalRead(AXIS_4);
 
-    uint8_t value = (halls[0] << 3) | (halls[1] << 2) | (halls[2] << 1) | halls[3];
+  uint8_t value =
+      (halls[0] << 3) | (halls[1] << 2) | (halls[2] << 1) | halls[3];
 
-    uint8_t cardinalPoints[8] = {0xC, 0x2, 0x9, 0x4, 0x3, 0x8, 0x6, 0x1};
+  uint8_t cardinalPoints[8] = {0xC, 0x2, 0x9, 0x4, 0x3, 0x8, 0x6, 0x1};
 
-    for (int i = 0; i < sizeof(cardinalPoints); i++) {
-        if (cardinalPoints[i] == value) {
-            wind_dir = i + 1;
-        }
+  for (int i = 0; i < sizeof(cardinalPoints); i++) {
+    if (cardinalPoints[i] == value) {
+      wind_dir = i + 1;
     }
+  }
 }

@@ -29,25 +29,26 @@ namespace nano {
 //    void finishReading();
 
 
-    void readBurst();
+void readBurst();
 
-    uint16_t getCursor();
+uint16_t getCursor();
 
-    uint8_t avail();
+uint8_t avail();
 
-    String getWaterCount();
+String getWaterCount();
 
-    void deleteBuffer();
+void deleteBuffer();
 
-    void readBuff();
+void readBuff();
 
-    String getWindValues();
+String getWindValues();
 
-    String getLightnings();
+String getLightnings();
+
+typedef struct TWindData {
+    float wind_speed;
+} TWindData;
 }
 
-typedef struct CustomSensors {
-
-} CustomSensors;
 
 #endif //IAGRI_DATA_LOGGER_FIRMWARE_ANEMOMETER_H

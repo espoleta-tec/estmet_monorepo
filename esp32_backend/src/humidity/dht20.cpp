@@ -23,7 +23,7 @@ void HumidityReader::humidityStart() {
     }
 }
 
-TempAndHumidity HumidityReader::getTemperatureAndHumidity() {
+TempAndHumidity HumidityReader::get_temperature_and_humidity() {
 
     if (millis() - dht20.lastRead() >= 1000) {
         dht20.read();

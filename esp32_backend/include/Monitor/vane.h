@@ -1,6 +1,6 @@
 
 #include "WString.h"
-namespace vortice {
+namespace Vortice {
 
 namespace sensors {
 

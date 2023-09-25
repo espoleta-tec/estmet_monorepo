@@ -4,6 +4,8 @@
 #include "Wire.h"
 #include "pinout.h"
 #include "utils/utils.h"
+#include "constants.h"
+#include "utils/i2cScanner.h"
 
 using namespace Vortice;
 
@@ -11,6 +13,7 @@ void setup() {
     Serial.begin(9600);
     Serial.flush();
     Vortice::printDiagnosticsHeader();
+    Vortice::printDiagnostic("Firmware Version", String(FIRMWARE_VERSION));
     Wire.begin(SDA, SCL, 1e5);
 
     const char *i2cLabel = "I2C";
@@ -34,12 +37,6 @@ void setup() {
     Vortice::printDiagnostic("Power Supply", supplyState ? "ON" : "OFF");
     resetSetup();
 
-    if (supplyState || true) {
-        serverSetup();
-        digitalWrite(LOGO_LED, LOW);
-    } else {
-        digitalWrite(LOGO_LED, HIGH);
-    }
 
     digitalWrite(PRO_MINI_RESET, LOW);
     delay(50);
@@ -47,6 +44,13 @@ void setup() {
 
     monitorSetup();
     Vortice::printDivider();
+
+    if (supplyState || true) {
+        digitalWrite(LOGO_LED, LOW);
+        serverSetup();
+    } else {
+        digitalWrite(LOGO_LED, HIGH);
+    }
 }
 
 void loop() { delay(1000000); }

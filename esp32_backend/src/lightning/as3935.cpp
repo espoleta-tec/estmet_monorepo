@@ -14,11 +14,11 @@
 SparkFun_AS3935 lightning(AS3935_ADDR);
 
 void Vortice::startLightning() {
-  const char *lightningLabel = "Lightning (AS3935)";
-  if (lightning.begin()) {
-    Vortice::printDiagnostic(lightningLabel, Vortice::Status[OK]);
-  } else {
-    Vortice::printDiagnostic(lightningLabel,
-                             Vortice::Status[Vortice::FAILED_TO_START]);
-  }
+    const char *lightningLabel = "Lightning (AS3935)";
+    if (lightning.begin()) {
+        Vortice::printDiagnostic(lightningLabel, Vortice::Status[OK]);
+    } else {
+        Vortice::printDiagnostic(lightningLabel,
+                                 Vortice::Status[Vortice::FAILED_TO_START]);
+    }
 }

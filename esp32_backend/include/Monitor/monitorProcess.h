@@ -10,8 +10,14 @@
 #include "pressureSensor.h"
 #include "realTimeClock.h"
 #include "Logger/logger.h"
+#include "DHTesp.h"
 
 extern TaskHandle_t monitorTask;
+
+typedef struct TScanData {
+    TPressureSensorData pressure_data;
+    TempAndHumidity humidity_data;
+} TScanData;
 
 void monitorSetup();
 

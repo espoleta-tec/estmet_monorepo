@@ -8,31 +8,27 @@
 #include "Arduino.h"
 
 namespace Vortice {
-    typedef struct TempAndHumidity {
-        float temperature;
-        float humidity;
-    } TempAndHumidity;
+typedef struct TempAndHumidity {
+    float temperature;
+    float humidity;
+} TempAndHumidity;
 
-    class HumidityReader {
-    public:
-        virtual void humidityStart();
-
-        String humidityRead();
-
-    private:
-        virtual TempAndHumidity getTemperatureAndHumidity();
-
-        float getHeatIndex(float temperatureInCelsius, float relativeHumidity);
-
-        float getDewPoint(float tempInCelsisu, float relativeHumidity);
-    };
-
-    void humidityStart();
+class HumidityReader {
+public:
+    virtual void humidityStart();
 
     String humidityRead();
-}
 
-#define USE_DHT20
-//#define USE_DHT11
+    virtual TempAndHumidity get_temperature_and_humidity();
 
-#endif //BACKEND_HUMIDITYSENSOR_H
+    float get_heat_index(float temperature_in_celsius, float relative_humidity);
+
+    float get_dew_point(float temperature_in_celsius, float relative_humidity);
+};
+
+void humidityStart();
+
+String humidityRead();
+} // namespace Vortice
+
+#endif // BACKEND_HUMIDITYSENSOR_H

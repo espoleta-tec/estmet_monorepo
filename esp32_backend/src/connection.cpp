@@ -2,12 +2,12 @@
 // Created by lazt on 4/23/21.
 //
 
-#include <Battery/batterySaving.h>
-#include <Monitor/anemometer.h>
-#include <Battery/battery_level.h>
-#include "constants.h"
 #include "WebServer/connection.h"
 #include "ArduinoJson.h"
+#include "constants.h"
+#include <Battery/batterySaving.h>
+#include <Battery/battery_level.h>
+#include <Monitor/anemometer.h>
 
 using namespace Vortice;
 
@@ -20,14 +20,12 @@ String sessionId = "";
 
 unsigned long refreshSession = 0;
 
-
 void passCors() {
     server.sendHeader("Access-Control-Allow-Origin", "*");
     server.sendHeader("Access-Control-Max-Age", "600");
     server.sendHeader("Access-Control-Allow-Methods", "*");
     server.sendHeader("Access-Control-Allow-Headers", "*");
 }
-
 
 bool checkAuth() {
     if (server.hasHeader("Authorization")) {
@@ -45,7 +43,6 @@ bool checkAuth() {
     return false;
 }
 
-
 bool authControl() {
     if (!checkAuth()) {
         passCors();
@@ -54,7 +51,6 @@ bool authControl() {
     }
     return true;
 }
-
 
 void initWifi() {
     String ssid = "";
@@ -75,8 +71,10 @@ void initWifi() {
     }
     int count = 0;
     for (int i = 0; i < networkCount; i++) {
-        if (WiFi.encryptionType(i) == WIFI_AUTH_OPEN) continue;
-        if (count > 0) networks += ",";
+        if (WiFi.encryptionType(i) == WIFI_AUTH_OPEN)
+            continue;
+        if (count > 0)
+            networks += ",";
         networks += "\"" + WiFi.SSID(i) + "\"";
         count++;
         Serial.println(WiFi.SSID(i));
@@ -124,14 +122,14 @@ void initWifi() {
     }
 }
 
-
 void configNet() {
     if (!authControl())
         return;
     Serial.println(server.uri());
     Serial.println(server.method());
     for (int i = 0; i < server.headers(); i++) {
-        Serial.printf("%s: %s\n", server.headerName(i).c_str(), server.header(i).c_str());
+        Serial.printf("%s: %s\n", server.headerName(i).c_str(),
+                      server.header(i).c_str());
     }
     for (int i = 0; i < server.args(); i++) {
         Serial.printf("%s: %s\n", server.argName(i).c_str(), server.arg(i).c_str());
@@ -160,7 +158,6 @@ void configNet() {
     server.send(200, "text/plain", "Network configuration changed");
 }
 
-
 void sessionWatch() {
     unsigned long lapse = millis() - refreshSession;
     if (lapse / 1000 / 60 > REFRESH_INTERVAL && !sessionId.isEmpty()) {
@@ -168,7 +165,6 @@ void sessionWatch() {
         sessionId = "";
     }
 }
-
 
 void genSessionID() {
     if (sessionId.isEmpty()) {
@@ -191,7 +187,6 @@ void genSessionID() {
     server.send(200, "application/json", response);
 }
 
-
 void authenticate() {
     DynamicJsonDocument request(512);
 
@@ -203,7 +198,6 @@ void authenticate() {
     String user = getStringVal(doc["user"]["name"]);
     String pswd = getStringVal(doc["user"]["password"]);
 
-
     if (user.equals(request["name"].as<String>()) &&
         pswd.equals(request["password"].as<String>())) {
         genSessionID();
@@ -213,7 +207,6 @@ void authenticate() {
     passCors();
     server.send(401, "text/plain", "auth error");
 }
-
 
 void initWebServer() {
     server.on("/testconn", HTTP_OPTIONS, sendCors);
@@ -234,7 +227,8 @@ void initWebServer() {
     server.on("/reset", resetConfig);
     server.on("/storage", HTTP_OPTIONS, sendCors);
     server.on("/storage", HTTP_GET, []() {
-        if (!authControl()) return;
+        if (!authControl())
+            return;
         String space = "{";
         space += "\"used\": " + String((double) (SD.usedBytes())) + ",";
         space += "\"total\": " + String((double) (SD.cardSize())) + "}";
@@ -248,7 +242,8 @@ void initWebServer() {
         if (server.hasArg("plain")) {
             DynamicJsonDocument request(512);
 
-            DeserializationError error = deserializeJson(request, server.arg("plain"));
+            DeserializationError error =
+                    deserializeJson(request, server.arg("plain"));
             if (error) {
                 Serial.println(error.c_str());
             }
@@ -267,7 +262,8 @@ void initWebServer() {
     server.on("/logs-global", HTTP_OPTIONS, sendCors);
     server.on("/logs-global", HTTP_GET, getGlobalLogs);
     server.on("/battery/save", []() {
-        if (!authControl()) return;
+        if (!authControl())
+            return;
         batterySavingActivated = true;
         server.send(200, "battery saving activated successfully");
     });
@@ -288,9 +284,9 @@ void initWebServer() {
     ws.onEvent(webSocketEvent);
 }
 
-
 void resetConfig() {
-    if (!authControl()) return;
+    if (!authControl())
+        return;
     triggerReset();
 }
 
@@ -322,20 +318,22 @@ void triggerReset() {
     ESP.restart();
 }
 
-
 void handleUpload() {
     HTTPUpload &upload = server.upload();
 
     if (upload.status == UPLOAD_FILE_START) {
-        if (!authControl()) return;
+        if (!authControl())
+            return;
         Serial.setDebugOutput(true);
         Serial.printf("Update: %s\n", upload.filename.c_str());
         if (upload.name == "filesystem") {
-            if (!Update.begin(UPDATE_SIZE_UNKNOWN, U_SPIFFS)) { //start with max available size
+            if (!Update.begin(UPDATE_SIZE_UNKNOWN,
+                              U_SPIFFS)) { // start with max available size
                 Update.printError(Serial);
             }
         } else {
-            if (!Update.begin(UPDATE_SIZE_UNKNOWN, U_FLASH)) { //start with max available size
+            if (!Update.begin(UPDATE_SIZE_UNKNOWN,
+                              U_FLASH)) { // start with max available size
                 Update.printError(Serial);
             }
         }
@@ -345,18 +343,19 @@ void handleUpload() {
             Update.printError(Serial);
         }
     } else if (upload.status == UPLOAD_FILE_END) {
-        if (Update.end(true)) { //true to set the size to the current progress
+        if (Update.end(true)) { // true to set the size to the current progress
             Serial.printf("Update Success: %u\nRebooting...\n", upload.totalSize);
         } else {
             Update.printError(Serial);
         }
         Serial.setDebugOutput(false);
     } else {
-        Serial.printf("Update Failed Unexpectedly (likely broken connection): status=%d\n", upload.status);
+        Serial.printf(
+                "Update Failed Unexpectedly (likely broken connection): status=%d\n",
+                upload.status);
         ESP.restart();
     }
 }
-
 
 void onFinishUpload() {
     Serial.println("update finished");
@@ -367,33 +366,24 @@ void onFinishUpload() {
     ESP.restart();
 }
 
-
 String getStringVal(JsonObject obj) {
-    return obj["value"].as<String>().length() ?
-           obj["value"].as<String>() :
-           obj["default"].as<String>();
+    return obj["value"].as<String>().length() ? obj["value"].as<String>()
+                                              : obj["default"].as<String>();
 }
-
 
 bool getBooleanVal(JsonObject obj) {
-    return obj["value"] != -1 ?
-           obj["value"].as<bool>() :
-           obj["default"].as<bool>();
+    return obj["value"] != -1 ? obj["value"].as<bool>()
+                              : obj["default"].as<bool>();
 }
-
 
 double getNumberVal(JsonObject obj) {
-    return obj["value"] ?
-           obj["value"].as<double>() :
-           obj["default"].as<double>();
+    return obj["value"] ? obj["value"].as<double>() : obj["default"].as<double>();
 }
-
 
 void getWiFis() {
     passCors();
     server.send(200, "application/json", networks);
 }
-
 
 void configUser() {
     if (!authControl())
@@ -416,14 +406,14 @@ void configUser() {
     }
 }
 
-
 void sendCors() {
     passCors();
     server.send(204);
 }
 
 void getGlobalLogs() {
-    if (!authControl()) return;
+    if (!authControl())
+        return;
     DateTime now = RTC.now();
     String path = "/logs/";
     path += "global";
@@ -440,7 +430,8 @@ void getGlobalLogs() {
 }
 
 void getLogs() {
-    if (!authControl()) return;
+    if (!authControl())
+        return;
     DateTime now = RTC.now();
     String path = "/logs/";
     path += now.year();
@@ -461,7 +452,8 @@ void getLogs() {
 }
 
 void formatSDCard() {
-    if (!authControl()) return;
+    if (!authControl())
+        return;
     File root;
     root = SD.open("/logs");
     delay(100);
@@ -484,13 +476,13 @@ void formatSDCard() {
 }
 
 void getConfig() {
-    if (!authControl()) return;
+    if (!authControl())
+        return;
     String output;
     serializeJson(doc, output);
     passCors();
     server.send(200, "application/json", output);
 }
-
 
 void webSocketEvent(byte num, WStype_t type, uint8_t *payload, size_t length) {
     String data = "";

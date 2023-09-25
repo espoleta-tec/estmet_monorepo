@@ -7,17 +7,15 @@
 
 RTC_DS1307 RTC;
 
-
 void timeStart() {
     const char *rtcLabel = "RTC";
-
 
     if (!RTC.begin()) {
         Vortice::printDiagnostic(rtcLabel, "NOT RUNNING");
     } else {
         Vortice::printDiagnostic(rtcLabel, Vortice::Status[Vortice::OK]);
         uint8_t status = RTC.readnvram(0);
-        status = status & 0x7F;
+        status = status & 0x7F; // enable oscillator bit
         RTC.writenvram(0, status);
     }
 }
@@ -36,6 +34,8 @@ String timeRead() {
     vars += now.minute();
     vars += ":";
     vars += now.second();
+
+    Vortice::log("The time is");
     Serial.println(vars);
     Serial.println();
 
