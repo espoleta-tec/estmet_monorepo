@@ -35,13 +35,18 @@ void setup() {
     initSDCard();
     supplyState = digitalRead(POWER_PIN);
     Vortice::printDiagnostic("Power Supply", supplyState ? "ON" : "OFF");
-    resetSetup();
+//    resetSetup();
 
 
     digitalWrite(PRO_MINI_RESET, LOW);
     delay(50);
     digitalWrite(PRO_MINI_RESET, HIGH);
 
+    while (true) {
+        timeStart();
+        Serial.println(timeRead());
+        delay(10);
+    }
     monitorSetup();
     Vortice::printDivider();
 

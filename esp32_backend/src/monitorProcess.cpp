@@ -17,8 +17,8 @@ void monitorSetup() {
     Vortice::printDiagnostic("LOG INTERVALS", String(LOG_INTERVAL));
 
     humidityStart();
-//  vortice::sensors::vane::start();
-    // lightStart(); //Don't start light
+//    Vortice::sensors::vane::start();
+//    lightStart(); //Don't start light
     startLightning();
     pressureStart();
     timeStart();
