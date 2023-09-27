@@ -32,16 +32,32 @@ String timeRead() {
   String vars = "";
   DateTime now = RTC.now();
   vars += now.year();
-  vars += "/";
+  vars += "-";
   vars += now.month();
-  vars += "/";
+  vars += "-";
+  if (now.day() < 10) {
+    vars += "0";
+  }
   vars += now.day();
   vars += " ";
+
+  if (now.hour() < 10) {
+    vars += "0";
+  }
   vars += now.hour();
   vars += ":";
+
+  if (now.minute() < 10) {
+    vars += "0";
+  }
   vars += now.minute();
   vars += ":";
+
+  if (now.second() < 10) {
+    vars += "0";
+  }
   vars += now.second();
+  vars += "Z";
 
   vars = ",date=\"" + vars + "\"";
   return vars;

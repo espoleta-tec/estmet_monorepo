@@ -90,7 +90,6 @@ uint8_t nano::avail() {
   Wire.requestFrom(SLAVE_ADDR, 1u);
 
   uint8_t mm = Wire.read();
-  // Serial.println(mm ,HEX);
 
   return mm;
 }
