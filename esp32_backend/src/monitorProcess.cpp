@@ -5,9 +5,12 @@
 #include "Monitor/anemometer.h"
 #include "Monitor/lightningDetector.h"
 #include "Monitor/vane.h"
+#include "WString.h"
 #include "esp32-hal.h"
 #include "utils/utils.h"
 #include <Battery/battery_level.h>
+#include <map>
+#include <string>
 
 using namespace Vortice;
 
@@ -65,11 +68,12 @@ String getReadings() {
       vTaskDelay(1);
     } while (data.length() == 0);
 
-    logData(data);
-
 #ifdef DEBUG
     Serial.println(data);
 #endif
+
+    logData(data);
+
     delay(5e3);
     //        if (batterySavingActivated && !digitalRead(POWER_PIN)) {
     //            esp_deep_sleep(LOG_INTERVAL * 1000);
