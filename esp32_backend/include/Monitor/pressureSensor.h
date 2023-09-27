@@ -18,6 +18,6 @@ void pressureStart();
 
 TPressureSensorData getPressure();
 
-String pressureRead();
+String read_pressure();
 
 #endif //BACKEND_PRESSURESENSOR_H

@@ -2,3 +2,4 @@
 #add_compile_definitions(BMP085)
 add_compile_definitions(BMP280)
 add_compile_definitions(USE_DHT20)
+add_compile_definitions(DEBUG)

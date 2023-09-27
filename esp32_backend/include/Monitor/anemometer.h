@@ -41,7 +41,7 @@ void deleteBuffer();
 
 void readBuff();
 
-String getWindValues();
+String get_wind_speed();
 
 String getLightnings();
 

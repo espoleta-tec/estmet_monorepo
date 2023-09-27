@@ -21,14 +21,14 @@ public:
 
     virtual TempAndHumidity get_temperature_and_humidity();
 
-    float get_heat_index(float temperature_in_celsius, float relative_humidity);
+    static float get_heat_index(float temperature_in_celsius, float relative_humidity);
 
-    float get_dew_point(float temperature_in_celsius, float relative_humidity);
+    static float get_dew_point(float temperature_in_celsius, float relative_humidity);
 };
 
 void humidityStart();
 
-String humidityRead();
+String read_humidity();
 } // namespace Vortice
 
 #endif // BACKEND_HUMIDITYSENSOR_H

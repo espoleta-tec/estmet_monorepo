@@ -2,10 +2,11 @@
 #include "Monitor/monitorProcess.h"
 #include "WebServer/webServerProcess.h"
 #include "Wire.h"
-#include "pinout.h"
-#include "utils/utils.h"
 #include "constants.h"
+#include "pinout.h"
 #include "utils/i2cScanner.h"
+#include "utils/utils.h"
+#include "Monitor/vane.h"
 
 using namespace Vortice;
 
@@ -15,10 +16,11 @@ void setup() {
     Vortice::printDiagnosticsHeader();
     Vortice::printDiagnostic("Firmware Version", String(FIRMWARE_VERSION));
     Wire.begin(SDA, SCL, 1e5);
+    Wire1.begin(SDA1, SCL1, 1e5);
 
     const char *i2cLabel = "I2C";
 
-    if (!Wire.begin()) {
+    if (!(Wire.begin() && Wire1.begin())) {
         printDiagnostic(i2cLabel, Status[Vortice::FAILED_TO_START]);
     } else {
         printDiagnostic(i2cLabel, Status[Vortice::OK]);
@@ -37,16 +39,17 @@ void setup() {
     Vortice::printDiagnostic("Power Supply", supplyState ? "ON" : "OFF");
 //    resetSetup();
 
-
     digitalWrite(PRO_MINI_RESET, LOW);
     delay(50);
     digitalWrite(PRO_MINI_RESET, HIGH);
 
-    while (true) {
-        timeStart();
-        Serial.println(timeRead());
-        delay(10);
-    }
+//    timeStart();
+//    Vortice::sensors::vane::start();
+//    while (true) {
+//        Serial.println(Vortice::sensors::vane::getAngle());
+//        Serial.println(timeRead());
+//        delay(1000);
+//    }
     monitorSetup();
     Vortice::printDivider();
 

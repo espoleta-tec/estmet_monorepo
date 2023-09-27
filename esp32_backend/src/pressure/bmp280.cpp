@@ -31,7 +31,7 @@ void pressureStart() {
     sensor_enabled = true;
 }
 
-String pressureRead() {
+String read_pressure() {
     String vars = "";
     if (sensor_enabled) {
         struct TPressureSensorData pressure_data = getPressure();
@@ -39,17 +39,11 @@ String pressureRead() {
         float pressure_mercury = pressure_data.pressure_mercury;
         vars += ",pressure=" + String(pressure);
         vars += ",pressure_mercury_mm=" + String(pressure_mercury);
-        Serial.print("Pressure = ");
-        Serial.print(pressure);
-        Serial.print(" Pa ");
 
         // Calculate altitude assuming 'standard' barometric
         // pressure of 1013.25 millibar = 101325 Pascal
         float altitude = pressure_data.altitude;
         vars += ",altitude=" + String(altitude);
-        Serial.print("Altitude = ");
-        Serial.print(altitude);
-        Serial.print(" meters ");
     }
     return vars;
 }

@@ -23,19 +23,11 @@ String HumidityReader::humidityRead() {
     vars += ",humidity=" + String(h);
     vars += ",temperature_c=" + String(t);
 
-    auto hic = get_heat_index(newValues.temperature, newValues.humidity);
-    auto dewPoint = this->get_dew_point(newValues.temperature, newValues.humidity);
-
+    float hic = get_heat_index(newValues.temperature, newValues.humidity);
+    float dewPoint = this->get_dew_point(newValues.temperature, newValues.humidity);
 
     vars += ",heatIndex_c=" + String(hic);
     vars += ",dew_point_c=" + String(dewPoint);
-
-
-    Serial.printf("Humidity: %f\t", h);
-    Serial.printf("Temperature: %f\t°C", t);
-    Serial.printf("Heat index: %f\t", hic);
-    Serial.printf("Dew point: %f\t°C", dewPoint);
-    Serial.println();
 
 
     return vars;
@@ -87,7 +79,7 @@ void Vortice::humidityStart() {
     reader.humidityStart();
 }
 
-String Vortice::humidityRead() {
+String Vortice::read_humidity() {
     return reader.humidityRead();
 }
 

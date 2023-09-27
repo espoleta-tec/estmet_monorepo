@@ -46,167 +46,145 @@ uint16_t waterCount;
 uint8_t readingsBuffer[400] = {0};
 
 [[noreturn]] void tickerTask(void *param) {
-    while (true) {
-        digitalWrite(2, !digitalRead(2));
-        digitalWrite(4, !digitalRead(4));
-        delay(50);
-    }
+  while (true) {
+    digitalWrite(2, !digitalRead(2));
+    digitalWrite(4, !digitalRead(4));
+    delay(50);
+  }
 }
 
 uint16_t nano::getCursor() {
-    Wire.beginTransmission(SLAVE_ADDR);
-    Wire.write(LAST_POS);
-    Wire.endTransmission();
+  Wire.beginTransmission(SLAVE_ADDR);
+  Wire.write(LAST_POS);
+  Wire.endTransmission();
 
-    Wire.requestFrom(SLAVE_ADDR, 2u);
+  Wire.requestFrom(SLAVE_ADDR, 2u);
 
-    uint8_t smallEnd, bigEnd;
-    smallEnd = Wire.read();
-    bigEnd = Wire.read();
-    return bigEnd << 8 | smallEnd;
+  uint8_t smallEnd, bigEnd;
+  smallEnd = Wire.read();
+  bigEnd = Wire.read();
+  return bigEnd << 8 | smallEnd;
 }
 
 void nano::readBurst() {
-    Wire.beginTransmission(SLAVE_ADDR);
-    Wire.write(BURST_DATA);
-    Wire.endTransmission();
+  Wire.beginTransmission(SLAVE_ADDR);
+  Wire.write(BURST_DATA);
+  Wire.endTransmission();
 
-    Wire.requestFrom(SLAVE_ADDR, 5u);
+  Wire.requestFrom(SLAVE_ADDR, 5u);
 
-    uint8_t smallEnd, bigEnd;
-    Serial.print(Wire.read(), HEX);
-    Serial.print("  ");
-    Serial.print(Wire.read(), HEX);
-    Serial.print("  ");
-    smallEnd = Wire.read();
-    Serial.print(smallEnd, HEX);
-    Serial.print("  ");
-    bigEnd = Wire.read();
-    Serial.print(bigEnd, HEX);
-    Serial.print("  ");
-    waterCount = bigEnd << 8 | smallEnd;
-    Serial.print(waterCount);
-    Serial.print(" ");
-    lightningCount = Wire.read();
-    Serial.print(lightningCount, HEX);
-    Serial.println();
+  uint8_t smallEnd, bigEnd;
+  Wire.read();
+  Wire.read();
+  smallEnd = Wire.read();
+  bigEnd = Wire.read();
+  waterCount = bigEnd << 8 | smallEnd;
+  lightningCount = Wire.read();
 }
 
 uint8_t nano::avail() {
-    Wire.beginTransmission(SLAVE_ADDR);
-    Wire.write(AVAILABLE);
-    Wire.endTransmission();
+  Wire.beginTransmission(SLAVE_ADDR);
+  Wire.write(AVAILABLE);
+  Wire.endTransmission();
 
-    Wire.requestFrom(SLAVE_ADDR, 1u);
+  Wire.requestFrom(SLAVE_ADDR, 1u);
 
-    uint8_t mm = Wire.read();
-    // Serial.println(mm ,HEX);
+  uint8_t mm = Wire.read();
+  // Serial.println(mm ,HEX);
 
-    return mm;
+  return mm;
 }
 
 void nano::deleteBuffer() {
-    Wire.beginTransmission(SLAVE_ADDR);
-    Wire.write(DELETE_BUF);
-    Wire.endTransmission();
+  Wire.beginTransmission(SLAVE_ADDR);
+  Wire.write(DELETE_BUF);
+  Wire.endTransmission();
 
-    Wire.requestFrom(SLAVE_ADDR, 1u);
+  Wire.requestFrom(SLAVE_ADDR, 1u);
 
-    Serial.println(Wire.read(), HEX);
-    for (unsigned char &i: readingsBuffer) {
-        i = 0;
-    }
+  Wire.read();
+  for (unsigned char &i : readingsBuffer) {
+    i = 0;
+  }
 }
 
 void nano::readBuff() {
-    for (uint8_t j = 0; j < 30; j++) {
+  for (uint8_t j = 0; j < 30; j++) {
 
-        Wire.beginTransmission(SLAVE_ADDR);
-        Wire.write(0xC0 + j);
-        Wire.endTransmission();
+    Wire.beginTransmission(SLAVE_ADDR);
+    Wire.write(0xC0 + j);
+    Wire.endTransmission();
 
-        Wire.requestFrom(SLAVE_ADDR, 12u);
+    Wire.requestFrom(SLAVE_ADDR, 12u);
 
-        for (uint8_t i = 0; i < 12; i++) {
-            readingsBuffer[12 * j + i] = Wire.read();
-        }
+    for (uint8_t i = 0; i < 12; i++) {
+      readingsBuffer[12 * j + i] = Wire.read();
     }
+  }
 }
 
-String nano::getWindValues() {
-    String val = "";
-    readBuff();
+String nano::get_wind_speed() {
+  String val = "";
+  readBuff();
 
-    double average, reducer;
-    uint8_t min = 255, max = 0;
-    uint16_t reducerCount = 0;
+  double average, reducer;
+  uint8_t min = 255, max = 0;
+  uint16_t reducerCount = 0;
 
-    reducer = 0;
-    reducerCount = 0;
-    for (int i = 0; i < 360; i += 2) {
+  reducer = 0;
+  reducerCount = 0;
+  for (int i = 0; i < 360; i += 2) {
 
-        if (readingsBuffer[i] == 0xFF)
-            continue;
-        if (readingsBuffer[i] > max) {
-            max = readingsBuffer[i];
-            Serial.print("new max: ");
-            Serial.print(readingsBuffer[i]);
-            Serial.print("position: ");
-            Serial.print(i);
-            Serial.println();
-        }
-        if (readingsBuffer[i] < min) {
-            min = readingsBuffer[i];
-        }
-        reducer += readingsBuffer[i];
-        reducerCount++;
+    if (readingsBuffer[i] == 0xFF)
+      continue;
+    if (readingsBuffer[i] > max) {
+      max = readingsBuffer[i];
     }
-
-    average = (double) reducer / reducerCount;
-
-    double average_wind_speed = (average * LINEAL_WIND_FACTOR);
-    double minimum_wind_speed = (min * LINEAL_WIND_FACTOR);
-    double max_wind_speed = (max * LINEAL_WIND_FACTOR);
-    TWindData wind_speed_data = {
-            .wind_speed = (float) average_wind_speed
-    };
-
-
-    if (average_wind_speed > 0) {
-        average_wind_speed = average_wind_speed * WIND_B1 + WIND_B0;
+    if (readingsBuffer[i] < min) {
+      min = readingsBuffer[i];
     }
-    if (minimum_wind_speed > 0) {
-        minimum_wind_speed = minimum_wind_speed * WIND_B1 + WIND_B0;
-    }
-    if (max_wind_speed > 0) {
-        max_wind_speed = max_wind_speed * WIND_B1 + WIND_B0;
-    }
+    reducer += readingsBuffer[i];
+    reducerCount++;
+  }
 
-    val += ",wind_speed_average=" + String(average_wind_speed);
-    val += ",wind_speed_min=" + String(minimum_wind_speed);
-    val += ",wind_speed_max=" + String(max_wind_speed);
+  average = (double)reducer / reducerCount;
 
-    Serial.printf("average: %.4f\n", average_wind_speed);
+  double average_wind_speed = (average * LINEAL_WIND_FACTOR);
+  double minimum_wind_speed = (min * LINEAL_WIND_FACTOR);
+  double max_wind_speed = (max * LINEAL_WIND_FACTOR);
+  TWindData wind_speed_data = {.wind_speed = (float)average_wind_speed};
 
-    return val;
+  if (average_wind_speed > 0) {
+    average_wind_speed = average_wind_speed * WIND_B1 + WIND_B0;
+  }
+  if (minimum_wind_speed > 0) {
+    minimum_wind_speed = minimum_wind_speed * WIND_B1 + WIND_B0;
+  }
+  if (max_wind_speed > 0) {
+    max_wind_speed = max_wind_speed * WIND_B1 + WIND_B0;
+  }
+
+  val += ",wind_speed_average=" + String(average_wind_speed);
+  val += ",wind_speed_min=" + String(minimum_wind_speed);
+  val += ",wind_speed_max=" + String(max_wind_speed);
+
+  return val;
 }
 
 String nano::getWaterCount() {
-    readBurst();
-    if (waterCount == 0xFFFF)
-        return "";
+  readBurst();
+  if (waterCount == 0xFFFF)
+    return "";
 
-    Serial.println("water count" + String(waterCount));
-    return ",water_count=" + String(waterCount * 0.02); // mm of water
+  return ",water_count=" + String(waterCount * 0.02); // mm of water
 }
 
 String nano::getLightnings() {
-    String val = "";
+  String val = "";
 
-    readBurst();
-    if (lightningCount == 0xFF)
-        return "";
-    Serial.println("lightningCount" + String(lightningCount));
-    val += ",lightningCount=" + String(lightningCount);
-    return val;
+  readBurst();
+  if (lightningCount == 0xFF)
+    return "";
+  val += ",lightningCount=" + String(lightningCount);
+  return val;
 }

@@ -11,8 +11,10 @@
 #include "Adafruit_Sensor.h"
 
 //humidity and temperature
-#define DHTPIN 33
-#define DHTTYPE DHT22
+//#define DHTPIN 33
+//#define DHTTYPE DHT22
+#define SDA1 33
+#define SCL1 32
 
 //anemometer
 #define ANEMOMETER_PIN 15
