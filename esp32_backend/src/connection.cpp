@@ -463,12 +463,12 @@ void formatSDCard() {
     File entry = root.openNextFile();
     String localPath;
 
-    Serial.println(entry.name());
+    Serial.println(entry.path());
     if (!entry) {
       break;
     }
     if (!entry.isDirectory()) {
-      SD.remove(String(entry.name()));
+      SD.remove(String(entry.path()));
     }
     vTaskDelay(1);
   }

@@ -17,7 +17,7 @@
   },
   "ssid": {
     "value": "",
-    "default": "ESTMET-AP"
+    "default": "VAP_2"
   },
   "password": {
     "value": "",
