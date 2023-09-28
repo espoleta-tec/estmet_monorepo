@@ -3,6 +3,7 @@
 //
 
 #include "Monitor/realTimeClock.h"
+#include "sys/_stdint.h"
 #include "utils/utils.h"
 
 RTC_DS1307 RTC;
@@ -25,38 +26,39 @@ void timeStart() {
   }
 }
 
+String left_pad(int val, uint16_t min_length, char character_to_fill = '0') {
+  String newVal = "";
+  int difference = min_length - String(val).length();
+
+  if (difference > 0) {
+    for (int i = 0; i < difference; i++) {
+      newVal += character_to_fill;
+    }
+  }
+
+  newVal += val;
+
+  return newVal;
+}
+
 String timeRead() {
   if (!RTC.isrunning()) {
     return ",date=ERROR";
   }
+
   String vars = "";
   DateTime now = RTC.now();
-  vars += now.year();
+  vars += left_pad(now.year(), 2);
   vars += "-";
-  vars += now.month();
+  vars += left_pad(now.month(), 2);
   vars += "-";
-  if (now.day() < 10) {
-    vars += "0";
-  }
-  vars += now.day();
-  vars += " ";
-
-  if (now.hour() < 10) {
-    vars += "0";
-  }
-  vars += now.hour();
+  vars += left_pad(now.day(), 2);
+  vars += "T";
+  vars += left_pad(now.hour(), 2);
   vars += ":";
-
-  if (now.minute() < 10) {
-    vars += "0";
-  }
-  vars += now.minute();
+  vars += left_pad(now.minute(), 2);
   vars += ":";
-
-  if (now.second() < 10) {
-    vars += "0";
-  }
-  vars += now.second();
+  vars += left_pad(now.second(), 2);
   vars += "Z";
 
   vars = ",date=\"" + vars + "\"";
