@@ -7,6 +7,12 @@
 
 #include "Arduino.h"
 
+#define MERCURY_MM_X_PASCAL_FACTOR 0.00750062f
+
+
+namespace vortice {
+namespace sensors {
+
 typedef struct TPressureSensorData {
     int error_code;
     float pressure;
@@ -14,10 +20,14 @@ typedef struct TPressureSensorData {
     float altitude;
 } TPressureSensorData;
 
-void pressureStart();
+void pressure_start();
 
-TPressureSensorData getPressure();
+TPressureSensorData pressure_get();
 
-String read_pressure();
+String pressure_read();
+
+extern bool __sensor_enabled;
+}
+}
 
 #endif //BACKEND_PRESSURESENSOR_H

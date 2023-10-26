@@ -35,7 +35,7 @@ void monitorSetup() {
     startLightning();
 #endif
 #ifdef USE_PRESSURE
-    pressureStart();
+    vortice::sensors::pressure_start();
 #endif
 #ifdef USE_TIME
     timeStart();
@@ -61,7 +61,7 @@ String getReadings() {
 #endif
 
 #ifdef USE_PRESSURE
-    data += read_pressure();
+    data += vortice::sensors::pressure_read();
 #endif
 
 #ifdef USE_HUMIDITY

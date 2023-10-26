@@ -2,13 +2,17 @@
 // Created by lazt on 4/23/21.
 //
 
+#include <WString.h>
 #include "Monitor/pressureSensor.h"
 
-#ifdef BMP085
+#ifdef USE_BMP_085
+
 #include "Adafruit_BMP085.h"
 #include "utils/utils.h"
 
-using namespace Vortice;
+namespace vortice {
+namespace sensors {
+
 Adafruit_BMP085 bmp;
 
 const double PRESSURE_B0 = -1;
@@ -16,7 +20,7 @@ const double PRESSURE_B1 = 1;
 
 bool ok = false;
 
-void pressureStart() {
+void pressure_start() {
     const char *bmp085Label = "Pressure (BMP085)";
 
     if (!bmp.begin()) {
@@ -31,24 +35,22 @@ void pressureStart() {
     ok = true;
 }
 
-String pressureRead() {
-    String vars = "";
-    if (ok) {
-        auto temperature_c = bmp.readTemperature();
-
+struct TPressureSensorData pressure_get() {
+    if (__sensor_enabled) {
         auto pressure = PRESSURE_B0 + PRESSURE_B1 * bmp.readPressure();
-        vars += ",pressure=" + String(pressure);
-
-        printDiagnostic("Pressure", String(pressure));
-
+        float pressure_in_mercury_mm = (float) pressure * MERCURY_MM_X_PASCAL_FACTOR;
         auto altitude = bmp.readAltitude();
-        vars += ",altitude=" + String(altitude);
-        printDiagnostic("Altitude", String(altitude));
 
-        auto seaLevelPressure = bmp.readSealevelPressure();
-        vars += ",pressure_sl=" + String(seaLevelPressure);
-        printDiagnostic("Sea Level Pressure", String(seaLevelPressure));
+        return {.error_code = 0,
+                .pressure = (float) pressure,
+                .pressure_mercury = pressure_in_mercury_mm,
+                .altitude = altitude};
+
+    } else {
+        return {.error_code =1};
     }
-    return vars;
 }
+}
+}
+
 #endif

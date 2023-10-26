@@ -15,8 +15,8 @@
 extern TaskHandle_t monitorTask;
 
 typedef struct TScanData {
-  TPressureSensorData pressure_data;
-  TempAndHumidity humidity_data;
+    vortice::sensors::TPressureSensorData pressure_data;
+    TempAndHumidity humidity_data;
 } TScanData;
 
 void monitorSetup();
