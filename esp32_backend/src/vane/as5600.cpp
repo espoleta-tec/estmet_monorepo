@@ -45,7 +45,7 @@ String getAngle() {
   //  uint8_t average_direction = uint8_t(raw_angle * 8 / 4096) + 1;
 
   float average_direction = float(raw_angle) / 4096.0 * 360.0;
-  double wind_direction_seconds = average_direction / 0.006;
+  double wind_direction_seconds = average_direction / 0.06;
 
   String val;
   val += ",wind_direction_min=" +
