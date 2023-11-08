@@ -3,66 +3,41 @@
 //
 #include "Monitor/humiditySensor.h"
 
+#include "DHTesp.h"
+#include "pinout.h"
+
 #ifdef USE_DHT11
 
-#include "pinout.h"
-#include "DHTesp.h"
+namespace Vortice {
 
-//DHT dht20(DHTPIN, DHTTYPE);
-DHTesp dht20;
+DHTesp dht11;
 
 const double TEMP_B0 = -2.4722766403;
 const double TEMP_B1 = 1.0547831582;
 const double HUMIDITY_B0 = -14.1345353691;
 const double HUMIDITY_B1 = 1.2579750347;
 
+#ifdef USE_DHT22
+#define DHT_TYPE DHTesp::DHT22
+#else
+#define DHT_TYPE DHTesp::DHT11
+#endif
 
-void humidityStart() {
-    dht20.setup(DHTPIN, DHTesp::DHT22);
+void HumidityReader::humidityStart() { dht11.setup(DHTPIN, DHT_TYPE); }
+
+static unsigned long last_read = 0;
+static TempAndHumidity tah = {.temperature = 0, .humidity = 0};
+
+TempAndHumidity HumidityReader::get_temperature_and_humidity() {
+
+  if (millis() - last_read >= 3000) {
+    last_read = millis();
+    return tah;
+  }
+
+  tah.temperature = dht11.getTemperature();
+  tah.humidity = dht11.getHumidity();
+  return tah;
 }
-
-String humidityRead() {
-    String vars = "";
-
-    TempAndHumidity newValues = dht20.getTempAndHumidity();
-    if (dht20.getStatus() != 0) {
-        Serial.println("DHT11 error status: " + String(dht20.getStatusString()));
-        Serial.println("Failed to read from DHT sensor!");
-        return vars;
-    }
-    double h = HUMIDITY_B0 + HUMIDITY_B1 * newValues.humidity;
-    double t = TEMP_B0 + TEMP_B1 * newValues.temperature;
-
-
-    if (isnan(h) || isnan(t)) {
-        Serial.println("Failed to read from DHT sensor!");
-        return vars;
-    }
-
-    vars += ",humidity=" + String(h);
-    vars += ",temperature_c=" + String(t);
-
-    double hic = dht20.computeHeatIndex(newValues.temperature, newValues.humidity);
-    double dewPoint = dht20.computeDewPoint(t, h);
-
-
-    vars += ",heatIndex_c=" + String(hic);
-    vars += ",dew_point_c=" + String(dewPoint);
-
-
-    Serial.print(F("Humidity: "));
-    Serial.print(h);
-    Serial.print(F("%  Temperature: "));
-    Serial.print(t);
-    Serial.print(F("°C "));
-    Serial.print(F("Heat index: "));
-    Serial.print(hic);
-    Serial.print("computeDewPoint: ");
-    Serial.print(dewPoint);
-    Serial.println(F("°C "));
-
-
-    return vars;
-}
-
+} // namespace Vortice
 #endif

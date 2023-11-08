@@ -5,37 +5,31 @@
 #ifndef BACKEND_PINOUT_H
 #define BACKEND_PINOUT_H
 
+// DHT SENSORS
 
+// humidity and temperature
+#ifdef USE_DHT11
+#define DHTPIN 2
+#endif
 
-//DHT SENSORS
-#include "Adafruit_Sensor.h"
-
-//humidity and temperature
-//#define DHTPIN 33
-//#define DHTTYPE DHT22
 #define SDA1 33
 #define SCL1 32
 
-//anemometer
-#define ANEMOMETER_PIN 15
-
-
-//light
+// light
 #define LIGHT_SENSOR_ADDRESS 0x23
 
 #define POWER_PIN 15
 
-//power
+// power
 #include "driver/adc.h"
 
 #define RESET_PIN 16
 #define BATTERY_LEVEL ADC1_CHANNEL_4
 
-//control pins
+// control pins
 #define PRO_MINI_RESET 4
-#define LOGO_LED 2
 
-//lightning watcher
+// lightning watcher
 #define LIGHTNING_PIN 32
 
-#endif //BACKEND_PINOUT_H
+#endif // BACKEND_PINOUT_H

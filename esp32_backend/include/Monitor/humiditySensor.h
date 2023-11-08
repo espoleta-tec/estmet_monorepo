@@ -9,21 +9,23 @@
 
 namespace Vortice {
 typedef struct TempAndHumidity {
-    float temperature;
-    float humidity;
+  float temperature;
+  float humidity;
 } TempAndHumidity;
 
 class HumidityReader {
 public:
-    virtual void humidityStart();
+  virtual void humidityStart();
 
-    String humidityRead();
+  String humidityRead();
 
-    virtual TempAndHumidity get_temperature_and_humidity();
+  virtual TempAndHumidity get_temperature_and_humidity();
 
-    static float get_heat_index(float temperature_in_celsius, float relative_humidity);
+  static float get_heat_index(float temperature_in_celsius,
+                              float relative_humidity);
 
-    static float get_dew_point(float temperature_in_celsius, float relative_humidity);
+  static float get_dew_point(float temperature_in_celsius,
+                             float relative_humidity);
 };
 
 void humidityStart();

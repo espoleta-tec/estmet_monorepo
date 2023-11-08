@@ -12,60 +12,54 @@
 using namespace Vortice;
 
 void setup() {
-    Serial.begin(9600);
-    Serial.flush();
-    Vortice::printDiagnosticsHeader();
-    Vortice::printDiagnostic("Firmware Version", String(FIRMWARE_VERSION));
-    Wire.begin(SDA, SCL, 1e5);
-    Wire1.begin(SDA1, SCL1, 1e5);
+  Serial.begin(9600);
+  Serial.flush();
+  Vortice::printDiagnosticsHeader();
+  Vortice::printDiagnostic("Firmware Version", String(FIRMWARE_VERSION));
+  Wire.begin(SDA, SCL, 1e5);
+  Wire1.begin(SDA1, SCL1, 1e5);
 
-    const char *i2cLabel = "I2C";
+  const char *i2cLabel = "I2C";
 
-    if (!(Wire.begin() && Wire1.begin())) {
-        printDiagnostic(i2cLabel, Status[Vortice::FAILED_TO_START]);
-    } else {
-        printDiagnostic(i2cLabel, Status[Vortice::OK]);
-    }
+  if (!(Wire.begin() && Wire1.begin())) {
+    printDiagnostic(i2cLabel, Status[Vortice::FAILED_TO_START]);
+  } else {
+    printDiagnostic(i2cLabel, Status[Vortice::OK]);
+  }
 
-    pinMode(LED_BUILTIN, OUTPUT);
-    pinMode(LOGO_LED, OUTPUT);
-    pinMode(PRO_MINI_RESET, OUTPUT);
-    pinMode(POWER_PIN, INPUT);
-    pinMode(RESET_PIN, INPUT_PULLUP);
+  pinMode(LED_BUILTIN, OUTPUT);
+  pinMode(PRO_MINI_RESET, OUTPUT);
+  pinMode(POWER_PIN, INPUT);
+  pinMode(RESET_PIN, INPUT_PULLUP);
 
-    initFileSystem();
-    loadConf();
-    initSDCard();
-    supplyState = digitalRead(POWER_PIN);
-    Vortice::printDiagnostic("Power Supply", supplyState ? "ON" : "OFF");
+  initFileSystem();
+  loadConf();
+  initSDCard();
+  supplyState = digitalRead(POWER_PIN);
+  Vortice::printDiagnostic("Power Supply", supplyState ? "ON" : "OFF");
 
 #ifndef DISABLE_RESET
-    resetSetup();
+  resetSetup();
 #endif
 
 #ifdef ARDUINO_CONNECTED
-    digitalWrite(PRO_MINI_RESET, LOW);
-    delay(50);
-    digitalWrite(PRO_MINI_RESET, HIGH);
+  digitalWrite(PRO_MINI_RESET, LOW);
+  delay(50);
+  digitalWrite(PRO_MINI_RESET, HIGH);
 #endif
 
-    monitorSetup();
-    Vortice::printDivider();
+  monitorSetup();
+  Vortice::printDivider();
 
 #ifdef USE_SERVER
 #ifdef DEBUG
-    serverSetup();
-    digitalWrite(LOGO_LED, HIGH);
+  serverSetup();
 #else
-    if (supplyState) {
-        digitalWrite(LOGO_LED, LOW);
-        serverSetup();
-    } else {
-        digitalWrite(LOGO_LED, HIGH);
-    }
+  if (supplyState) {
+    serverSetup();
+  }
 #endif
 #endif
-
 }
 
 void loop() { delay(1000000); }
