@@ -4,5 +4,7 @@
 
 #ifndef ESP32_BACKEND_CONSTANTS_H
 #define ESP32_BACKEND_CONSTANTS_H
-#define FIRMWARE_VERSION "0.3.3"
+#include "Arduino.h"
+
+#define FIRMWARE_VERSION String("0.3.5_") + String(BUILD_TYPE)
 #endif // ESP32_BACKEND_CONSTANTS_H

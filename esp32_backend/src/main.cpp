@@ -11,11 +11,13 @@
 
 using namespace Vortice;
 
+const char *build_types[] = {"rel", "dbg"};
+
 void setup() {
   Serial.begin(9600);
   Serial.flush();
   Vortice::printDiagnosticsHeader();
-  Vortice::printDiagnostic("Firmware Version", String(FIRMWARE_VERSION));
+  Vortice::printDiagnostic("Firmware Version", FIRMWARE_VERSION);
   Wire.begin(SDA, SCL, 1e5);
   Wire1.begin(SDA1, SCL1, 1e5);
 

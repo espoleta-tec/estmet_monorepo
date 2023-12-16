@@ -441,13 +441,14 @@ void getLogs() {
   path += "-";
   path += now.day();
 
+  passCors();
   File log = SD.open(path, FILE_READ);
   if (!log) {
     Serial.println("couldn't open log for reading");
-    server.send(404, "text/plain", "no logs found for this day");
+    server.send(404, "application/json",
+                "{ \"error\": \"no logs found for this day\"}");
     return;
   }
-  passCors();
   server.streamFile(log, "text/plain");
   log.close();
 }
