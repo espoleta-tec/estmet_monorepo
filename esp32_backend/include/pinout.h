@@ -9,7 +9,7 @@
 
 // humidity and temperature
 #ifdef USE_DHT11
-#define DHTPIN 2
+#define DHTPIN 16
 #endif
 
 #define SDA1 33
