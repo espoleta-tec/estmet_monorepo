@@ -23,7 +23,7 @@
 // power
 #include "driver/adc.h"
 
-#define RESET_PIN 16
+#define RESET_PIN 17
 #define BATTERY_LEVEL ADC1_CHANNEL_4
 
 // control pins
