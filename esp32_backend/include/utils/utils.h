@@ -9,25 +9,18 @@
 
 namespace Vortice {
 
-    enum ComponentState {
-        OK, FAILED_TO_START, ON, OFF
-    };
-    const String Status[] = {
-            "OK",
-            "FAILED_TO_START",
-            "ON",
-            "OFF"
-    };
+enum ComponentState { OK, FAILED_TO_START, ON, OFF };
+const String Status[] = {"OK", "FAILED_TO_START", "ON", "OFF"};
 
-    void printDiagnosticsHeader();
+void printDiagnosticsHeader();
 
-    void printDiagnosticsFooter();
+void printDiagnosticsFooter();
 
-    void printDiagnostic(String component, String status, String reason = "");
+void printDiagnostic(String component, String status, String reason = "");
 
-    void log(String data);
+void log(String data);
 
-    void printDivider();
-}
+void printDivider();
+} // namespace Vortice
 
-#endif //BACKEND_UTILS_H
+#endif // BACKEND_UTILS_H

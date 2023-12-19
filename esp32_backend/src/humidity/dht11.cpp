@@ -33,8 +33,9 @@ void HumidityReader::humidityStart() {
   const char *dhtLabel = "DHT11";
 #endif
 
-  if (temp == NAN) {
+  if (isnan(temp)) {
     printDiagnostic(dhtLabel, Vortice::Status[FAILED_TO_START]);
+    printDiagnostic(dhtLabel, String(temp));
   } else {
     printDiagnostic(dhtLabel, Vortice::Status[OK]);
   }
