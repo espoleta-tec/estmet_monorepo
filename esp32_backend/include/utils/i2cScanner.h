@@ -8,8 +8,8 @@
 #include "Arduino.h"
 #include "Wire.h"
 
-void scanI2C();
+void scanI2C(bool useOne = true);
 
 void i2cSlave();
 
-#endif //ESP32_BACKEND_I2CSCANNER_H
+#endif // ESP32_BACKEND_I2CSCANNER_H

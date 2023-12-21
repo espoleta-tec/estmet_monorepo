@@ -5,9 +5,8 @@
 #ifndef BACKEND_PINOUT_H
 #define BACKEND_PINOUT_H
 
+#include "driver/adc.h"
 // DHT SENSORS
-
-// humidity and temperature
 #ifdef USE_DHT11
 #define DHTPIN 16
 #endif
@@ -21,8 +20,6 @@
 #define POWER_PIN 15
 
 // power
-#include "driver/adc.h"
-
 #define RESET_PIN 17
 #define BATTERY_LEVEL ADC1_CHANNEL_4
 

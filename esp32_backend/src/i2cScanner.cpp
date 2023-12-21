@@ -3,6 +3,7 @@
 //
 
 #include "utils/i2cScanner.h"
+#include "Wire.h"
 
 #define SLAVE_ADDRESS 0x05
 
@@ -12,17 +13,19 @@ void onRecive(int num_bytes) { command = Wire.read(); }
 
 void onRequest() { Wire.write(0x01); }
 
-void scanI2C() {
+void scanI2C(bool useOne) {
   int nDevices = 0;
 
-  Serial.println("Scanning...");
+  TwoWire *wireInstance = useOne ? &Wire1 : &Wire;
+
+  Serial.printf("Scanning on Wire%d\n", useOne);
 
   for (byte address = 1; address < 127; ++address) {
     // The i2c_scanner uses the return value of
     // the Write.endTransmisstion to see if
     // a device did acknowledge to the address.
-    Wire.beginTransmission(address);
-    byte error = Wire.endTransmission();
+    wireInstance->beginTransmission(address);
+    byte error = wireInstance->endTransmission();
 
     if (error == 0) {
       Serial.print("I2C device found at address 0x");
