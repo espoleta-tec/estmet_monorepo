@@ -29,13 +29,13 @@ void setup() {
     printDiagnostic(i2cLabel, Status[Vortice::OK]);
   }
 
-  // scanI2C(false);
-  // scanI2C(true);
-
-  // while (true) {
-  //   Serial.printf("%d --- %d\n", digitalRead(SDA1), digitalRead(SCL1));
-  //   delay(1000);
-  // }
+#ifdef SCAN_I2C
+  while (true) {
+    scanI2C(false);
+    scanI2C(true);
+    delay(1000);
+  }
+#endif
 
   pinMode(LED_BUILTIN, OUTPUT);
   pinMode(PRO_MINI_RESET, OUTPUT);

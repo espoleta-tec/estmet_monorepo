@@ -20,9 +20,6 @@ void timeStart() {
     } else {
       Vortice::printDiagnostic(rtcLabel, Vortice::Status[Vortice::OK]);
     }
-    //        uint8_t status = RTC.readnvram(0);
-    //        status = status & 0x7F; // enable oscillator bit
-    //        RTC.writenvram(0, status);
   }
 }
 

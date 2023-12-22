@@ -80,12 +80,13 @@ String getReadings() {
 #ifdef USE_LIGHTNING
   data += nano::getLightnings();
 #endif
+  nano::deleteBuffer();
 #endif
 
   //        data += getBatteryLevelString(); //TODO change pin
-  nano::deleteBuffer();
-
+#ifdef USE_TIME
   data += timeRead();
+#endif
   f_ReadInProgress = false;
   lastReading = data;
   return data;
